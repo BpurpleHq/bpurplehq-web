@@ -10,25 +10,27 @@ const page = () => {
   return (
     <div>
     <section className='sm:px-16 px-6 pt-4 lg:pt-[90px] pb-14'>
-      <h3 className='text-body-2 font-bold text-center lg:text-start'>About us</h3>
+      <h3 className='text-headline-2 text-secondary mb-5 font-bold text-center lg:text-start'>About Us</h3>
       <div className='flex flex-col lg:flex-row justify-between'>
         <div className=''>
           <h2 className='text-headline-3 lg:text-headline-2 text-primary text-center lg:text-start'>We Create Experience That Put People First</h2>
         </div>
         <div>
-          <p className='lg:text-body-2 lg:mt-6 mt-3'>Bpurple connotes a state of mind, a state of relevance, agility, staying up to date and evolving with technology trends while building market ready skills and making businesses to stay competitive.<br /> <br />We are focused on providing high-quality tech services, products, training, hiring, and consulting to businesses and individuals looking to acquire and develop their tech skills.</p>
+          <p className='lg:mt-6 mt-3'>Bpurple connotes a state of mind, a state of relevance, agility, staying up to date and evolving with technology 
+          trends while building market ready skills and making businesses to stay competitive.<br /> <br />We are focused on providing high-quality tech services, products, 
+          training, hiring, and consulting to businesses and individuals looking to acquire and develop their tech skills.</p>
         </div>
         </div>
         <div className='flex flex-col gap-5 lg:gap-0 lg:flex-row justify-between mt-3'>
-          <Image src='/aboutImage1.png' width={600} height={359} alt='about image' />
+          <Image src='/aboutImage1.png' width={520} height={300} alt='about image' />
           <Image src='/aboutImage2.png' width={600} height={359} alt='about image' />
         </div>
       </section>
       <section className='bg-extra'>
         <div className='flex flex-col gap-3 sm:px-16 px-6 lg:py-10 py-4'>
-          <h3 className='text-body-2 font-bold'>Why We Exists?</h3>
+          <h3 className='text-body-2 font-bold'></h3>
           <div className='flex flex-col Lg:items-start mt-3'>
-            <h2 className='text-headline-3 lg:text-headline-2 text-primary'>Our Mission</h2>
+            <h2 className='text-headline-3 lg:text-headline-2 text-secondary'>Our Mission</h2>
             <p className='lg:w-[400px] mt-2'>Our mission is to establish coding boot camps and tech schools in major African cities and states with the aim of achieving several goals. </p>
           </div>
           <div className='relative flex flex-col lg:items-end'>
@@ -43,12 +45,12 @@ const page = () => {
       </section>
       <section>
         <div className='sm:px-16 px-6 lg:py-10 py-5'>
-          <h2 className='font-semibold text-center lg:text-start'>WE BELIEVE IN PURPOSFUL ACTION</h2>
-          <h2 className='text-headline-3 lg:text-headline-2 text-primary text-center lg:text-start'>Our Values</h2>
+          <h2 className='font-semibold text-center lg:text-start'></h2>
+          <h2 className='text-headline-3 lg:text-headline-2 text-secondary text-center lg:text-start'>Our Values</h2>
           <div className='flex flex-col lg:flex-row gap-4 lg:gap-0 lg:justify-between mt-3'>
             {values.map(({ id, title, description, image }) => (
               <div key={id} className='border border-primary rounded-xl py-4 px-5 shadow-xl'>
-                <p className='text-center font-bold'>{title}</p>
+                <p className='text-center font-bold text-headline-3 text-primary mt-5'>{title}</p>
                 <p className='lg:w-[300px] mt-5'>{description}</p>
                 <div className='flex justify-center mt-3'>
                   <Image src={image} alt={title} width={70} height={70} />
@@ -60,7 +62,7 @@ const page = () => {
       </section>
       <section className='bg-extra'>
         <div className='sm:px-16 px-6 lg:py-10 py-5'>
-          <h3 className='text-body-2 text-center font-semibold'>PROGRAMS AT bpurpleHQ</h3>
+          <h3 className='text-body-2 text-center font-semibold'></h3>
           <h2 className='text-headline-3 lg:text-headline-2 text-center text-primary mt-2'>Our Services</h2>
           <div className='grid grid-cols-1 md:grid-cols-2'>
             {services1.map(({ id, title, description, image }) => (

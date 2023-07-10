@@ -70,19 +70,19 @@ export const footerLinks = [
 export const metrics = [
     {
         id: 1,
-        figure: '50+',
+        figure: '100+',
         title: 'Trained',
         image: learnIcon,
     },
     {
         id: 2,
-        figure: '1000+',
-        title: 'Products of Ours', 
+        figure: '20+',
+        title: 'Instructors', 
         image: handIcon,
     },
     {
         id: 3,
-        figure: '1.5+',
+        figure: '500+',
         title: 'Satisfied Customers',
         image: peopleIcon,
     }
@@ -115,21 +115,21 @@ export const testimonials = [
         review: '“Special thanks to the organizers of the bpurple bootcamp, I decided to join the virtual assistant path in the free tech bootcamp organized by bpurpleHQ as a newbie, it was so engaging and while at it, I did not only learn the skill, I was subjected to learning, leadership and collaboration skills.” ',
         image: testimonial1,
         name: 'Olabisi Balogun',
-        title: '- intern at bpurpleHQ',
+        title: 'Intern-bpurpleHQ',
     },
     {
         id: 2,
-        review: '“Special thanks to the organizers of the bpurple bootcamp, I decided to join the virtual assistant path in the free tech bootcamp organized by bpurpleHQ as a newbie, it was so engaging and while at it, I did not only learn the skill, I was subjected to learning, leadership and collaboration skills.” ',
+        review: '“Overall, I highly recommend the  bpurple Data Analysis class to anyone seeking to enhance their skills in this field. The quality of instruction, comprehensive curriculum, and hands-on learning approach make it a worthwhile investment. I feel more confident in my ability to collect, analyze, and interpret data, thanks to the team for providing such a valuable learning experience.” ',
         image: testimonial2,
-        name: 'Olabisi Balogun',
-        title: '- intern at bpurpleHQ',
+        name: 'Victor Dibia',
+        title: '',
     },
 ];
 
 export const cta = [
     {
         id: 1,
-        title: 'Individaul',
+        title: 'Individual',
         content: 'Accelerate your dream of becoming a world-class software developer or designer.',
         image: individualIcon,
         buttonTitle: 'Browse Courses',
@@ -149,7 +149,7 @@ export const learningPath = [
         image: GISIMAGE,
         title: 'School of GIS',
         description: 'GIS is an effective instrument for collecting, processing, and displaying spatial and geographic data. Numerous sectors, including urban planning, environmental management, and resource allocation, can use this technology. Organizations can use GIS to visualize data in maps, graphs, and tables, analyze patterns, and uncover connections that might not be obvious through conventional data analysis.',
-        duration: '3-4 weeks',
+        duration: '5-7 weeks',
         url: '/gis-school',
     },
     {
@@ -165,7 +165,7 @@ export const learningPath = [
         image: productImage,
         title: 'School of Product',
         description: 'Product design is a highly valuable skill that involves the creation of new products or the improvement of existing ones. It encompasses a wide range of activities, including research, conceptualization, prototyping, testing, and refinement. The ability to collaborate with cross-functional teams, communicate effectively, and understand customer needs are also essential components of product design.',
-        duration: '3-4 weeks',
+        duration: '6-8 weeks',
         url: '/product-school',
     },
     {
@@ -173,7 +173,7 @@ export const learningPath = [
         image: dataImage,
         title: 'Data School',
         description: 'Data analysis is the process of looking at and interpreting data to gain understanding and make wise choices. To spot patterns, trends, and correlations, one must collect, clean, organize, and visualize data. For organizations to make choices based on facts, spot areas for improvement, and maximize performance, data analysis is a crucial tool.',
-        duration: '3-4 weeks',
+        duration: '10-12 weeks',
         url: '/data-school',
     },
     {
@@ -181,7 +181,7 @@ export const learningPath = [
         image: blockchainImage,
         title: 'School of Blockchain',
         description: 'COMING SOON',
-        duration: '3-4 weeks',
+        duration: 'N/A',
         url: '/blockchain-school',
     },
     {
@@ -189,7 +189,7 @@ export const learningPath = [
         image: aiImage,
         title: 'School of AI',
         description: 'COMING SOON',
-        duration: '3-4 weeks',
+        duration: 'N/A',
         url: '/ai-school',
     },
 ];
@@ -230,7 +230,7 @@ export const services1 = [
     },
     {
         id: 3,
-        title: 'Texh Product Development',
+        title: 'Tech Product Development',
         description: 'bpurple can see through the development of products for her clients, from the ideation stage to full implementation while sticking to the business requirements and deployment timeline',
         image: dotIcon,
     },

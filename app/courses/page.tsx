@@ -15,8 +15,10 @@ const page = () => {
         <div className='flex flex-col lg:flex-row lg:justify-between items-center lg:gap-7 lg:pt-7'>
           <div className='relative lg:mt-6 bg-extra rounded-lg'>
             <div className='p-5'>
-            <h3 className='max-w-[500px] text-headline-2 text-primary lg:mt-[60px]'>Todays learners change the world</h3>
-            <p className='lg:max-w-[500px] pt-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione sapiente non ex optio? Labore nisi dignissimos, maiores suscipit voluptate optio?</p>
+            <h3 className='max-w-[500px] text-headline-2 text-primary lg:mt-[50px]'>Todays <span className='text-secondary'>learners</span>  change the world</h3>
+            <p className='lg:max-w-[500px] pt-4'>
+            We are positioned to provide user centric learning experiences with a defined curriculum backed with industry leading experts as instructors.
+            </p>
 
             <div className='hidden'>
               <CustomButton 
