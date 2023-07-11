@@ -46,8 +46,8 @@ export const footerLinks = [
   {
     title: "Products",
     links: [
-      { title: "Communities", url: "/" },
-      { title: "Courses", url: "/" },
+      { title: "Communities", url: "#" },
+      { title: "Courses", url: "#" },
     ],
   },
   {
@@ -60,9 +60,9 @@ export const footerLinks = [
   {
     title: "Contact",
     links: [
-      { title: "+234 806 939 4886", url: "/" },
+      { title: "+2348069394886", url: "/" },
       { title: "info@bpurplehq.org", url: "/" },
-      { title: "Send a Message", url: "/" },
+      { title: "", url: "/" },
     ],
   },
 ];
