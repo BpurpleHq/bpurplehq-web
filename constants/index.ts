@@ -27,7 +27,7 @@ export const menuLinks = [
     {
         id: 2,
         title: 'Community',
-        url: '/community',
+        url: '#',
     },
     {
         id: 3,
@@ -60,7 +60,7 @@ export const footerLinks = [
   {
     title: "Contact",
     links: [
-      { title: "+234819476231", url: "/" },
+      { title: "+234 806 939 4886", url: "/" },
       { title: "info@bpurplehq.org", url: "/" },
       { title: "Send a Message", url: "/" },
     ],
