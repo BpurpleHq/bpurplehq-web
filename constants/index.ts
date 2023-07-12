@@ -60,7 +60,7 @@ export const footerLinks = [
   {
     title: "Contact",
     links: [
-      { title: "+2348069394886", url: "/" },
+      { title: "+234 8069394886", url: "/" },
       { title: "info@bpurplehq.org", url: "/" },
       { title: "", url: "/" },
     ],
