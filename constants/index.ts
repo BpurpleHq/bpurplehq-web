@@ -27,7 +27,7 @@ export const menuLinks = [
     {
         id: 2,
         title: 'Community',
-        url: '/community',
+        url: '#',
     },
     {
         id: 3,
@@ -46,8 +46,8 @@ export const footerLinks = [
   {
     title: "Products",
     links: [
-      { title: "Communities", url: "/" },
-      { title: "Courses", url: "/" },
+      { title: "Communities", url: "#" },
+      { title: "Courses", url: "#" },
     ],
   },
   {
@@ -60,9 +60,9 @@ export const footerLinks = [
   {
     title: "Contact",
     links: [
-      { title: "+234819476231", url: "/" },
+      { title: "+234 8069394886", url: "/" },
       { title: "info@bpurplehq.org", url: "/" },
-      { title: "Send a Message", url: "/" },
+      { title: "", url: "/" },
     ],
   },
 ];
