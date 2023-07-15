@@ -12,7 +12,7 @@ const page = () => {
   return (
     <main className='relative w-full'>
       <section className='sm:px-16 px-6 pt-4 lg:pt-[90px] pb-5 lg:pb-0'>
-        <div className='flex flex-col lg:flex-row lg:justify-between items-center lg:gap-7 lg:pt-7'>
+        <div className='max-w-[1440px] mx-auto flex flex-col lg:flex-row lg:justify-between items-center lg:gap-7 lg:pt-7'>
           <div className='relative lg:mt-6 bg-extra rounded-lg'>
             <div className='p-5'>
             <h3 className='max-w-[500px] text-headline-2 text-primary lg:mt-[50px]'>Todays <span className='text-secondary'>learners</span>  change the world</h3>

@@ -6,17 +6,17 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer className='bg-primary'>
-      <div className='flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10'>
+      <div className='max-w-[1440px] mx-auto flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10'>
         <Link href='/' className=''>
           <Image src='/logoWhite.svg' alt='logo' width={150} height={150} />
         </Link>
-        <div className='flex max-md:flex-col flex-wrap justify-between lg:gap-5 gap-6'>
+        <div className='grid grid-cols-2 md:grid-cols-4 gap-3'>
           {footerLinks.map((link) => (
-            <div key={link.title} className='flex justify-center items-center lg:justify-start lg:items-start flex-col gap-3 lg:gap-4 text-base min-w-[170px]'>
+            <div key={link.title} className='flex justify-center items-center lg:justify-start lg:items-start flex-col gap-4 lg:gap-4 text-base min-w-[190px]'>
               <h3 className='text-headline-4 text-white'>{link.title}</h3>
               {link.links.map((item) => (
                 <Link key={item.title} href={item.url} className='text-white text-body-2'>
-                  <p>{ item.title }</p>
+                  <p>{item.title}</p>
                 </Link>
               ))}
             </div>
