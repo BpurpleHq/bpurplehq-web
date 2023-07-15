@@ -374,10 +374,30 @@ export const communityLink = [
         id: 1,
         title: 'Career',
         content: 'Lorem ipsum dolor sit amet consectetur. Integer augue risus pharetra nisl. Eu proin .',
+        url: '/courses',
     },
     {
         id: 2,
         title: 'Workforce',
         content: 'Lorem ipsum dolor sit amet consectetur. Integer augue risus pharetra nisl. Eu proin .',
+        url: '/community/workforce',
+    },
+];
+
+export const workforceCard = [
+    {
+        id: 1,
+        title: 'We focus on teaching In-demand skills',
+        content: 'Lorem ipsum dolor sit amet consectetur. Integer augue risus pharetra nisl. Eu proin posuere nunc metus semper id consequat. Pretium viverra fringilla phasellus quam ',
+    },
+    {
+        id: 2,
+        title: 'Certificates to boost your CV',
+        content: 'Lorem ipsum dolor sit amet consectetur. Integer augue risus pharetra nisl. Eu proin posuere nunc metus semper id consequat. Pretium viverra fringilla phasellus quam ',
+    },
+    {
+        id: 3,
+        title: 'Well tailored teaching for your teams',
+        content: 'Lorem ipsum dolor sit amet consectetur. Integer augue risus pharetra nisl. Eu proin posuere nunc metus semper id consequat. Pretium viverra fringilla phasellus quam ',
     },
 ]

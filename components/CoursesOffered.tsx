@@ -18,7 +18,7 @@ const CoursesOffered = () => {
                 <p className='mt-3 px-5'>{description}</p>
                 <p className='mt-3 px-5 font-semibold'>Duration: {duration}</p>
 
-                <Link href={url} className=''>
+                <Link href={url} className='flex-2'>
                     <CustomButton
                         title='Learn more'
                         btnType='button'

@@ -44,12 +44,12 @@ const page = () => {
       </section> */}
       <section className='max-w-[1440px] mx-auto sm:px-16 px-6 lg:py-10 py-4'>
         <div className='flex justify-center items-center gap-7'>
-          {communityLink.map(({ id, title, content }) => (
+          {communityLink.map(({ id, title, content, url }) => (
             <div className='lg:w-[512px] border border-primary px-4 py-5 rounded-lg'>
               <h2 className='text-headline-3 text-center text-primary'>{title}</h2>
               <p className='text-center'>{content}</p>
               <div className='flex justify-center items-center'>
-                <Link href='/courses'>
+                <Link href={url}>
                   <CustomButton
                     title='Explore'
                     containerStyles='bg-secondary p-2 rounded-lg mt-2'
