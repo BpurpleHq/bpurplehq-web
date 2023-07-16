@@ -42,7 +42,7 @@ export const menuLinks = [
     {
         id: 2,
         title: 'Community',
-        url: '#',
+        url: '/community',
     },
     {
         id: 3,
@@ -55,7 +55,7 @@ export const footerLinks = [
     title: "Quick Links",
     links: [
       { title: "About Us", url: "/about" },
-      { title: "FAQs", url: "/faq" },
+      { title: "FAQs", url: "#" },
     ],
   },
   {
