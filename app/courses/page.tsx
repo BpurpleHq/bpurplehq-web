@@ -32,7 +32,7 @@ const page = () => {
           </div>
         </div>
         <div className='relative lg:w-[50%] lg:m-10'>
-          <Image src='/courseImage.png' alt='course image' width={512} height={500} />
+          <Image src='/courseImage.png' alt='course image' fill className='obeject-contain' />
         </div>
       </section>
       <section className='bg-extra'>
