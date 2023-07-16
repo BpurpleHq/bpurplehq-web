@@ -1,4 +1,4 @@
-import CourseDetailBody from '@/components/CourseDetailBody';
+import CourseDetailBodyDA from '@/components/CourseDetailsBodyDA';
 import CourseInfo from '@/components/CourseInfo';
 import CoursesDetailsHero from '@/components/CoursesDetailsHero';
 import React from 'react'
@@ -15,14 +15,14 @@ const page = () => {
           title='School of Data'
           subtitle='Start off your career today as a Data Analyst. Learn how to review and identify key insights into business’ customers and ways data can be used to solve problems.'
           image='/dataImage.png'
-          status='We are currently taking applications!'
+          status='We are currently NOT taking applications!'
         />        
       </section>
       <section className='bg-extra'>
         <CourseInfo />
       </section>
       <section>
-        <CourseDetailBody />
+        <CourseDetailBodyDA />
       </section>
     </div>
   )

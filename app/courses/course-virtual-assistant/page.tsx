@@ -1,4 +1,4 @@
-import CourseDetailBody from '@/components/CourseDetailBody';
+import CourseDetailBodyVA from '@/components/CourseDetailsBodyVA';
 import CourseInfo from '@/components/CourseInfo';
 import CoursesDetailsHero from '@/components/CoursesDetailsHero';
 import React from 'react'
@@ -15,14 +15,14 @@ const page = () => {
           title='Virtual Assistant'
           subtitle='Start off your career today as a Virtual Assistant. Learn how to offer administrative services to clients from a remote location.'
           image='/virtualImage.png'
-          status='We are currently taking applications!'
+          status='We are currently NOT taking applications!'
         />        
       </section>
       <section className='bg-extra'>
         <CourseInfo />
       </section>
       <section>
-        <CourseDetailBody />
+        <CourseDetailBodyVA />
       </section>
     </div>
   )

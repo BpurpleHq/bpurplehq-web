@@ -20,7 +20,7 @@ export default function Home() {
       <section className='bg-white flex flex-col-reverse lg:flex-row gap-5 relative z-0 max-w-[1440px] mx-auto sm:px-16 px-3 pt-[40px] mb-[20px] lg:mb-0 pb-7 lg:pb-0'>
         <div className='flex flex-col lg:justify-start lg:items-start lg:mt-[50px] w-full lg:max-w-[70%] flex-1'>
           <h1 className='lg:w-[70%] text-headline-2 text-primary text-center md:text-start'>Tech <span className='text-secondary'>Training,</span> Get Mentored, Stay Relevant.</h1>
-          <p className='text-body lg:text-headline-4 text-primary mt-4'>We are part of the solution in building a <span className='text-secondary'>SKILLED</span> continent.</p>
+          <p className='text-body lg:text-headline-4 text-primary mt-4'>We are part of the solution in building a <span className='text-secondary text-headline-3'>SKILLED</span> continent.</p>
           <div className='flex justify-center items-center lg:justify-items-start gap-3 mt-8 md:mt-8'>
             <Link href='/courses'>
               <CustomButton
@@ -39,11 +39,11 @@ export default function Home() {
           </div>
         </div>
         
-        <div className='flex relative lg:w-[580px] lg:h-[500px] h-[390px] rounded-xl'>
-          <Image src='/heroImage.png' alt='Hero Image'fill  />
+        <div className='flex relative lg:w-[420px] lg:h-[500px] h-[390px] rounded-xl'>
+          <Image src='/heroimage.png' alt='Hero Image'fill  />
         </div>
         <div className='hidden lg:block absolute bottom-[10%] left-[-1px]'>
-          <Image src='/arrowIcon.svg' alt='arrow' width={130} height={800} />
+          <Image src='/arrowIcon.svg' alt='arrow' width={130} height={700} />
         </div>
       </section>
 

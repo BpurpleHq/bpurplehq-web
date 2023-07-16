@@ -1,4 +1,4 @@
-import CourseDetailBody from '@/components/CourseDetailBody';
+import CourseDetailBody from '@/components/CourseDetailsBodyProduct';
 import CourseInfo from '@/components/CourseInfo';
 import CoursesDetailsHero from '@/components/CoursesDetailsHero';
 import React from 'react'
@@ -13,9 +13,9 @@ const page = () => {
       <section className='sm:px-16 px-6 lg:py-10 py-4'>
         <CoursesDetailsHero
           title='School of Product'
-          subtitle='Start off your career today as a Product Designer. Learn how to design user friendly products to enhance and improve usability and accessibility during interaction between user and the product.'
+          subtitle='Start off your career today as a Product Manager. Learn how to design user friendly products to enhance and improve usability and accessibility during interaction between user and the product.'
           image='/productImage.png'
-          status='We are currently taking applications!'
+          status='We are currently NOT taking applications!'
         />        
       </section>
       <section className='bg-extra'>
