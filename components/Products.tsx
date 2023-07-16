@@ -24,25 +24,32 @@ const Products = () => {
         >
           {products.map(({id, image, title, description}) => (
             <SwiperSlide>
-              <div className='flex flex-col lg:flex-row lg:justify-between'>
+              <div className='max-w-[1440px] mx-auto flex flex-col lg:flex-row lg:justify-between '>
                 <Image src={image} alt={title} width={400} height={300} className='border-2 border-secondary rounded-xl' />
-                <div className='flex flex-col justify-center items-center'>
+                <div className='relative flex flex-col justify-center items-center'>
+                <div className=''>
                   <div className='lg:w-[548px] py-4 px-3 mt-4 lg:mt-0 bg-extra shadow-lg'>
                   <h2 className='text-headline-3 text-primary text-center'>{title}</h2>
                   <p className='lg:w-[492px] mt-2'>{description}</p>
                 </div>
+                </div>
+                  <CustomButton
+                    title='Explore'
+                    containerStyles='lg:absolute bottom-0 right-2 bg-secondary p-3 mt-3 mb-7 lg:mb-0 rounded-lg'
+                    textStyles='text-dark'
+                  />
                 </div>
               </div>
             </SwiperSlide>
           ))}  
         </Swiper>
       </div>
-        <h3 className='text-headline-3 mt-10'>Testimonials</h3>
+        <h3 className='max-w-[1440px] mx-auto text-headline-3 mt-10'>Testimonials</h3>
         <div className='flex flex-col lg:flex-row justify-center items-center gap-4 mt-5'>
           {testimonials.map(({id, review, image, name, title}) => (
-            <div className='bg-extra flex flex-col lg:flex-row border border-secondary rounded-xl p-6 shadow-lg'>
+            <div key={id} className='bg-extra flex flex-col lg:flex-row border border-secondary rounded-xl p-6 shadow-lg'>
                 <div>
-                  <p className='lg:w-[400px]'>{review}</p>  
+                  <p className='lg:w-[400px] text-sm'>{review}</p>  
                 </div>
                 <div>
                   <Image src={image} alt='title' width={280} height={280} />
