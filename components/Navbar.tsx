@@ -41,7 +41,7 @@ const Navbar = () => {
           </div>
 
            {/* Other screen */}
-        <div className='bg-primary bg-opacity-90 w-full flex justify-between items-center sm:px-16 px-3 py-4 z-20 '>
+        <div className='fixed bg-primary bg-opacity-90 w-full flex justify-between items-center sm:px-16 px-3 py-4 z-20 '>
            <Link href='/'>
                 <Image src='/logoWhite.svg' width={100} height={100} alt='Bpurple logo'
                 />
