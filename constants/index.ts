@@ -42,7 +42,7 @@ export const menuLinks = [
     {
         id: 2,
         title: 'Community',
-        url: 'community',
+        url: '/community',
     },
     {
         id: 3,
