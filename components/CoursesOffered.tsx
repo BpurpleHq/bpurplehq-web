@@ -6,7 +6,7 @@ import CustomButton from './CustomButton'
 
 const CoursesOffered = () => {
   return (
-    <div className='sm:px-16 px-6 py-10'>
+    <div className='max-w-[1440px] mx-auto sm:px-16 px-6 py-10'>
      <h3 className='text-headline-3 lg:text-headline-2 text-secondary'>Our Learning Path</h3>
      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-9'>
         {learningPath.map(({ id, image, title, description, duration, url }) => (
@@ -18,7 +18,7 @@ const CoursesOffered = () => {
                 <p className='mt-3 px-5'>{description}</p>
                 <p className='mt-3 px-5 font-semibold'>Duration: {duration}</p>
 
-                <Link href={url} className='hidden'>
+                <Link href={url} className='flex-2'>
                     <CustomButton
                         title='Learn more'
                         btnType='button'
