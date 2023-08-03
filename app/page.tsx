@@ -40,7 +40,7 @@ export default function Home() {
         </div>
         
         <div className='flex relative lg:w-[500px] lg:h-[500px] h-[390px] rounded-xl'>
-          <Image src='/PMad.jpeg' alt='Hero Image'fill  />
+          <Image src='/heroimage.png' alt='Hero Image'fill  />
         </div>
         <div className='hidden lg:block absolute bottom-[10%] left-[-1px]'>
           <Image src='/arrowIcon.svg' alt='arrow' width={130} height={700} />
