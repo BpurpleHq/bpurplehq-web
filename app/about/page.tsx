@@ -9,7 +9,7 @@ export const metadata = {
 const page = () => {
   return (
     <div>
-    <section className='max-w-[1440px] mx-auto sm:px-16 px-6 pt-4 lg:pt-[90px] pb-14'>
+    <section className='max-w-[1440px] mx-auto sm:px-16 px-6 pt-4 pb-14'>
       <h3 className='text-headline-2 text-secondary lg:mb-5 font-bold text-center lg:text-start'>About Us</h3>
       <div className='flex flex-col lg:flex-row justify-between'>
         <div className=''>
