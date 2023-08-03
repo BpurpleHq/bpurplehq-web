@@ -32,6 +32,7 @@ import questionIcon from '../public/questionIcon.svg';
 import mailIcon from '../public/mailIcon.svg';
 import whatsappIcon from '../public/whatsappIcon.svg';
 import venueIcon from '../public/venueIcon.svg';
+import commimage from "../public/comImage1.png"
 
 export const menuLinks = [
     {
@@ -102,19 +103,19 @@ export const footerLinks = [
 export const metrics = [
     {
         id: 1,
-        figure: '100+',
+        figure: '300+',
         title: 'Trained',
         image: learnIcon,
     },
     {
         id: 2,
         figure: '20+',
-        title: 'Instructors', 
+        title: 'Seasoned Instructors', 
         image: handIcon,
     },
     {
         id: 3,
-        figure: '500+',
+        figure: '100+',
         title: 'Satisfied Customers',
         image: peopleIcon,
     }
@@ -123,19 +124,19 @@ export const metrics = [
 export const products = [
     {
         id: 1,
-        image: courseImage,
+        image: dataImage,
         title: 'Expert Mentors',
         description: 'Our trainings offerings are delivered by industry experts, offering our clients training courses that help them improve their technical skills. Training in subjects like software development, data science, GIS, products etc.',
     },
     {
         id: 2,
         image: businessImage,
-        title: 'Business Process',
+        title: 'Collaborative Learning',
         description: 'The main goal of every business is to make improvements to their business process, we offer this through consulting services, project management and administration, quality control and process improvement.',
     },
     {
         id: 3,
-        image: courseImage,
+        image: aiImage,
         title: 'Emerging Technology',
         description: 'Technology is changing the way we live, our focus is to deliver training and consulting services in relation to cutting-edge technologies like blockchain, web3, machine learning, and artificial intelligence.',
     }
@@ -144,10 +145,10 @@ export const products = [
 export const testimonials = [
     {
         id: 1,
-        review: '“My sincere thanks to Bpurple Technologies for the excellent Data Analysis training. Despite lacking a tech background, I made a bold decision to switch careers and pursue Data Analysis. Bpurple"s training in Excel, Power BI, and SQL was clear and effective, enabling me to confidently handle data manipulation, processing, and presentation. Thanks, Bpurple, for a job well done, and for helping me embark on my tech journey successfully.” ',
+        review: '“My sincere thanks to Bpurple Technologies for the excellent Data Analysis training. Despite lacking a tech background, I made a bold decision to switch careers and pursue Data Analysis. The sessions in Excel, PowerBI and SQL were clear and effective, enabling me to confidently handle data manipulation, processing, and presentation. Thanks, Bpurple, for a job well done, and for helping me embark on my tech journey successfully.” ',
         image: testimonial1,
-        name: 'Chukwujindu-Emili Ifeyinwa Victory',
-        title: 'Data Analyst',
+        name: 'Ifeyinwa Victory',
+        title: 'Data Analyst - Intern',
     },
     {
         id: 2,
@@ -171,9 +172,10 @@ export const cta = [
     {
         id: 1,
         title: 'Individual',
-        content: 'Accelerate your dream of becoming a world-class software developer or designer.',
+        content: 'Lets be your partner in your journey into Tech, you can trust the process.',
         image: individualIcon,
-        buttonTitle: 'Browse Courses',
+        buttonTitle: 'Courses',
+        url: '/courses',
     },
     {
         id: 2,
@@ -181,6 +183,7 @@ export const cta = [
         content: 'Professional Staff training courses applicable to any corporate organization.',
         image: cooperateIcon,
         buttonTitle: 'Learn More',
+        url:'/community/workforce',
     },
 ];
 

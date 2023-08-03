@@ -13,7 +13,7 @@ const page = () => {
       <section className='sm:px-16 px-6 lg:py-10 py-4'>
         <CoursesDetailsHero
           title='Virtual Assistant'
-          subtitle='Start off your career today as a Virtual Assistant. Learn how to offer administrative services to clients from a remote location.'
+          subtitle='Virtual assistants are revolutionizing the way we manage our personal and professional lives. From automating mundane tasks to providing personalized support, these AI-powered assistants empower individuals and businesses to maximize productivity, improve time management, and enhance overall efficiency..'
           image='/virtualImage.png'
           status='We are currently NOT taking applications!'
         />        
