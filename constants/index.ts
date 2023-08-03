@@ -131,18 +131,25 @@ export const products = [
 export const testimonials = [
     {
         id: 1,
-        review: '“Special thanks to the organizers of the bpurple bootcamp 2023, I joined the Virtual Assistant path as a newbie, it was so engaging and while at it, I did not only learn the skill, I was subjected to learning leadership and collaborative skills. Currently I work as an intern in bpurpleHQ” ',
+        review: '“My sincere thanks to Bpurple Technologies for the excellent Data Analysis training. Despite lacking a tech background, I made a bold decision to switch careers and pursue Data Analysis. Bpurple"s training in Excel, Power BI, and SQL was clear and effective, enabling me to confidently handle data manipulation, processing, and presentation. Thanks, Bpurple, for a job well done, and for helping me embark on my tech journey successfully.” ',
         image: testimonial1,
-        name: 'Ayo Tomi',
-        title: 'VA-bpurpleHQ',
+        name: 'Chukwujindu-Emili Ifeyinwa Victory',
+        title: 'Data Analyst',
     },
     {
         id: 2,
-        review: '“Overall, I highly recommend the bpurpleHQ to anyone seeking to enhance their skills in this tech. The quality of instruction, comprehensive curriculum, and hands-on learning approach make it a worthwhile investment. I feel more confident in my ability to collect, analyze, and interpret data, thanks to the team for providing such a valuable learning experience.” ',
+        review: '“The data analysis course at Bpurple was a huge success, providing me with essential skills to handle complex datasets and extract valuable insights in real-time. Now, I feel confident and excited to apply my newfound abilities as a data analyst in my professional career..” ',
         image: testimonial2,
-        name: 'Victoria Dibia',
+        name: 'Ifeanyi Nathaniel',
         title: 'Data Analyst',
     },
+    // {
+    //     id: 3,
+    //     review: '“Attending the Data Analysis course at BPurpleHQ has been a truly enriching experience. The course effectively blends theory with practical exercises, and the instructors excel at simplifying complex concepts, ensuring every student is well-engaged throughout. The incorporation of real-world examples equips learners with valuable, job-ready skills. I highly recommend this course to anyone seeking a solid grasp on data analysis.” ',
+    //     image: testimonial2,
+    //     name: 'Joel Aikoroje',
+    //     title: 'Data Analyst',
+    // },
 ];
 
 export const cta = [

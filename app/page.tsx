@@ -17,7 +17,7 @@ export default function Home() {
       
   return (
     <main className="w-full relative">
-      <section className='bg-white flex flex-col-reverse lg:flex-row gap-5 relative z-0 max-w-[1440px] mx-auto sm:px-16 px-3 pt-[40px] mb-[20px] lg:mb-0 pb-7 lg:pb-0'>
+      <section className='bg-white flex flex-col-reverse lg:flex-row gap-5 lg:gap-0 relative z-0 max-w-[1440px] mx-auto sm:px-16 px-3 pt-[40px] mb-[20px] lg:mb-0 pb-7 lg:pb-0'>
         <div className='flex flex-col lg:justify-start lg:items-start lg:mt-[50px] w-full lg:max-w-[70%] flex-1'>
           <h1 className='lg:w-[70%] text-headline-2 text-primary text-center md:text-start'>Tech <span className='text-secondary'>Training,</span> Get Mentored, Stay Relevant.</h1>
           <p className='text-body lg:text-headline-4 text-primary mt-4'>We are part of the solution in building a <span className='text-secondary text-headline-3'>SKILLED</span> continent.</p>

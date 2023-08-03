@@ -9,7 +9,7 @@ import MenuItems from './MenuItems';
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
-    const [color, setColor] = useState(false);
+    // const [color, setColor] = useState(false);
 
   //   const changeColor = () => {
   //       if (window.scrollY >= 90 ) {
