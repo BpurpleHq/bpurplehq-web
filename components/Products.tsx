@@ -13,8 +13,8 @@ import Testimonials from './Testimonials'
 const Products = () => {
   return (
     <div className=''>
-      <h2 className='sm:px-16 px-6 py-10 text-headline-3 lg:text-headline-3 text-primary text-center'>Why we exist..</h2>
-      <p className='sm:px-16 px-6 py-10 lg:text-headline-4 lg:text-center text-body text-primary mt-5'>At bpurple, you gain access to project-based learning curriculum to enable you graps immediately the techniques involved in develop quality products.</p>
+      <h2 className='sm:px-10 px-6 py-10 text-headline-3 lg:text-headline-2 text-primary text-center lg:mt-2'>Why we exist..</h2>
+      <p className='sm:px-16 px-6 lg:text-headline-4 lg:text-center text-body text-primary'>At bpurple, you gain access to project-based learning curriculum to enable you graps immediately the techniques involved in develop quality products.</p>
       <div className='sm:px-16 px-6 py-10'>
         <Swiper
           // @ts-ignore
@@ -26,19 +26,19 @@ const Products = () => {
           {products.map(({id, image, title, description}) => (
             <SwiperSlide>
               <div key={id} className='max-w-[1440px] mx-auto flex flex-col lg:flex-row lg:justify-between '>
-                <Image src={image} alt={title} width={400} height={300} className='border-2 border-secondary rounded-xl' />
+                <Image src={image} alt={title} width={500} height={300} />
                 <div className='relative flex flex-col justify-center items-center'>
                 <div className=''>
                   <div className='lg:w-[548px] py-4 px-3 mt-4 lg:mt-0 bg-extra shadow-lg'>
-                  <h2 className='text-headline-3 text-primary text-center'>{title}</h2>
-                  <p className='lg:w-[492px] mt-2'>{description}</p>
+                  <h2 className='text-headline-3 text-primary text-center lg:mt-8'>{title}</h2>
+                  <p className='lg:w-[492px] lg:m-5'>{description}</p>
                 </div>
                 </div>
-                  <CustomButton
+                 {/** <CustomButton
                     title='Explore'
                     containerStyles='lg:absolute bottom-0 right-2 bg-secondary p-3 mt-3 mb-7 lg:mb-0 rounded-lg'
                     textStyles='text-dark'
-                  />
+                  />  */}
                 </div>
               </div>
             </SwiperSlide>

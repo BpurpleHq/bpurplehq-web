@@ -17,8 +17,8 @@ const Testimonials = () => {
 
   return (
     <div>
-      <h3 className='max-w-[1440px] mx-auto text-headline-3 sm:px-16 px-6 py-10'>Testimonials</h3>
-      <div className='relative group flex flex-row px-[18px]'>
+      <h3 className='max-w-[1440px] mx-auto text-headline-3 lg:text-headline-2 sm:px-16 px-6 py-10 text-primary'> See what people are saying</h3>
+      <div className='relative group flex flex-row px-1'>
         <MdChevronLeft
           onClick={slideLeft}
           className='lg:bg-white lg:top-[50%] lg:left-0 lg:rounded-full lg:absolute lg:opacity-50 lg:hover:opacity-100 lg:cursor-pointer lg:z-30 hidden lg:group-hover:block'

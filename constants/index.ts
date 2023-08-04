@@ -32,8 +32,19 @@ import questionIcon from '../public/questionIcon.svg';
 import mailIcon from '../public/mailIcon.svg';
 import whatsappIcon from '../public/whatsappIcon.svg';
 import venueIcon from '../public/venueIcon.svg';
+import commimage from "../public/comImage1.png"
 
 export const menuLinks = [
+    {
+        id: 3,
+        title: 'Home',
+        url: '/',
+    },
+    {
+        id: 3,
+        title: 'About Us',
+        url: '/about',
+    },
     {
         id: 1,
         title: 'Courses',
@@ -44,10 +55,11 @@ export const menuLinks = [
         title: 'Community',
         url: '/community',
     },
+   
     {
         id: 3,
-        title: 'About Us',
-        url: '/about',
+        title: 'FAQ',
+        url: '/faq',
     },
 ];
 export const footerLinks = [
@@ -61,6 +73,7 @@ export const footerLinks = [
   {
     title: "Products",
     links: [
+
 
       { title: "Communities", url: "/community" },
       { title: "Courses", url: "/courses" },
@@ -78,6 +91,7 @@ export const footerLinks = [
     title: "Contact",
     links: [
 
+
       { title: "+234 806 939 4886", url: "#" },
       { title: "info@bpurplehq.org", url: "#" },
       { title: "Send a Message", url: "#" },
@@ -89,19 +103,19 @@ export const footerLinks = [
 export const metrics = [
     {
         id: 1,
-        figure: '100+',
+        figure: '300+',
         title: 'Trained',
         image: learnIcon,
     },
     {
         id: 2,
         figure: '20+',
-        title: 'Instructors', 
+        title: 'Seasoned Instructors', 
         image: handIcon,
     },
     {
         id: 3,
-        figure: '500+',
+        figure: '100+',
         title: 'Satisfied Customers',
         image: peopleIcon,
     }
@@ -110,19 +124,19 @@ export const metrics = [
 export const products = [
     {
         id: 1,
-        image: courseImage,
+        image: dataImage,
         title: 'Expert Mentors',
         description: 'Our trainings offerings are delivered by industry experts, offering our clients training courses that help them improve their technical skills. Training in subjects like software development, data science, GIS, products etc.',
     },
     {
         id: 2,
         image: businessImage,
-        title: 'Business Process',
+        title: 'Collaborative Learning',
         description: 'The main goal of every business is to make improvements to their business process, we offer this through consulting services, project management and administration, quality control and process improvement.',
     },
     {
         id: 3,
-        image: courseImage,
+        image: aiImage,
         title: 'Emerging Technology',
         description: 'Technology is changing the way we live, our focus is to deliver training and consulting services in relation to cutting-edge technologies like blockchain, web3, machine learning, and artificial intelligence.',
     }
@@ -131,10 +145,10 @@ export const products = [
 export const testimonials = [
     {
         id: 1,
-        review: '“My sincere thanks to Bpurple Technologies for the excellent Data Analysis training. Despite lacking a tech background, I made a bold decision to switch careers and pursue Data Analysis. Bpurple"s training in Excel, Power BI, and SQL was clear and effective, enabling me to confidently handle data manipulation, processing, and presentation. Thanks, Bpurple, for a job well done, and for helping me embark on my tech journey successfully.” ',
+        review: '“My sincere thanks to Bpurple Technologies for the excellent Data Analysis training. Despite lacking a tech background, I made a bold decision to switch careers and pursue Data Analysis. The sessions in Excel, PowerBI and SQL were clear and effective, enabling me to confidently handle data manipulation, processing, and presentation. Thanks, Bpurple, for a job well done, and for helping me embark on my tech journey successfully.” ',
         image: testimonial1,
-        name: 'Chukwujindu-Emili Ifeyinwa Victory',
-        title: 'Data Analyst',
+        name: 'Ifeyinwa Victory',
+        title: 'Data Analyst - Intern',
     },
     {
         id: 2,
@@ -143,6 +157,7 @@ export const testimonials = [
         name: 'Ifeanyi Nathaniel',
         title: 'Data Analyst',
     },
+
     // {
     //     id: 3,
     //     review: '“Attending the Data Analysis course at BPurpleHQ has been a truly enriching experience. The course effectively blends theory with practical exercises, and the instructors excel at simplifying complex concepts, ensuring every student is well-engaged throughout. The incorporation of real-world examples equips learners with valuable, job-ready skills. I highly recommend this course to anyone seeking a solid grasp on data analysis.” ',
@@ -150,15 +165,17 @@ export const testimonials = [
     //     name: 'Joel Aikoroje',
     //     title: 'Data Analyst',
     // },
+
 ];
 
 export const cta = [
     {
         id: 1,
         title: 'Individual',
-        content: 'Accelerate your dream of becoming a world-class software developer or designer.',
+        content: 'Lets be your partner in your journey into Tech, you can trust the process.',
         image: individualIcon,
-        buttonTitle: 'Browse Courses',
+        buttonTitle: 'Courses',
+        url: '/courses',
     },
     {
         id: 2,
@@ -166,6 +183,7 @@ export const cta = [
         content: 'Professional Staff training courses applicable to any corporate organization.',
         image: cooperateIcon,
         buttonTitle: 'Learn More',
+        url:'/community/workforce',
     },
 ];
 
@@ -300,25 +318,25 @@ export const generalInfo = [
         id: 1,
         image: locationIcon,
         title: 'Are the programs onsite or on-line?',
-        content: 'Lorem ipsum dolor sit amet consectetur. Integer augue risus pharetra nisl. Eu proin posuere nunc metus semper id consequat.',
+        content: 'Our programs are 100% remote',
     },
     {
         id: 2,
         image: pinIcon,
         title: 'Where are we located?',
-        content: 'Lorem ipsum dolor sit amet consectetur. Integer augue risus pharetra nisl. Eu proin posuere nunc metus semper id consequat.',
+        content: 'We are fully REMOTE',
     },
     {
         id: 3,
         image: learnIcon,
-        title: 'Where are we located?',
-        content: 'Lorem ipsum dolor sit amet consectetur. Integer augue risus pharetra nisl. Eu proin posuere nunc metus semper id consequat.',
+        title: 'Do I have access to mentors?',
+        content: 'Yes, every learner is assigned a mentor, who monitors and track growth',
     },
     {
         id: 1,
         image: scheduleIcon,
-        title: 'What is the class schedule?',
-        content: 'Lorem ipsum dolor sit amet consectetur. Integer augue risus pharetra nisl. Eu proin posuere nunc metus semper id consequat.',
+        title: 'Do I have access to community?',
+        content: 'All individuals who registers for our trainings have access to our large tech community',
     },
 ];
 
@@ -327,25 +345,25 @@ export const studentProfile = [
         id: 1,
         image: laptopIcon,
         title: 'Do i need a laptop?',
-        content: 'Lorem ipsum dolor sit amet consectetur. Integer augue risus pharetra nisl. Eu proin posuere nunc metus semper id consequat.',
+        content: 'A functional Laptop is an essential tool for any of our programs',
     },
     {
         id: 2,
         image: ageIcon,
         title: 'What is the minimum age to apply?',
-        content: 'Lorem ipsum dolor sit amet consectetur. Integer augue risus pharetra nisl. Eu proin posuere nunc metus semper id consequat.',
+        content: 'We accept individual of any age as long as they ca read, write and understand concepts',
     },
     {
         id: 3,
         image: paymentPlanIcon,
-        title: 'What is Github/Behance link?',
-        content: 'Lorem ipsum dolor sit amet consectetur. Integer augue risus pharetra nisl. Eu proin posuere nunc metus semper id consequat.',
+        title: 'What is the Training duration?',
+        content: 'Training duration is solely dependent on the path.',
     },
     {
         id: 1,
         image: linkIcon,
         title: 'What is the class schedule?',
-        content: 'Lorem ipsum dolor sit amet consectetur. Integer augue risus pharetra nisl. Eu proin posuere nunc metus semper id consequat.',
+        content: 'Class schedule is also dependent on the course and mentors schedule',
     },
 ];
 
@@ -355,27 +373,27 @@ export const questions = [
         image: questionIcon,
         title: 'Visit FAQ page',
         content: 'Most of your pressing questions, already been answered.',
-        url: '/',
+        url: '/faq',
     },
     {
         id: 2,
         image: mailIcon,
         title: 'Send an email',
         content: 'Expect a response from one of our staff within 2 to 3 hours',
-        url: '/',
+        url: '#',
     },
     {
         id: 3,
         image: whatsappIcon,
         title: 'Hello! Whatapp',
         content: 'You can connect with us if you are already on Telegram.',
-        url: '/',
+        url: '#',
     },
     {
         id: 4,
         image: venueIcon,
-        title: 'Visit our school',
-        content: 'No. 55 ,Village Road..',
+        title: 'We are Social',
+        content: '@bpurplehq on all social media platform',
         url: '/',
     },
 ];
