@@ -18,17 +18,17 @@ const Testimonials = () => {
   return (
     <div>
       <h3 className='max-w-[1440px] mx-auto text-headline-3 sm:px-16 px-6 py-10'>Testimonials</h3>
-      <div className='relative group flex flex-row px-1'>
+      <div className='relative group flex flex-row px-[18px]'>
         <MdChevronLeft
           onClick={slideLeft}
-          className='bg-white top-[50%] left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-30 hidden group-hover:block'
+          className='lg:bg-white lg:top-[50%] lg:left-0 lg:rounded-full lg:absolute lg:opacity-50 lg:hover:opacity-100 lg:cursor-pointer lg:z-30 hidden lg:group-hover:block'
           size={40}
         />
-        <div id={'slider'} className='w-full flex justify-center relative gap-3 pt-5 pb-[45px] '>
+        <div id={'slider'} className='w-full flex flex-col lg:flex-row justify-center relative gap-3 pt-5 pb-[45px] '>
           {testimonials.map(({id, review, image, name, title}) => (
-            <div key={id} className=' bg-extra flex gap-2 border border-secondary rounded-xl p-6 shadow-lg'>
+            <div key={id} className=' bg-extra flex flex-col lg:flex-row gap-2 border border-secondary rounded-xl p-6 shadow-lg'>
                 <div className='flex justify-center items-center'>
-                  <p className='lg:w-[400px] text-sm'>{review}</p>  
+                  <p className='w-[400px] text-sm'>{review}</p>  
                 </div>
                 <div className='flex flex-col justify-center items-center'>
                   <Image src={image} alt='title' width={150} height={150} />
@@ -40,7 +40,7 @@ const Testimonials = () => {
         </div>
         <MdChevronRight
           onClick={slideRight}
-          className='bg-white top-[50%] right-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
+          className='lg:bg-white top-[50%] lg:right-0 lg:rounded-full lg:absolute lg:opacity-50 lg:hover:opacity-100 lg:cursor-pointer lg:z-10 hidden lg:group-hover:block'
           size={40}
         />  
       </div>
