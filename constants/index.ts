@@ -172,14 +172,14 @@ export const cta = [
     {
         id: 1,
         title: 'Individual',
-        content: 'Lets be your partner in your journey into Tech, you can trust the process.',
+        content: 'Let us be the partner in your journey into Tech, you can trust the process.',
         image: individualIcon,
         buttonTitle: 'Courses',
         url: '/courses',
     },
     {
         id: 2,
-        title: 'Corperate',
+        title: 'Corporate/Business',
         content: 'Professional Staff training courses applicable to any corporate organization.',
         image: cooperateIcon,
         buttonTitle: 'Learn More',
