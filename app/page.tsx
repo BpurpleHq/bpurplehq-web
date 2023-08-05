@@ -43,7 +43,7 @@ export default function Home() {
         
 
         <div className='flex relative lg:w-[480px] lg:h-[550px] h-[390px] rounded-xl'>
-          <Image src='/hero2.png' alt='Hero Image'fill  />
+          <Image src='/heroImage.png' alt='Hero Image'fill  />
 
         </div>
        {/** <div className='hidden lg:block absolute bottom-[10%] left-[-1px]'>
