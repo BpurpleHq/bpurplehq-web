@@ -7,6 +7,9 @@ import { HiBars3BottomRight, HiOutlineXMark } from "react-icons/hi2";
 import MenuAction from './MenuAction';
 import MenuItems from './MenuItems';
 
+
+
+
 const Navbar = () => {
     const [open, setOpen] = useState(false);
     // const [color, setColor] = useState(false);
@@ -41,7 +44,7 @@ const Navbar = () => {
           </div>
 
            {/* Other screen */}
-        <div className='fixed bg-primary bg-opacity-90 w-full flex justify-between items-center sm:px-16 px-3 py-4 z-20 '>
+        <div className=' bg-primary bg-opacity-90 w-full flex justify-between items-center sm:px-16 px-3 py-4 z-20 '>
            <Link href='/'>
                 <Image src='/logoWhite.svg' width={100} height={100} alt='Bpurple logo'
                 />
@@ -56,8 +59,11 @@ const Navbar = () => {
             <div className='hidden lg:flex'>
                 <MenuAction />
             </div> 
+          
         </div>
+        
     </div>
+    
   )
 }
 

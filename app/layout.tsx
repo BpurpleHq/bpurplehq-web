@@ -1,12 +1,12 @@
 import './globals.css'
 import { Montserrat } from 'next/font/google'
-import { Footer, Navbar } from '@/components'
+import { Footer, Navbar, Upcoming } from '@/components'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'bpurpleHQ | Home',
-  description: '',
+  description: 'Training next-gen human capital in tech, leadership character and capacity',
 }
 
 export default function RootLayout({
@@ -16,10 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
+      <body className= {montserrat.className}>
         <Navbar />
-        {/* <Upcoming /> */}
-        <main className='pt-[80px]'>{children}</main>
+        <Upcoming />
+        <main className='pt-[1px]'>{children}</main>
         <Footer />
       </body>
     </html>

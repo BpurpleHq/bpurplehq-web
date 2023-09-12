@@ -13,9 +13,9 @@ const MenuAction = () => {''
           textStyles='text-dark'
         /> 
       </Link> ***/}
-      <Link href='https://bit.ly/bpurpletrainings'>  {/**changed the button name and url **/}
+      <Link href='https://forms.gle/ubN1UipLdP3oUcCj8'>  {/**changed the button name and url **/}
         <CustomButton
-          title='Register'
+          title='Register for SFSP'
           btnType='button'
           containerStyles='bg-secondary p-3 rounded-lg'
           textStyles='text-dark font-medium'

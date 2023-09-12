@@ -22,7 +22,9 @@ export default function Home() {
         <h1 className='text-headline-3 lg:text-headline-2 text-secondary text-center md:text-start lg:mb-10'>#MakeTheSwitch</h1>
           <h1 className='text-headline-2 text-primary text-center md:text-start'>Get Trained in Tech, Access Mentorship, Stay <span className='text-secondary'>Relevant.</span></h1>
           
-          <p className='text-body lg:text-headline-4 text-primary mt-4 lg:w-[75%]'>We are part of the solution in building a <span className='text-secondary text-headline-3'>SKILLED</span> continent.</p>
+          <p className='text-body lg:text-headline-4 text-primary mt-5 lg:w-[90%]'>We are training next-gen human capital in tech, leadership character and capacity </p> 
+          {/* <p className='text-body lg:text-headline-4 text-primary mt-4 lg:w-[75%]'>We are part of the solution in building a <span className='text-secondary text-headline-3'>SKILLED</span> continent.</p> */}
+         
           <div className='flex justify-center items-center lg:justify-items-start gap-3 mt-8 md:mt-8'>
             <Link href='/courses'>
               <CustomButton
@@ -42,8 +44,8 @@ export default function Home() {
         </div>
         
 
-        <div className='flex relative lg:w-[480px] lg:h-[550px] h-[390px] rounded-xl'>
-          <Image src='/heroimage.png' alt='Hero Image'fill  />
+        <div className='flex relative lg:w-[620px] lg:h-[500px] h-[310px] rounded-xl grayscale'>
+          <Image src='/photo.png' alt='Hero Image'fill  />
 
         </div>
        {/** <div className='hidden lg:block absolute bottom-[10%] left-[-1px]'>
@@ -54,7 +56,7 @@ export default function Home() {
       <section className='bg-extra' data-aos="fade-up">
         <Metrics />
       </section>
-
+ 
       <section className='bg-white' data-aos="fade-up">
         <Products />
       </section>
