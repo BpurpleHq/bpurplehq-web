@@ -47,6 +47,10 @@ export default function Home() {
         <div className='flex relative lg:w-[620px] lg:h-[500px] h-[310px] rounded-xl grayscale'>
           <Image src='/photo.png' alt='Hero Image'fill  />
 
+       {/* <div className='flex relative lg:w-[480px] lg:h-[550px] h-[390px] rounded-xl'>
+          <Image src='/heroImage.png' alt='Hero Image'fill  /> */}
+
+
         </div>
        {/** <div className='hidden lg:block absolute bottom-[10%] left-[-1px]'>
           <Image src='/arrowIcon.svg' alt='arrow' width={130} height={700} />

@@ -180,7 +180,9 @@ export const cta = [
     {
         id: 1,
         title: 'Individual',
-        content: 'Let us be your partner in your journey into Tech, you can trust the process.',
+
+        content: 'Let us be the partner in your journey into Tech, you can trust the process.',
+
         image: individualIcon,
         buttonTitle: 'Courses',
         url: '/courses',
