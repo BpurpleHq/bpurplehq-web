@@ -1,6 +1,6 @@
 import CourseDetailBodyDA from '@/components/CourseDetailsBodyDA';
 import CourseInfo from '@/components/CourseInfo';
-import CoursesDetailsHero from '@/components/CoursesDetailsHero';
+import CoursesDetailsHeroDA from '@/components/CoursesDetailsHeroDA';
 import React from 'react'
 
 export const metadata = {
@@ -11,7 +11,7 @@ const page = () => {
   return (
     <div>
       <section className='sm:px-16 px-6 lg:py-10 py-4'>
-        <CoursesDetailsHero
+        <CoursesDetailsHeroDA
           title='School of Data'
           subtitle='Start off your career today as a Data Analyst. Learn how to review and identify key insights into business’ customers and ways data can be used to solve problems.'
           image='/dataImage.png'

@@ -28,7 +28,7 @@ const CourseDetailBody = () => {
                             textStyles='text-dark'
                         />
                     </Link>
-                    <Link href='https://www.canva.com/design/DAFuOfNglAQ/Mck-adTOh_8acflrj4yLHQ/view?website#2:course-module-coming-soon' target="_blank" rel="noopener noreferrer">
+                    <Link href='https://www.canva.com/design/DAFuOfNglAQ/Mck-adTOh_8acflrj4yLHQ/view?website#2:let-s-be-part-of-your-transition-into-the-world-of-tech-we-get-you-started-and-keep-you-purple' target="_blank" rel="noopener noreferrer">
                         <CustomButton
                             title='Download Syllabus'
                             btnType='button'

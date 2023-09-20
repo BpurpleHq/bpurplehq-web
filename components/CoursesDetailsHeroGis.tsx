@@ -4,7 +4,7 @@ import React from 'react'
 import CustomButton from './CustomButton'
 import Link from 'next/link';
 
-const CoursesDetailsHero = ({ title, subtitle, status, image }: CourseDetailsHeroProps) => {
+const CoursesDetailsHeroGis = ({ title, subtitle, status, image }: CourseDetailsHeroProps) => {
     return (
         <div className='max-w-[1440px] mx-auto flex flex-col-reverse lg:flex-row lg:justify-between'>
             <div className='flex lg:justify-center lg:items-center'>
@@ -20,7 +20,7 @@ const CoursesDetailsHero = ({ title, subtitle, status, image }: CourseDetailsHer
                             textStyles='text-dark'
                         />
                     </Link>
-                    <Link href='https://www.canva.com/design/DAFuOfNglAQ/Mck-adTOh_8acflrj4yLHQ/view?website#2:course-module-coming-soon' target="_blank" rel="noopener noreferrer">
+                    <Link href='https://www.canva.com/design/DAFuOfNglAQ/Mck-adTOh_8acflrj4yLHQ/view?website#2:let-s-be-part-of-your-transition-into-the-world-of-tech-we-get-you-started-and-keep-you-purple' target="_blank" rel="noopener noreferrer">
                         <CustomButton
                             title='Download Syllabus'
                             btnType='button'
@@ -39,4 +39,4 @@ const CoursesDetailsHero = ({ title, subtitle, status, image }: CourseDetailsHer
     )
 };
 
-export default CoursesDetailsHero
+export default CoursesDetailsHeroGis

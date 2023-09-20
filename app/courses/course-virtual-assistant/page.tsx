@@ -1,6 +1,6 @@
 import CourseDetailBodyVA from '@/components/CourseDetailsBodyVA';
 import CourseInfo from '@/components/CourseInfo';
-import CoursesDetailsHero from '@/components/CoursesDetailsHero';
+import CoursesDetailsHero from '@/components/CourseDetailsHeroVA';
 import React from 'react'
 
 export const metadata = {

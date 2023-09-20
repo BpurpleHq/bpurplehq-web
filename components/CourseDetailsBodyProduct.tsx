@@ -1,5 +1,6 @@
 import React from 'react'
 import CustomButton from './CustomButton'
+import Link from 'next/link'
 
 const CourseDetailBody = () => {
   return (
@@ -19,20 +20,25 @@ Product management is a multifaceted discipline that encompasses the strategic p
 - Product Development and Agile Methodologies: Learn to oversee the product development process, employing agile methodologies to ensure iterative and incremental product releases. They work closely with development teams, providing guidance, resolving issues, and ensuring timely delivery.<br/>
 - Product Launch and Go-to-Market Strategy: Learn to orchestrate the product launch, collaborating with marketing and sales teams to create effective go-to-market strategies, pricing models, and marketing campaigns.</p>
           </div>
-          <div className='flex justify-center gap-6 mt-6'>
+            <div className='flex justify-center gap-6 mt-6'>
+                <Link href='#' target="_blank" rel="noopener noreferrer">
                     <CustomButton
                         title='Apply Now'
                         btnType='button'
                         containerStyles='bg-secondary p-3 rounded-lg'
                         textStyles='text-dark'
                     />
-                    <CustomButton
-                        title='Download Syllabus'
-                        btnType='button'
-                        containerStyles='bg-secondary p-3 rounded-lg'
-                        textStyles='text-dark'
-                    />
+                  </Link>
+                  <Link href='#' target="_blank" rel="noopener noreferrer">
+                      <CustomButton
+                          title='Download Syllabus'
+                          btnType='button'
+                          containerStyles='bg-secondary p-3 rounded-lg'
+                          textStyles='text-dark'
+                      />
+                  </Link>
                 </div>
+                
     </div>
   )
 }
