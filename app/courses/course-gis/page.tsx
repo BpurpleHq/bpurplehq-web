@@ -1,6 +1,6 @@
 import CourseDetailBody from '@/components/CourseDetailBody';
 import CourseInfo from '@/components/CourseInfo';
-import CoursesDetailsHero from '@/components/CoursesDetailsHero';
+import CoursesDetailsHero from '@/components/CoursesDetailsHeroGis';
 import React from 'react'
 
 export const metadata = {
@@ -17,7 +17,7 @@ const page = () => {
           
           Start off your career today as a GIS specialist. Learn to design high quality digital maps using geographical data and analyze spatial and non-spatial information. '
           image='/GISImage.png'
-          status='We are currently NOT taking applications!'
+          status='We are currently taking applications!'
         />        
       </section>
       <section className='bg-extra'>

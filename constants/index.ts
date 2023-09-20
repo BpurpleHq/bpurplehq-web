@@ -299,7 +299,7 @@ export const services1 = [
 export const courseDetails = [
     {
         id: 1,
-        content: '--',
+        content: 'TBA',
         title: 'Duration',
         image: durationIcon,
     },
@@ -317,7 +317,7 @@ export const courseDetails = [
     },
     {
         id: 4,
-        content: '3 project',
+        content: '5+ projects',
         title: 'Projects',
         image: projectIcon,
     },

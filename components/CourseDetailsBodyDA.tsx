@@ -1,5 +1,6 @@
 import React from 'react'
 import CustomButton from './CustomButton'
+import Link from 'next/link'
 
 const CourseDetailBody = () => {
   return (
@@ -18,18 +19,23 @@ const CourseDetailBody = () => {
 - Data Visualization: Presenting data visually through charts, graphs, and interactive dashboards to communicate findings effectively and facilitate better understanding.</p>
           </div>
           <div className='flex justify-center gap-6 mt-6'>
+          <Link href='#' target="_blank" rel="noopener noreferrer">
                     <CustomButton
                         title='Apply Now'
                         btnType='button'
                         containerStyles='bg-secondary p-3 rounded-lg'
                         textStyles='text-dark'
                     />
+                    </Link>
+                <Link href='#' target="_blank" rel="noopener noreferrer">
                     <CustomButton
+                    
                         title='Download Syllabus'
                         btnType='button'
                         containerStyles='bg-secondary p-3 rounded-lg'
                         textStyles='text-dark'
                     />
+                    </Link>
                 </div>
     </div>
   )
