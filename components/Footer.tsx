@@ -26,13 +26,13 @@ const Footer = () => {
       <div className='sm:px-16 px-6 py-5 text-white'>
         <div className='w-full border-t border-secondary flex flex-col justify-center items-center'>
           <div className='flex gap-4 my-4'>
-            <Image src='/facebook.svg' alt='facebook logo' width={30} height={30} />
-            <Image src='/instagram.svg' alt='instagram logo' width={30} height={30} />
-            <Image src='/youtube.svg' alt='youtube logo' width={30} height={30} />
-            <Image src='/twitter.svg' alt='twitter logo' width={30} height={30} />
+          {/** <Link href='/'> <Image src='/facebook.svg' alt='facebook logo' width={30} height={30} /> </Link> */} 
+          <Link href='/'> <Image src='/instagram.svg' alt='instagram logo' width={30} height={30} />  </Link>  
+         {/** <Link href='/'> <Image src='/youtube.svg' alt='youtube logo' width={30} height={30} /> </Link>  */} 
+          <Link href='/'> <Image src='/twitter.svg' alt='twitter logo' width={30} height={30} /> </Link>
           </div>
             <div>
-            <p className='text-body-2 text-center'>&copy; 2023 bpurpleHQ All Rights Reserved. Powered by bpurple Tech.</p>
+            <p className='text-body-2 text-center'>&copy; 2023 bpurpleHQ All Rights Reserved, with 💜 from bpurple Technologies.</p>
             <div className='flex justify-center items-center gap-[8px] mt-1 text-body-2'>
               <Link href='/'>
                <p>Privacy Policy</p> 

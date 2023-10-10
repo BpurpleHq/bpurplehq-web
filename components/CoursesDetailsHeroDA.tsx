@@ -12,7 +12,7 @@ const CourseDetailsHeroDA = ({ title, subtitle, status, image }: CourseDetailsHe
                 <h2 className='text-primary text-center lg:text-start text-headline-3 lg:text-headline-2 mt-4 lg:mt-0'>{title}</h2>
                 <p className='lg:w-[698px] text-primary mt-3'>{subtitle}</p>
                 <div className='flex justify-center lg:justify-start gap-3 mt-4'>
-                    <Link href='#' target="_blank" rel="noopener noreferrer">
+                    <Link href='https://forms.gle/ubN1UipLdP3oUcCj8' target="_blank" rel="noopener noreferrer">
                         <CustomButton
                             title='Apply Now'
                             btnType='button'

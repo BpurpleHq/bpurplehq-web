@@ -21,7 +21,7 @@ Product management is a multifaceted discipline that encompasses the strategic p
 - Product Launch and Go-to-Market Strategy: Learn to orchestrate the product launch, collaborating with marketing and sales teams to create effective go-to-market strategies, pricing models, and marketing campaigns.</p>
           </div>
             <div className='flex justify-center gap-6 mt-6'>
-                <Link href='#' target="_blank" rel="noopener noreferrer">
+                <Link href='https://forms.gle/ubN1UipLdP3oUcCj8' target="_blank" rel="noopener noreferrer">
                     <CustomButton
                         title='Apply Now'
                         btnType='button'

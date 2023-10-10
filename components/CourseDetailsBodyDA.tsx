@@ -19,7 +19,7 @@ const CourseDetailBody = () => {
 - Data Visualization: Presenting data visually through charts, graphs, and interactive dashboards to communicate findings effectively and facilitate better understanding.</p>
           </div>
           <div className='flex justify-center gap-6 mt-6'>
-          <Link href='#' target="_blank" rel="noopener noreferrer">
+          <Link href='https://forms.gle/ubN1UipLdP3oUcCj8' target="_blank" rel="noopener noreferrer">
                     <CustomButton
                         title='Apply Now'
                         btnType='button'
