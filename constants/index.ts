@@ -2,7 +2,7 @@ import learnIcon from '../public/learnIcon.svg';
 import handIcon from '../public/handIcon.svg';
 import peopleIcon from '../public/peopleIcon.svg';
 import courseImage from '../public/courseImage.png';
-import businessImage from '../public/businessImage.png';
+import businessImage from '../public/businessImagenew.png';
 import testimonial1 from '../public/testimonial1.png';
 import testimonial2 from '../public/testimonial2.png';
 import cooperateIcon from '../public/cooperateIcon.svg';

@@ -24,7 +24,7 @@ const page = () => {
         <div className='max-w-[1440px] mx-auto flex flex-col lg:flex-row lg:justify-between'>
           <div className='flex flex-col lg:flex-row gap-5'>
             <Image src='/comImage1.png' alt='community image1' width={340} height={309} />
-            <Image src='/comImage2.png' alt='community image1' width={340} height={309} />
+            <Image src='/businessImagenew.png' alt='community image1' width={340} height={300} />
           </div>
           <div className='flex flex-col lg:justify-center lg:items-center m-5'>
             <p className='lg:w-[450px] mt-3 lg:mt-0'>In the rapidly evolving world of technology, Community plays a pivotal role in fostering growth, knowledge sharing, and innovation. Whether it's a local meetup, an online forum, or a professional network, being part of a tech community offers numerous benefits and opportunities</p>

@@ -13,8 +13,8 @@ const page = () => {
     <div>
       <section className='bg-extra'>
         <div className='max-w-[1440px] mx-auto flex flex-col-reverse lg:flex-row justify-between sm:px-16 px-6 lg:py-10 py-4'>
-          <div className='mt-4 lg:mt-0'>
-            <h2 className='text-headline-3 text-center lg:text-start lg:text-headline-2 text-primary lg:w-[422px]'>Prepare and <span className='text-secondary'>Empower</span> your labor force for the <span className='text-secondary'>future</span> of work.</h2>
+          <div className='mt-4 lg:mt-4'>
+            <h2 className='text-headline-3 text-center lg:text-start lg:text-headline-2 text-primary lg:w-[522px]'>Prepare and <span className='text-secondary'>Empower</span> your labor force for the <span className='text-secondary'>future</span> of work.</h2>
             <p className='lg:w-[569px] mt-3'>Need a team that works and wins together? Let bpurpleHQ help you make that team a dream come true with our well-trained curriculum and industry standard technologies to build the team of your dreams!</p>
 
             <div className='mt-5'>
