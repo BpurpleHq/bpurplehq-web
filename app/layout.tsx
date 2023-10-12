@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className= {montserrat.className}>
         <Navbar />
-        <Upcoming />
+       {/** <Upcoming />  */}
 
         <main className='pt-[1px]'>{children}</main>
         <Footer />
