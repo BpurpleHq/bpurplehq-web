@@ -1,6 +1,8 @@
 "use client"
 
 import { useEffect } from 'react';
+
+import { useRouter } from 'next/navigation'
 import { CTA, Metrics, Products } from '@/components';
 import CustomButton from '@/components/CustomButton';
 import Image from 'next/image';
@@ -10,7 +12,9 @@ import 'aos/dist/aos.css';
 import Link from 'next/link';
 
 export default function Home() {
-  
+
+  const router = useRouter()
+
   useEffect(() => {
         AOS.init();
       }, [])
@@ -26,14 +30,14 @@ export default function Home() {
           {/* <p className='text-body lg:text-headline-4 text-primary mt-4 lg:w-[75%]'>We are part of the solution in building a <span className='text-secondary text-headline-3'>SKILLED</span> continent.</p> */}
          
           <div className='flex justify-center items-center lg:justify-items-start gap-3 mt-8 md:mt-8'>
-            <Link href='/courses'>
+            <Link href='/courses' onClick={() => router.push('/courses')}>
               <CustomButton
                 title='Explore Courses'
                 btnType='button'
                 containerStyles='bg-secondary rounded-lg py-2 min-w-[130px] px-2'
                 textStyles='text-dark text-body-1 font-medium z-index-90'
               />
-            </Link>
+            </Link >
             <CustomButton
               title='Enroll Now'
               btnType='button'
