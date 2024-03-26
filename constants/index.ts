@@ -111,20 +111,20 @@ export const footerLinks = [
 export const metrics = [
     {
         id: 1,
-        figure: '300+',
+        figure: '1300+',
         title: 'Trained',
         image: learnIcon,
     },
     {
         id: 2,
-        figure: '20+',
+        figure: '30+',
         title: 'Seasoned Instructors', 
         image: handIcon,
     },
     {
         id: 3,
-        figure: '100+',
-        title: 'Satisfied Customers',
+        figure: '1000+',
+        title: 'Satisfied Participants',
         image: peopleIcon,
     }
 ];
@@ -181,7 +181,7 @@ export const cta = [
         id: 1,
         title: 'Individual',
 
-        content: 'Let us be the partner in your journey into Tech, you can trust the process.',
+        content: 'Who is your Guy?.. Let us be the partner in your journey into Tech, you can trust the process.',
 
         image: individualIcon,
         buttonTitle: 'Courses',
@@ -217,7 +217,7 @@ export const learningPath = [
     {
         id: 3,
         image: productImage,
-        title: 'School of Product',
+        title: 'School of Products',
         description: 'Product management is a highly valuable skill that involves the creation of new products or the improvement of existing ones. It encompasses a wide range of activities, including research, conceptualization, prototyping, testing, and refinement. The ability to collaborate with cross-functional teams, communicate effectively, and understand customer needs are also essential components of product design.',
         duration: '10-12 weeks',
         url: '/courses/course-product',
