@@ -13,10 +13,10 @@ const page = () => {
       <section className='sm:px-16 px-6 lg:py-10 py-4'>
         <CoursesDetailsHero
           title='School of GIS'
-          subtitle='Geographic Information Systems (GIS) encompass a set of technologies, methodologies, and tools used to capture, manage, analyze, and display geographically referenced data. By integrating spatial data with attributes, GIS enables us to explore relationships, patterns, and trends, providing a comprehensive understanding of complex real-world problems.
+          subtitle='   Explore the fascinating field of Geographic Information Systems (GIS) through our specialized learning path. Learn how to capture, store, analyze, and visualize spatial data to solve real-world problems. From mapping and spatial analysis to geospatial database management, this path equips you with the skills needed to work with geospatial technologies across diverse industries..
           
           Start off your career today as a GIS specialist. Learn to design high quality digital maps using geographical data and analyze spatial and non-spatial information. '
-          image='/GISImage.png'
+          image='/gis.png'
           status='We are currently taking applications!'
         />        
       </section>

@@ -7,7 +7,7 @@ import CustomButton from './CustomButton'
 const CTA = () => {
   return (
     <div className='max-w-[1440px] mx-auto sm:px-16 px-6 py-10'>
-        <h3 className='text-headline-3 text-center text-primary'>Break into tech like a pro, start your journey with us at bpurpleHQ</h3> 
+        <h2 className='sm:px-10 text-headline-2 text-center text-primary m-5'> Work <span className='text-secondary '>smarter </span>, not <span className='text-secondary'>harder </span>, start your journey with us at bpurpleHQ</h2> 
         <div className='relative flex flex-col gap-7 lg:flex-row lg:gap-0 justify-around mt-5 p-5'>
           {cta.map(({id, title, content, image, buttonTitle,url}) => (
             <div className='border border-primary rounded-xl px-3 bg-white shadow-md'>
@@ -22,7 +22,7 @@ const CTA = () => {
                         
                       />
                      
-                  <Image src={image} alt={title} width={80} height={80}  className=''/>  
+                  <Image src={image} alt={title} width={90} height={90}  className=''/>  
                 </div>        
             </div>
           ))}  

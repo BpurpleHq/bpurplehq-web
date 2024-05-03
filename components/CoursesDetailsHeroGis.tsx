@@ -33,7 +33,7 @@ const CoursesDetailsHeroGis = ({ title, subtitle, status, image }: CourseDetails
                 </div>
             </div>
             <div>
-                <Image src={image} alt={title} width={500} height={500} />
+                <Image src={image} alt={title} width={450} height={300} className='rounded-lg' />
             </div>
         </div>
     )

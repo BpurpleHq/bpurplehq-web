@@ -13,9 +13,9 @@ const page = () => {
       <section className='sm:px-16 px-6 lg:py-10 py-4'>
         <CoursesDetailsHeroDA
           title='School of Data'
-          subtitle='Start off your career today as a Data Analyst. Learn how to review and identify key insights into business’ customers and ways data can be used to solve problems.'
-          image='/dataImage.png'
-          status='We are currently NOT taking applications!'
+          subtitle='Unlock the power of data with our comprehensive Data School learning path. Explore data collection, analysis, visualization, and interpretation techniques across various domains. Whether you are a beginner or an experienced data enthusiast, this path caters to individuals seeking to harness data-driven insights for informed decision-making.'
+          image='/herolady.png'
+          status='We are currently taking applications!'
         />        
       </section>
       <section className='bg-extra'>

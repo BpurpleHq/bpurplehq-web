@@ -2,17 +2,23 @@ import learnIcon from '../public/learnIcon.svg';
 import handIcon from '../public/handIcon.svg';
 import peopleIcon from '../public/peopleIcon.svg';
 import courseImage from '../public/courseImage.png';
-import businessImage from '../public/businessImagenew.png';
+
 import testimonial1 from '../public/testimonial1.png';
 import testimonial2 from '../public/testimonial2.png';
 import cooperateIcon from '../public/cooperateIcon.svg';
 import individualIcon from '../public/individualIcon.svg';
-import GISIMAGE from '../public/GISImage.png';
+import GISIMAGE from '../public/gis.png';
 import virtualImage from '../public/virtualImage.png';
-import productImage from '../public/productImage.png';
-import dataImage from '../public/dataImage.png';
+import productImage from '../public/products.png';
+import dataImage from '../public/data.png';
+import swImage from '../public/sw.png';
+import VAImage from '../public/va.png';
+import QAImage from '../public/qa.png';
+import AIImage from '../public/ai.png';
+import cyb from '../public/cyberimage.png';
+import dataimg from '../public/data.png';
 import blockchainImage from '../public/blockchainImage.png';
-import aiImage from '../public/aiImage.png';
+import aiImage from '../public/ai.png';
 import respectIcon from '../public/respectIcon.svg';
 import compassionIcon from '../public/compassionIcon.svg';
 import accountabilityIcon from '../public/accountabilityIcon.svg';
@@ -75,7 +81,7 @@ export const footerLinks = [
     title: "Quick Links",
     links: [
       { title: "About Us", url: "/about" },
-      { title: "FAQs", url: "#" },
+      { title: "FAQs", url: "/faq" },
     ],
   },
   {
@@ -111,19 +117,19 @@ export const footerLinks = [
 export const metrics = [
     {
         id: 1,
-        figure: '1300+',
+        figure: '2000+',
         title: 'Trained',
         image: learnIcon,
     },
     {
         id: 2,
-        figure: '30+',
+        figure: '40+',
         title: 'Seasoned Instructors', 
         image: handIcon,
     },
     {
         id: 3,
-        figure: '1000+',
+        figure: '1500+',
         title: 'Satisfied Participants',
         image: peopleIcon,
     }
@@ -133,27 +139,28 @@ export const products = [
     {
         id: 1,
         image: dataImage,
-        title: 'Expert Mentors',
-        description: 'Our trainings offerings are delivered by industry experts, offering our clients training courses that help them improve their technical skills. Training in subjects like software development, data science, GIS, products etc.',
+        title: 'Big Data School',
+        description: 'Announcing our Data Engineering Training Bootcamp – your gateway to mastering the foundations of data architecture and processing! Led by industry experts, our immersive program provides hands-on experience with cutting-edge tools and techniques essential for building scalable data pipelines and infrastructure. Whether you are a seasoned data professional or new to the field, join us and gain the skills needed to excel in the rapidly evolving world of data engineering.',
+       
     },
     {
         id: 2,
-        image: businessImage,
-        title: 'Collaborative Learning',
-        description: 'The main goal of every business is to make improvements to their business process, we offer this through consulting services, project management and administration, quality control and process improvement.',
+        image: cyb,
+        title: 'Cybersecurity',
+        description: 'Announcing our Cybersecurity Training Bootcamp: Your gateway to mastering the art of cybersecurity defense! Led by industry experts, our hands-on program equips you with the skills and knowledge needed to combat modern cyber threats head-on. Whether you are a seasoned professional or new to the field, join us in securing the digital landscape of tomorrow. Enroll now and become a cybersecurity leader in just weeks!',
     },
     {
         id: 3,
         image: aiImage,
-        title: 'Emerging Technology',
-        description: 'Technology is changing the way we live, our focus is to deliver training and consulting services in relation to cutting-edge technologies like blockchain, web3, machine learning, and artificial intelligence.',
+        title: 'Artificial Intelligence',
+        description: 'Introducing our AI Tools Training Bootcamp – your passport to unlocking the potential of artificial intelligence! Led by seasoned AI experts, our intensive program offers hands-on training with cutting-edge tools and techniques essential for navigating the AI landscape. Whether you are a beginner or an experienced professional, dive into the world of machine learning, deep learning, and natural language processing.',
     }
 ];
 
 export const testimonials = [
     {
         id: 1,
-        review: '“My sincere thanks to Bpurple Technologies for the excellent Data Analysis training. Despite lacking a tech background, I made a bold decision to switch careers and pursue Data Analysis. The sessions in Excel, PowerBI and SQL were clear and effective, enabling me to confidently handle data manipulation, processing, and presentation. Thanks, Bpurple, for a job well done, and for helping me embark on my tech journey successfully.” ',
+        review: '“Despite lacking a tech background, I made a bold decision to switch careers and pursue Data Analysis. The sessions in Excel, PowerBI and SQL were clear and effective, enabling me to confidently handle data manipulation, processing, and presentation..” ',
         image: testimonial1,
         name: 'Ifeyinwa Victory',
         title: 'Data Analyst - Intern',
@@ -181,71 +188,92 @@ export const cta = [
         id: 1,
         title: 'Individual',
 
-        content: 'Who is your Guy?.. Let us be the partner in your journey into Tech, you can trust the process.',
+        content: 'Who is your Guy?.. Let us be the partner in your journey into Tech, you can trust the process. Work smarter, not harder: Get expert advice on how to increase productivity, inspire creativity, or handle challenges expertly in your current position or one you take on later',
 
         image: individualIcon,
-        buttonTitle: 'Courses',
+        buttonTitle: 'Explore Courses',
         url: '/courses',
     },
     {
         id: 2,
         title: 'Corporate/Business',
-        content: 'Professional Staff training courses applicable to any corporate organization.',
+        content: 'Professional Staff training courses applicable to any corporate organization - We drive a smarter workplace, get expert advice on how to increase productivity at work, inspire creativity and drive innovation within the workplace. ',
         image: cooperateIcon,
-        buttonTitle: 'Learn More',
+        buttonTitle: 'Explore More',
         url:'/community/workforce',
     },
 ];
 
 export const learningPath = [
-    {
+{
         id: 1,
-        image: GISIMAGE,
-        title: 'School of GIS',
-        description: 'GIS is an effective instrument for collecting, processing, and displaying spatial and geographic data. Numerous sectors, including urban planning, environmental management, and resource allocation, can use this technology. Organizations can use GIS to visualize data in maps, graphs, and tables, analyze patterns, and uncover connections that might not be obvious through conventional data analysis.',
-        duration: '8-10 weeks',
-        url: '/courses/course-gis',
+        image: cyb,
+        title: 'Cybersecurity',
+        description: 'Dive into the world of cybersecurity and learn how to protect systems, networks, and data from digital threats.',
+        duration: '12-16 weeks',
+        url: '/courses/cybersecurity',
     },
-    {
-        id: 2,
-        image: virtualImage,
-        title: 'Software Development Engineer in Test',
-        description: 'SDET training program is designed to empower individuals with a deep understanding of both software development and quality assurance principles. Participants will gain the expertise needed to enhance software testing processes through the creation of automated test suites and tools, contributing to the delivery of high-quality software products.',
-        duration: '8-10 weeks',
-        url: '/courses/software-quality-assurance',
-    },
-    {
+     {
         id: 3,
         image: productImage,
         title: 'School of Products',
-        description: 'Product management is a highly valuable skill that involves the creation of new products or the improvement of existing ones. It encompasses a wide range of activities, including research, conceptualization, prototyping, testing, and refinement. The ability to collaborate with cross-functional teams, communicate effectively, and understand customer needs are also essential components of product design.',
-        duration: '10-12 weeks',
+        description: ' Learn the art of building cutting-edge products, explore methodologies, user experience design principles, and agile development practices',
+        duration: '12-14 weeks',
         url: '/courses/course-product',
     },
-    {
+      {
         id: 4,
         image: dataImage,
         title: 'Data School',
-        description: 'Data analysis is the process of looking at and interpreting data to gain understanding and make wise choices. To spot patterns, trends, and correlations, one must collect, clean, organize, and visualize data. For organizations to make choices based on facts, spot areas for improvement, and maximize performance, data analysis is a crucial tool.',
-        duration: '10-12 weeks',
+        description: 'Unlock the power of data, explore data collection, analysis, visualization, and interpretation techniques for decision making. ',
+        duration: '12-14 weeks',
         url: '/courses/course-data', 
     },
     {
         id: 5,
-        image: blockchainImage,
-        title: 'School of Blockchain',
-        description: 'COMING SOON',
+        image: swImage,
+        title: 'Software Engineering',
+        description: ' Master the craft of software engineering from design and methodologies to testing and deployment strategies.',
+        duration: '12-14 weeks',
+        url: '/courses/software',
+    },
+     {
+        id: 7,
+        image: AIImage,
+        title: 'School of AI',
+        description: 'Embark on a journey into the realm of AI, from machine learning to neural networks, delve into the intricacies of AI technology. ',
+        duration: 'N/A',
+        url: '/courses/ai',
+    },
+     {
+        id: 8,
+        image: GISIMAGE,
+        title: 'Geographic Information Systems',
+        description: 'Explore the fascinating field of GIS, learn how to capture, store, analyze, and visualize spatial data to solve real-world problems',
+        duration: '12-14 weeks',
+        url: '/courses/course-gis',
+    }, 
+   
+    {
+        id: 2,
+        image: QAImage,
+        title: 'Software Testing (QA)',
+        description: 'Master the art of software testing, explore testing methodologies, strategies, and tools used to ensure software quality and reliability.  ',
+        duration: '8-10 weeks',
+        url: '/courses/software-quality-assurance',
+    },
+   
+  
+    {
+        id: 6,
+        image: VAImage,
+        title: 'Virtual Assistant',
+        description: 'Enter the world of virtual assistants and learn how to design, develop, and deploy conversational AI applications. ',
         duration: 'N/A',
         url: '#', //replace # with '/blockchain-school',
     },
-    {
-        id: 6,
-        image: aiImage,
-        title: 'School of AI',
-        description: 'COMING SOON',
-        duration: 'N/A',
-        url: '#', //replace # with '/ai-school',
-    },
+    
+     
 ];
 
 export const values = [
@@ -256,17 +284,18 @@ export const values = [
         image: compassionIcon,
     },
     {
-        id: 2,
-        title: 'Respect',
-        description: 'Self- awareness, Kindness, Equality, Zero bullying, Zero discrimination.',
-        image: respectIcon,
-    },
-    {
         id: 3,
         title: 'Accountability',
         description: 'Take ownership, Growth mindset, Role model and Leader.',
         image: accountabilityIcon,
     },
+    {
+        id: 2,
+        title: 'Respect',
+        description: 'Self- awareness, Kindness, Equality, Zero bullying, Zero discrimination.',
+        image: respectIcon,
+    },
+    
 ];
 
 export const services1 = [
@@ -299,7 +328,7 @@ export const services1 = [
 export const courseDetails = [
     {
         id: 1,
-        content: 'TBA',
+        content: 'Min 10 weeks - 40Hrs',
         title: 'Duration',
         image: durationIcon,
     },
@@ -311,13 +340,13 @@ export const courseDetails = [
     },
     {
         id: 3,
-        content: 'Laptop',
+        content: 'Laptop, Internet access',
         title: 'Prerequisites',
         image: prerequisiteIcon,
     },
     {
         id: 4,
-        content: '5+ projects',
+        content: 'Capstone projects',
         title: 'Projects',
         image: projectIcon,
     },

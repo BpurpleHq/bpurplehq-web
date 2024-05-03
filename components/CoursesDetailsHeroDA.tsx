@@ -14,26 +14,26 @@ const CourseDetailsHeroDA = ({ title, subtitle, status, image }: CourseDetailsHe
                 <div className='flex justify-center lg:justify-start gap-3 mt-4'>
                     <Link href='https://forms.gle/ubN1UipLdP3oUcCj8' target="_blank" rel="noopener noreferrer">
                         <CustomButton
-                            title='Apply Now'
+                            title="I'm Interested"
                             btnType='button'
                             containerStyles='bg-secondary p-3 rounded-lg'
                             textStyles='text-dark'
                         />
                     </Link>
-                    <Link href='#' target="_blank" rel="noopener noreferrer">
+                    {/** <Link href='#' target="_blank" rel="noopener noreferrer">
                         <CustomButton
                             title='Download Syllabus'
                             btnType='button'
                             containerStyles='bg-secondary p-3 rounded-lg'
                             textStyles='text-dark'
                         />
-                    </Link>
+                    </Link> **/}
                 </div>
                 <p className='text-primary font-semibold mt-4'>{status}</p>
                 </div>
             </div>
             <div>
-                <Image src={image} alt={title} width={500} height={500} />
+                <Image src={image} alt={title} width={450} height={300} className='rounded-lg'/>
             </div>
         </div>
     )

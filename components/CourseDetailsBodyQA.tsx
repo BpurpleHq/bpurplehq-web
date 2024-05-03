@@ -36,16 +36,16 @@ understanding and application of SDET concepts.<br/>
                         containerStyles='bg-secondary p-3 rounded-lg'
                         textStyles='text-dark'
                     />
-                    </Link>
+                    </Link> 
 
-            <Link href='#' target="_blank" rel="noopener noreferrer">
+           {/** <Link href='#' target="_blank" rel="noopener noreferrer">
                     <CustomButton
                         title='Download Syllabus'
                         btnType='button'
                         containerStyles='bg-secondary p-3 rounded-lg'
                         textStyles='text-dark'
                     />
-                    </Link>
+                    </Link>  **/}
                 </div>
     </div>
   )

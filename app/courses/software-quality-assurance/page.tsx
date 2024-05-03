@@ -13,8 +13,8 @@ const page = () => {
       <section className='sm:px-16 px-6 lg:py-10 py-4'>
         <CoursesDetailsHero
           title='Software Development in Test (SDET)'
-          subtitle='Throughout the training, participants will engage in hands-on exercises and real-world projects that simulate software testing scenarios. By applying their knowledge in practical settings, they will gain the confidence and competence to address testing challenges in their professional roles. Assessment methods, including quizzes, assignments, and a final project, will be used to evaluate participants understanding and application of SDET concepts.'
-          image='/virtualImage.png'
+          subtitle='Master the art of software testing with our comprehensive learning path. Explore testing methodologies, strategies, and tools used to ensure software quality and reliability. From manual testing techniques to automated testing frameworks, this path covers a wide range of testing approaches to help you become a proficient software tester.'
+          image='/qa.png'
           status='Applications is Open!'
         />        
       </section>

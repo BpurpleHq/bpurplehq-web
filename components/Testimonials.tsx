@@ -17,7 +17,7 @@ const Testimonials = () => {
 
   return (
     <div>
-      <h3 className='max-w-[1440px] mx-auto text-headline-3 lg:text-headline-2 sm:px-16 px-6 py-10 text-primary'> See what people are saying</h3>
+      <h3 className='max-w-[1440px] mx-auto text-headline-3 lg:text-headline-2 sm:px-16 px-6 py-10 text-primary'> See what our students are saying</h3>
       <div className='relative group flex flex-row px-1'>
         <MdChevronLeft
           onClick={slideLeft}
