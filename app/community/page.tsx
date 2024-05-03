@@ -16,7 +16,7 @@ const page = () => {
           <Image src='/comHeroImage.png' alt='community banner' width={700} height={309} />
           <div>
             <h2 className='text-primary text-headline-3 text-center lg:text-start lg:text-headline-2 m-5 lg:mt-0'>We Are <span className='text-secondary'>Community</span> Driven and Career Focused. </h2>
-            <p className='text-headline-4 lg:text-headline-3 text-center lg:text-mid text-primary mt-2'>Why learn alone when you can learn and grow with a family.</p>
+            <p className='text-headline-4 lg:text-headline-3 lg:text-mid text-primary mt-2'>Why learn alone when you can learn and grow with a family.</p>
           </div>
         </div>
       </section>

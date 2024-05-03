@@ -191,7 +191,7 @@ export const cta = [
         content: 'Who is your Guy?.. Let us be the partner in your journey into Tech, you can trust the process. Work smarter, not harder: Get expert advice on how to increase productivity, inspire creativity, or handle challenges expertly in your current position or one you take on later',
 
         image: individualIcon,
-        buttonTitle: 'Explore Courses',
+        buttonTitle: 'Courses',
         url: '/courses',
     },
     {
@@ -199,7 +199,7 @@ export const cta = [
         title: 'Corporate/Business',
         content: 'Professional Staff training courses applicable to any corporate organization - We drive a smarter workplace, get expert advice on how to increase productivity at work, inspire creativity and drive innovation within the workplace. ',
         image: cooperateIcon,
-        buttonTitle: 'Explore More',
+        buttonTitle: 'Explore',
         url:'/community/workforce',
     },
 ];
