@@ -50,10 +50,10 @@ export default function Home() {
         </div>
         
 
-        <div className='flex relative lg:w-[480px] lg:h-[510px] h-[380px] rounded-xl'>
+        <div className='flex relative lg:w-[480px] lg:h-[510px] h-[320px] rounded-xl'>
           <Image src='/avt.jpeg' alt='Hero Image'fill  />
 
-       {/* <div className='flex relative lg:w-[480px] lg:h-[550px] h-[390px] rounded-xl'>
+       {/* <div className='flex relative lg:w-[480px] lg:h-[550px] h-[300px] rounded-xl'>
           <Image src='/heroImage.png' alt='Hero Image'fill  /> */}
 
 
