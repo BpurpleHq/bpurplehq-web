@@ -91,9 +91,13 @@ export const footerLinks = [
 
       { title: "Communities", url: "/community" },
       { title: "Courses", url: "/courses" },
+      { title: "Contact Us", url: "/faq/ask-a-question" },
+      { title: "Corporate", url: "/community/workforce" },
+
 
     ],
   },
+
   {
     title: "Legal",
     links: [
@@ -106,9 +110,9 @@ export const footerLinks = [
     links: [
 
 
-      { title: "+234 806 939 4886", url: "#" },
+      { title: "+234 806 939 4886", url: "https://wa.me/message/3AQABF3PD5HZM1" },
       { title: "info@bpurplehq.org", url: "#" },
-      { title: "Send a Message", url: "#" },
+      { title: "Send a Message", url: "https://wa.me/message/3AQABF3PD5HZM1" },
 
     ],
   },
@@ -169,7 +173,7 @@ export const testimonials = [
         id: 2,
         review: '“The data analysis course at Bpurple was a huge success, providing me with essential skills to handle complex datasets and extract valuable insights in real-time. Now, I feel confident and excited to apply my newfound abilities as a data analyst in my professional career..” ',
         image: testimonial2,
-        name: 'Ifeanyi Nathaniel',
+        name: 'Awa Sule',
         title: 'Data Analyst',
     },
 
@@ -328,7 +332,7 @@ export const services1 = [
 export const courseDetails = [
     {
         id: 1,
-        content: 'Min 10 weeks - 40Hrs',
+        content: '10-30 weeks',
         title: 'Duration',
         image: durationIcon,
     },
@@ -426,7 +430,7 @@ export const questions = [
         image: whatsappIcon,
         title: 'Hello! Whatapp',
         content: 'You can connect with us if you are already on Telegram.',
-        url: '#',
+        url: 'https://wa.me/message/3AQABF3PD5HZM1',
     },
     {
         id: 4,

@@ -10,7 +10,7 @@ const page = () => {
   return (
     <div>
     <section className='max-w-[1440px] mx-auto sm:px-16 px-6 pt-4 pb-14'>
-      <h3 className='text-headline-2 text-secondary lg:mb-10 font-bold text-center lg:text-start'>About Us</h3>
+      <h3 className='lg:text-headline-4 text-headline-3 text-primary lg:mb-12 mb-10 underline font-bold lg:text-mid'>About Us</h3>
       <div className='flex flex-col lg:flex-row justify-between'>
         <div className=''>
           <h2 className='text-headline-3 lg:text-headline-2 text-primary text-center lg:text-start'>We Create Experience That Put <span className='text-secondary'>People</span> First</h2>

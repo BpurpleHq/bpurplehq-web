@@ -12,10 +12,10 @@ const CourseDetailBody = () => {
         </div> **/}
 
         <div className='mt-4'>
-            <h3 className='text-center text-primary text-headline-2'>The learning paths</h3>
+            <h3 className='text-center text-primary text-headline-3 lg:text-headline-2 lg:text-start'>The learning paths</h3>
             <p className='text center mt-2 text-headline-3 text-primary'> Data Science:</p> <p>
 - Foundations of Data Science: Ensuring data quality by identifying and addressing errors, inconsistencies, missing values, and outliers, this first step involves understanding your data, cleaning data, standardization, and transformation.<br/>
- - Understand Exploratory Data Analysis concepts and hypothesis testing, perform initial data exploration to understand the characteristics, distributions, and relationships within the data. EDA involves generating summary statistics, creating visualizations, and identifying patterns or trends.<br/>
+ - Understand Exploratory Data Analysis concepts.<br/>
 - Learn about probability distributions and statistical inference - Applying statistical techniques such as hypothesis testing, regression analysis, correlation analysis, and time series analysis to uncover relationships, associations, and trends in the data.<br/>
 - Data Modeling and Predictive Analytics: Building models to predict future outcomes or trends based on historical data. This may involve machine learning algorithms, regression models, decision trees, or other predictive modeling techniques.<br/>
 - Explore supervised, unsupervised, and reinforcement learning algorithms <br/>

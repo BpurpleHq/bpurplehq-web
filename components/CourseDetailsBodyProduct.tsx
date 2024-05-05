@@ -6,10 +6,10 @@ import Link from 'next/link'
 
 const CourseDetailBody = () => {
   return (
-    <div className='max-w-[1440px] mx-auto flex flex-col sm:px-16 px-6 lg:py-10 py-4'>
+    <div className='max-w-[1440px] mx-auto flex flex-col sm:px-16 px-6 lg:py-20 py-4'>
 
         <div className='mt-4'>
-            <h3 className='text-center text-primary text-headline-2'> Learning paths</h3>
+            <h3 className='text-center text-primary text-headline-3 lg:text-headline-2 lg:text-start'> Learning paths</h3>
             <p className='text center mt-2 text-headline-3 text-primary'> Product Design:</p> <p>
 - User-Centered Design Principles  <br/>
   - Understand the importance of user-centered design in product development  <br/>

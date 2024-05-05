@@ -12,7 +12,7 @@ const CourseDetailBody = () => {
         </div> **/}
 
         <div className='mt-4'>
-            <h3 className='text-center text-primary text-headline-2'>What you will Learning</h3>
+            <h3 className='text-center text-primary text-headline-3 lg:text-headline-2 lg:text-start'>What you will Learning</h3>
 <p className='text center mt-2'> 
 - Introduction to Cybersecurity <br/>
   - Understand the importance of cybersecurity in today's digital landscape <br/>

@@ -18,18 +18,18 @@ const page = () => {
               <div className='flex justify-center gap-3 lg:gap-6 mt-9'>
                 <Link href='/faq/ask-a-question'>
                     <CustomButton
-                        title='Ask a Question'
-                        btnType='button'
-                        containerStyles='bg-secondary p-3 rounded-lg'
-                        textStyles='text-dark'
-                    />
-                </Link>    
-                    <CustomButton
                         title='Contact Us'
                         btnType='button'
                         containerStyles='bg-secondary p-3 rounded-lg'
                         textStyles='text-dark'
                     />
+                </Link>    
+                    {/** <CustomButton
+                        title='Contact Us'
+                        btnType='button'
+                        containerStyles='bg-secondary p-3 rounded-lg'
+                        textStyles='text-dark'
+                    /> **/}
                 </div>
             </div>    
           </section>
