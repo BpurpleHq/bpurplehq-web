@@ -21,7 +21,7 @@ export default function Home() {
       
   return (
     <main className="w-full relative">
-      <section className='bg-extra flex flex-col-reverse lg:flex-row gap-5 lg:gap-0 relative z-0 max-w-[1440px] mx-auto sm:px-16 px-3 pt-[10px] mb-[20px] lg:mb-0 pb-7 lg:pb-0 mt-5'>
+      <section className='bg-white flex flex-col-reverse lg:flex-row gap-5 lg:gap-0 relative z-0 max-w-[1440px] mx-auto sm:px-16 px-3 pt-[10px] mb-[20px] lg:mb-0 pb-7 lg:pb-0 mt-5'>
         <div className='flex flex-col lg:justify-start lg:items-start lg:mt-[50px] w-full lg:max-w-[70%] flex-1'>
         <h1 className='text-headline-3 lg:text-headline-2 text-secondary text-center md:text-start lg:mb-10'>#MakeTheTransition</h1>
           <h1 className='text-headline-2 text-primary text-center md:text-start'>Get Skilled in Tech, Access Mentorship, Stay <span className='text-secondary'>Relevant.</span></h1>
