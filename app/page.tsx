@@ -23,8 +23,8 @@ export default function Home() {
     <main className="w-full relative">
       <section className='bg-white flex flex-col-reverse lg:flex-row gap-5 lg:gap-0 relative z-0 max-w-[1440px] mx-auto sm:px-16 px-3 pt-[10px] mb-[20px] lg:mb-0 pb-7 lg:pb-0 mt-5'>
         <div className='flex flex-col lg:justify-start lg:items-start lg:mt-[50px] w-full lg:max-w-[70%] flex-1'>
-        <h1 className='text-headline-3 lg:text-headline-2 text-secondary text-center md:text-start lg:mb-10'>#MakeTheTransition</h1>
-          <h1 className='text-headline-2 text-primary text-center md:text-start'>Get Skilled in Tech, Access Mentorship, Stay <span className='text-secondary'>Relevant.</span></h1>
+        <h1 className='text-headline-3 lg:text-headline-2 text-secondary text-center md:text-start lg:mb-10'>#CyberAwarenessWorkshop</h1>
+          <h1 className='text-headline-2 text-primary text-center md:text-start'>Empowering individuals and organizations to stay ahead of  <span className='text-secondary'>Threats.</span></h1>
           
           <p className='text-body lg:text-headline-4 text-primary mt-5 lg:w-[90%]'>We are nurturing next-gen human capital in Information Technology, backed with leadership, character and building capacity to thrive in a dynamic tech ecosystem </p> 
           {/* <p className='text-body lg:text-headline-4 text-primary mt-4 lg:w-[75%]'>We are part of the solution in building a <span className='text-secondary text-headline-3'>SKILLED</span> continent.</p> */}
@@ -32,7 +32,7 @@ export default function Home() {
           <div className='flex justify-center items-center lg:justify-items-start gap-3 mt-8 md:mt-8'>
             <Link href='/courses' onClick={() => router.push('/courses')}>
               <CustomButton
-                title='Explore Courses'
+                title='Explore Here'
                 btnType='button'
                 containerStyles='bg-secondary rounded-lg py-2 min-w-[130px] px-2'
                 textStyles='text-dark text-body-1 font-medium z-index-90'
