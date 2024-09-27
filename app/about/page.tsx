@@ -78,25 +78,7 @@ const page = () => {
           </div>
         </div>
       </section>
-      <section>
-        <div className='sm:px-16 px-6 lg:py-10 py-5'>
-            <h3 className='max-w-[1440px] mx-auto text-headline-3 lg:text-headline-2 text-primary'>Testimonials</h3>
-            <div className='flex flex-col lg:flex-row justify-center items-center gap-4 mt-3'>
-              {testimonials.map(({id, review, image, name, title}) => (
-                <div key={id} className='bg-extra flex flex-col lg:flex-row border border-secondary rounded-xl p-6 shadow-lg'>
-                  <div>
-                    <p className='lg:w-[400px]'>{review}</p>  
-                  </div>
-                <div>
-                  <Image src={image} alt='title' width={280} height={280} />
-                    <p className='text-body-2 font-bold text-center'>{name}</p>
-                    <p className='text-body-2 text-center'>{title}</p>  
-                </div>  
-              </div>
-              ))}  
-            </div>
-          </div>
-      </section>
+      
     </div>
   )
 }

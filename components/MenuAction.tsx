@@ -13,14 +13,14 @@ const MenuAction = () => {''
           textStyles='text-dark'
         /> 
       </Link> **/}
-      <Link href='https://forms.gle/ubN1UipLdP3oUcCj8'>  {/**changed the button name and url **/}
+     <Link href='/courses'>  {/**changed the button name and url **/}
         <CustomButton
-          title='Register for SFSP'
+          title='Explore School of Tech'
           btnType='button'
           containerStyles='bg-secondary p-3 rounded-lg'
           textStyles='text-dark font-medium'
         />
-      </Link>
+      </Link> 
     </div>
   )
 }

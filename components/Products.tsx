@@ -8,12 +8,12 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
-import Testimonials from './Testimonials'
+
 
 const Products = () => {
   return (
     <div className='mb-5'>
-      <h2 className='sm:px-10 px-6 py-10 text-headline-3 lg:text-headline-2 text-primary text-center lg:mt-2'>🚀 New Programs Alert <br/> Coming Up this May 2024.. </h2>
+      <h2 className='sm:px-10 px-6 py-10 text-headline-3 lg:text-headline-2 text-primary text-center lg:mt-2'>🚀 New Programs Alert </h2>
       <p className='sm:px-16 px-6 lg:text-headline-4 lg:text-center text-body text-primary mb-10'> At bpurplehq, we advance along with the tech industry! We're introducing to you new programmes that are targeted at the global tech ecosystem's changing needs.<span className='text-secondary text-headline-3'> Data Engineering, Artificial Intelligence Tools Data Science and Cybersecurity. </span> </p>
 
       <div className='sm:px-16 px-6 py-10 '>
@@ -47,7 +47,7 @@ const Products = () => {
           ))}  
         </Swiper>
       </div>
-      <Testimonials />
+     
     </div>
   )
 }

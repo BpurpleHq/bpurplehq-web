@@ -5,6 +5,7 @@ import Products from "./Products";
 import CTA from "./CTA";
 import CoursesOffered from "./CoursesOffered";
 import Upcoming from "./Upcoming";
+import InfoCard from "./InfoCard";
 
 export {
     Navbar,
@@ -14,4 +15,5 @@ export {
     CTA,
     CoursesOffered,
     Upcoming,
+    InfoCard,
 }

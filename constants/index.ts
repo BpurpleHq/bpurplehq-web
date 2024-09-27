@@ -1,6 +1,6 @@
-import learnIcon from '../public/learnIcon.svg';
-import handIcon from '../public/handIcon.svg';
-import peopleIcon from '../public/peopleIcon.svg';
+import people from '../public/people.png';
+import handIcon from '../public/check.png';
+import peopleIcon from '../public/handshake.png';
 import courseImage from '../public/courseImage.png';
 
 import testimonial1 from '../public/testimonial1.png';
@@ -53,14 +53,10 @@ export const menuLinks = [
     },
     {
         id: 1,
-        title: 'Courses',
+        title: 'School Of Tech',
         url: '/courses',
     },
-    {
-        id: 2,
-        title: 'Community',
-        url: '/community',
-    },
+    
 
     {
         id: 3,
@@ -111,7 +107,7 @@ export const footerLinks = [
 
 
       { title: "+234 806 939 4886", url: "https://wa.me/message/3AQABF3PD5HZM1" },
-      { title: "info@bpurplehq.org", url: "#" },
+      { title: "hello@bpurplehq.org", url: "#" },
       { title: "Send a Message", url: "https://wa.me/message/3AQABF3PD5HZM1" },
 
     ],
@@ -121,20 +117,20 @@ export const footerLinks = [
 export const metrics = [
     {
         id: 1,
-        figure: '2000+',
-        title: 'Trained',
-        image: learnIcon,
+        figure: '20+',
+        title: 'Satisfied Clients',
+        image: people,
     },
     {
         id: 2,
-        figure: '40+',
-        title: 'Seasoned Instructors', 
+        figure: '4000+',
+        title: 'Trained', 
         image: handIcon,
     },
     {
         id: 3,
-        figure: '1500+',
-        title: 'Satisfied Participants',
+        figure: '50+',
+        title: 'Experts',
         image: peopleIcon,
     }
 ];
@@ -177,6 +173,8 @@ export const testimonials = [
         title: 'Data Analyst',
     },
 
+
+
     // {
     //     id: 3,
     //     review: '“Attending the Data Analysis course at BPurpleHQ has been a truly enriching experience. The course effectively blends theory with practical exercises, and the instructors excel at simplifying complex concepts, ensuring every student is well-engaged throughout. The incorporation of real-world examples equips learners with valuable, job-ready skills. I highly recommend this course to anyone seeking a solid grasp on data analysis.” ',
@@ -196,7 +194,7 @@ export const cta = [
 
         image: individualIcon,
         buttonTitle: 'Courses',
-        url: '/courses',
+        url: '/School of Tech',
     },
     {
         id: 2,
@@ -371,7 +369,7 @@ export const generalInfo = [
     },
     {
         id: 3,
-        image: learnIcon,
+        image: people,
         title: 'Do I have access to mentors?',
         content: 'Yes, every learner is assigned a mentor, who monitors and track growth',
     },

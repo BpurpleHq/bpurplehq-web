@@ -5,7 +5,7 @@ import React from 'react'
 
 
 export const metadata = {
-  title: 'bpurpleHQ | Courses',
+  title: 'bpurpleHQ | School of Tech - Courses',
 };
 
 const page = () => {
