@@ -8,7 +8,7 @@ const Metrics = () => {
       {metrics.map(({id, figure, title, image}) => (
         <div key={id} className='max-w-[1440px] text-primary flex gap-4 mx-auto'>
             <div>
-                  <Image src={image} alt={title} width={80} height={80} />
+                  <Image src={image} alt={title} width={60} height={60} />
               </div>
               <div>
                 <p className='text-headline-2'>{figure}</p>
