@@ -72,7 +72,7 @@ export const InfoCard: React.FC<InfoCardProps> = ({
   return (
     <div className={`flex flex-col w-full md:w-[454px] px-4 py-8 ${className}`}>
       <div className="flex items-center justify-center md:items-start md:justify-start">
-        <Image src={icon} alt={title} height={70} width={70} />
+        <Image src={icon} alt={title} height={50} width={50} />
       </div>
       <div className="flex flex-col justify-center items-center md:justify-start md:items-start text-white pt-[18px]">
         <h2 className="text-subtitle1 font-bold">{title}</h2>

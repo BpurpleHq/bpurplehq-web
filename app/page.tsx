@@ -49,16 +49,16 @@ export default function Home() {
         
 
         <div className='flex relative lg:w-[550px] lg:h-[510px] h-[320px] rounded-xl'>
-          <Image src='/aboutimg.png' alt='Hero Image'fill  />
+          <Image src='/aboutImg.png' alt='Hero Image'fill  />
 
        {/* <div className='flex relative lg:w-[480px] lg:h-[550px] h-[300px] rounded-xl'>
           <Image src='/heroImage.png' alt='Hero Image'fill  /> */}
 
 
         </div>
-       {/** <div className='hidden lg:block absolute bottom-[10%] left-[-1px]'>
+        <div className='hidden lg:block absolute bottom-[10%] left-[-1px]'>
           <Image src='/arrowIcon.svg' alt='arrow' width={130} height={700} />
-        </div>  */}
+        </div>  
       </section>
 
       <section className='bg-extra' data-aos="fade-up">
@@ -84,11 +84,11 @@ export default function Home() {
               We believe in the power of strategic guidance to transform
               businesses and drive sustainable success. With a team of seasoned
               professionals and a commitment to excellence, we partner with
-              organizations to navigate challenges ,seize opportunities, and
+              organizations to navigate challenges, seize opportunities, and
               achieve full potential.
             </p>
             <p className="text-body text-center lg:text-start py-6">
-              We bring together a wealth of knowledge across arious industries,
+              We bring together a wealth of knowledge across various industries,
               enabling us to offer comprehensie solutions tailored to the
               unqique needs of our clients
             </p>
@@ -161,7 +161,7 @@ export default function Home() {
           <TestimonialCard
             imageSrc="/frame5.png"
             quoteIconSrc="/quote.png"
-            content="The data analysis course at Bpurple was a huge success, providing me with essential skills to handle complex datasets and extract valuable insights in real-time."
+            content="The data analysis course at bpurplehq was a huge success, providing me with essential skills to handle complex datasets and extract valuable insights in real-time."
             fullName="Steve Peters"
           />
           <TestimonialCard
