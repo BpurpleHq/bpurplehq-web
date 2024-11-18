@@ -57,7 +57,7 @@ const Navbar = () => {
                 <MenuItems />
             </div>
             <div className='hidden lg:flex'>
-                <MenuAction />
+                <MenuAction /> 
             </div> 
           
         </div>

@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 
 import { useRouter } from 'next/navigation'
-import { CTA, Metrics, Products } from '@/components';
+import { CTA, Metrics, Products, Banner} from '@/components';
 import CustomButton from '@/components/CustomButton';
 import Image from 'next/image';
 // @ts-ignore
@@ -22,6 +22,9 @@ export default function Home() {
       
   return (
     <main className="w-full relative">
+    <section className='bg-extra' data-aos="fade-up">
+        <Banner />
+      </section>
       <section className='bg-white flex flex-col-reverse lg:flex-row gap-5 lg:gap-0 relative z-0 max-w-[1440px] mx-auto sm:px-16 px-3 pt-[10px] mb-[20px] lg:mb-0 pb-7 lg:pb-0 mt-5'>
         <div className='flex flex-col lg:justify-start lg:items-start lg:mt-[50px] w-full lg:max-w-[60%] flex-1'>
         <h1 className='text-headline-3 lg:text-headline-2 text-secondary text-center md:text-start lg:mb-10'>#Innovation<span className='text-primary'>Meets</span>Culture</h1>

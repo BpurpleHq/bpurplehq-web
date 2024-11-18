@@ -25,7 +25,7 @@ const page = () => {
             </div>
           ))}
         </div>
-        <div className='flex justify-center items-center'>
+        {/** <div className='flex justify-center items-center'>
           <Link href='/courses'>
             <CustomButton
               title='Browse Course'
@@ -33,7 +33,7 @@ const page = () => {
               textStyles='text-dark'
             />
           </Link>
-        </div>
+        </div> **/}
       </div>
     </div>
   )

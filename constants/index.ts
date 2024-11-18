@@ -19,6 +19,9 @@ import cyb from '../public/cyberimage.png';
 import dataimg from '../public/data.png';
 import blockchainImage from '../public/blockchainImage.png';
 import aiImage from '../public/ai.png';
+import slideimg1 from '../public/slideimg1.jpg';
+import slideimg2 from '../public/slideimg2.jpg';
+import slideimg3 from '../public/slideimg3.jpg';
 import respectIcon from '../public/respectIcon.svg';
 import compassionIcon from '../public/compassionIcon.svg';
 import accountabilityIcon from '../public/accountabilityIcon.svg';
@@ -51,25 +54,25 @@ export const menuLinks = [
         title: 'About Us',
         url: '/about',
     },
+
+     {
+        id: 3,
+        title: 'Products/Services',
+        url: '/productsservice/solutions',
+    },
+
     {
         id: 1,
         title: 'School Of Tech',
         url: '/courses',
     },
-    
-
     {
-        id: 3,
-        title: 'Corporate',
-        url: '/community/workforce',
+        id: 1,
+        title: 'Connect with us',
+        url: '/faq/ask-a-question',
     },
    
-    {
-        id: 3,
-        title: 'FAQ',
-        url: '/faq',
-    },
-
+    
     
 ];
 export const footerLinks = [
@@ -77,7 +80,7 @@ export const footerLinks = [
     title: "Quick Links",
     links: [
       { title: "About Us", url: "/about" },
-      { title: "FAQs", url: "/faq" },
+      
     ],
   },
   {
@@ -85,10 +88,10 @@ export const footerLinks = [
     links: [
 
 
-      { title: "Communities", url: "/community" },
+      { title: "Products", url: "/Products/Services" },
       { title: "Courses", url: "/courses" },
       { title: "Contact Us", url: "/faq/ask-a-question" },
-      { title: "Corporate", url: "/community/workforce" },
+    
 
 
     ],
@@ -154,6 +157,24 @@ export const products = [
         image: aiImage,
         title: 'Artificial Intelligence',
         description: 'Introducing our AI Tools Training Bootcamp – your passport to unlocking the potential of artificial intelligence! Led by seasoned AI experts, our intensive program offers hands-on training with cutting-edge tools and techniques essential for navigating the AI landscape. Whether you are a beginner or an experienced professional, dive into the world of machine learning, deep learning, and natural language processing.',
+    }
+];
+
+export const banners = [
+    {
+        id: 1,
+        image: slideimg1,
+       
+    },
+    {
+        id: 2,
+        image: slideimg2,
+       
+    },
+    {
+        id: 3,
+        image: slideimg3,
+      
     }
 ];
 
@@ -414,12 +435,12 @@ export const questions = [
         image: questionIcon,
         title: 'Visit FAQ page',
         content: 'Most of your pressing questions, already been answered.',
-        url: '/faq',
+        url: '#',
     },
     {
         id: 2,
         image: mailIcon,
-        title: 'Send an email',
+        title: 'Send an email - business@bpurplehq.org',
         content: 'Expect a response from one of our staff within 2 to 3 hours',
         url: '#',
     },
@@ -427,7 +448,7 @@ export const questions = [
         id: 3,
         image: whatsappIcon,
         title: 'Hello! Whatapp',
-        content: 'You can connect with us if you are already on Telegram.',
+        content: 'You can connect with us if you are already on Whatsapp.',
         url: 'https://wa.me/message/3AQABF3PD5HZM1',
     },
     {

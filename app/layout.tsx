@@ -9,7 +9,7 @@ const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'bpurpleHQ | Home',
-  description: 'Equipping next-gen human capital in tech, leadership character and capacity',
+  description: 'Unlocking business needs with customized technology solutions',
 }
 
 export default function RootLayout({
@@ -38,7 +38,7 @@ export default function RootLayout({
       </Head>
       <body className= {montserrat.className}>
         <Navbar />
-       <Upcoming />
+       {/** <Upcoming /> **/}
 
         <main className='pt-[1px]'>{children}</main>
         <Footer />

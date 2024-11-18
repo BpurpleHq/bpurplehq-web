@@ -6,6 +6,7 @@ import CTA from "./CTA";
 import CoursesOffered from "./CoursesOffered";
 import Upcoming from "./Upcoming";
 import InfoCard from "./InfoCard";
+import Banner from "./Banner";
 
 export {
     Navbar,
@@ -16,4 +17,5 @@ export {
     CoursesOffered,
     Upcoming,
     InfoCard,
+    Banner,
 }

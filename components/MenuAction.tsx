@@ -13,9 +13,9 @@ const MenuAction = () => {''
           textStyles='text-dark'
         /> 
       </Link> **/}
-     <Link href='/courses'>  {/**changed the button name and url **/}
+     <Link href='/faq/ask-a-question'>  {/**changed the button name and url **/}
         <CustomButton
-          title='Explore School of Tech'
+          title='Enquiries? Contact Us'
           btnType='button'
           containerStyles='bg-secondary p-3 rounded-lg'
           textStyles='text-dark font-medium'
