@@ -11,9 +11,21 @@ import { Pagination, Autoplay } from 'swiper/modules';
 
 const Banner = () => {
   const sliderContent = [
-    { title: "Transform - Innovate - Lead!!"},
-    { title: "Empower Your Workforce"},
-    { title: "Discover Tailored Solutions"},
+    { 
+      title: "Transform Your Business Today", 
+      subtitle: "Innovative solutions tailored to accelerate your growth.", 
+      
+    },
+    { 
+      title: "Empower Your Workforce", 
+      subtitle: "Prepare your team for the future of work.", 
+      
+    },
+    { 
+      title: "Discover Tailored Solutions", 
+      subtitle: "Optimize your processes with cutting-edge technology.", 
+      
+    },
   ];
 
   return (
@@ -36,11 +48,15 @@ const Banner = () => {
                 className="w-full h-full"
               />
               
-              <div className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white z-10">
-               
-                <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold ml-10 text-white">
+               <div className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white z-10">
+                {/* Title */}
+                <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold">
                   {sliderContent[index]?.title}
                 </h1>
+                {/* Subtitle */}
+                <p className="mt-1 text-sm md:text-lg lg:text-3xl font-light text-secondary">
+                  {sliderContent[index]?.subtitle}
+                </p>
               
                    {/*  <CustomButton
           title='Explore Now'
