@@ -74,7 +74,36 @@ export const InfoCard: React.FC<InfoCardProps> = ({
       <div className="flex items-center justify-center md:items-start md:justify-start">
         <Image src={icon} alt={title} height={50} width={50} />
       </div>
-      <div className="flex flex-col justify-center items-center md:justify-start md:items-start text-white pt-[18px]">
+      <div className="flex flex-col justify-center items-center md:justify-start md:items-start text-black pt-[18px]">
+        <h2 className="text-subtitle1 font-bold">{title}</h2>
+        <p className="pt-[15px] text-center md:text-start text-body">
+          {content}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+// InfoCard Component
+interface InfoCardPropservice {
+  
+  title: string;
+  content: string;
+  className?: string;
+}
+
+export const InfoCardservice: React.FC<InfoCardProps> = ({
+  
+  title,
+  content,
+  className = "",
+}) => {
+  return (
+    <div className={`flex flex-col w-full md:w-[454px] px-4 py-8 ${className}`}>
+      <div className="flex items-center justify-center md:items-start md:justify-start">
+        
+      </div>
+      <div className="flex flex-col justify-center items-center md:justify-start md:items-start text-black pt-[18px]">
         <h2 className="text-subtitle1 font-bold">{title}</h2>
         <p className="pt-[15px] text-center md:text-start text-body">
           {content}

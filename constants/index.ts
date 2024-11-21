@@ -63,7 +63,7 @@ export const menuLinks = [
 
     {
         id: 1,
-        title: 'School Of Tech',
+        title: 'Trainings',
         url: '/courses',
     },
     {

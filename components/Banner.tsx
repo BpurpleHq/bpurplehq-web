@@ -7,6 +7,7 @@ import CustomButton from './CustomButton';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import AOS from 'aos';
 import { Pagination, Autoplay } from 'swiper/modules';
 
 const Banner = () => {
@@ -48,7 +49,7 @@ const Banner = () => {
                 className="w-full h-full"
               />
               
-               <div className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white z-10">
+               <div className='absolute top-1/2 data-aos="fade-up" left-4 transform -translate-y-1/2 text-white z-10'>
                 {/* Title */}
                 <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold">
                   {sliderContent[index]?.title}
