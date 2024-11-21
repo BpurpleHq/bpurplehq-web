@@ -27,7 +27,7 @@ export default function Home() {
         <Banner />
       </section>
       
-      <section className='bg-white flex flex-col-reverse lg:flex-row gap-5 lg:gap-0 relative z-0 max-w-[1440px] mx-auto sm:px-16 px-3 pt-[10px] mb-[20px] lg:mb-0 pb-7 lg:pb-0 mt-5'>
+      <section className='bg-white flex flex-col-reverse lg:flex-row gap-5 lg:gap-0 relative z-0 max-w-[1440px] mx-auto sm:px-16 px-3 pt-[10px] mb-[20px] lg:mb-0 pb-7 lg:pb-0 mt-5' data-aos="fade-up">
         <div className='flex flex-col lg:justify-start lg:items-start lg:mt-[50px] w-full lg:max-w-[60%] flex-1'>
         <h1 className='text-headline-3 lg:text-headline-2 text-secondary text-center md:text-start lg:mb-10'>#Innovation<span className='text-primary'>Meets</span>Culture</h1>
           <h1 className='text-headline-2 text-primary text-center md:text-start'>Unlocking Business Potential with Customized  <span className='text-secondary'>Technology Solutions</span></h1>
@@ -61,9 +61,9 @@ export default function Home() {
 
 
         </div>
-        <div className='hidden lg:block absolute bottom-[10%] left-[-1px]'>
+        {/* <div className='hidden lg:block absolute bottom-[10%] left-[-1px]'>
           <Image src='/arrowIcon.svg' alt='arrow' width={130} height={700} />
-        </div>  
+        </div> */} 
       </section>
 
       <section className='bg-extra' data-aos="fade-up">
@@ -116,8 +116,8 @@ export default function Home() {
         <section>
         <div>
          
-          <div className="bg-extra text-subtitle text-center lg:text-start mt-3 px-[60px]">
-            <div className="flex flex-col text-subtitle text-center lg:text-start md:flex-row md:justify-around">
+          <div className="bg-extra mt-3 px-[60px]">
+            <div className="flex flex-col md:flex-row md:justify-around">
               <InfoCard
                 className="md:border-r md:border-gray-500 md:border-opacity-50"
                 icon="/handshake.png"

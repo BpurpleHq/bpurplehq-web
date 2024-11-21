@@ -7,7 +7,7 @@ import React from 'react'
 import { AchievementsCard, Card, InfoCardservice, TestimonialCard } from '@/components/InfoCard';
 
 export const metadata = {
-  title: 'bpurpleHQ | Community - Workforce',
+  title: 'bpurpleHQ | Products and Solutions',
 };
 
 const page = () => {
