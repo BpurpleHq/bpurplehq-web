@@ -3,8 +3,9 @@ import { workforceCard } from '@/constants';
 import Image from 'next/image';
 import Link from 'next/link';
 import AOS from 'aos';
+import 'aos/dist/aos.css';
 import React from 'react'
-import { AchievementsCard, Card, InfoCardservice, TestimonialCard } from '@/components/InfoCard';
+import { AchievementsCard, Card, InfoCard, TestimonialCard } from '@/components/InfoCard';
 
 export const metadata = {
   title: 'bpurpleHQ | Products and Solutions',

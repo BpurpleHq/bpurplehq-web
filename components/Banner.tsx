@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { Pagination, Autoplay } from 'swiper/modules';
 
 const Banner = () => {
@@ -50,10 +51,12 @@ const Banner = () => {
               />
               
                <div className='absolute top-1/2 data-aos="fade-up" left-4 transform -translate-y-1/2 text-white z-10'>
+               
                 {/* Title */}
                 <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold">
                   {sliderContent[index]?.title}
                 </h1>
+                
                 {/* Subtitle */}
                 <p className="mt-1 text-sm md:text-lg lg:text-3xl font-light text-secondary">
                   {sliderContent[index]?.subtitle}

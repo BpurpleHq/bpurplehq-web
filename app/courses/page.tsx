@@ -2,11 +2,12 @@ import { CoursesOffered, Metrics } from '@/components'
 import CustomButton from '@/components/CustomButton'
 import Image from 'next/image'
 import AOS from 'aos'
+import 'aos/dist/aos.css';
 import React from 'react'
 
 
 export const metadata = {
-  title: 'bpurpleHQ | School of Tech - Courses',
+  title: 'bpurpleHQ | Training - Courses',
 };
 
 const page = () => {

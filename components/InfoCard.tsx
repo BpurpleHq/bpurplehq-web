@@ -85,7 +85,7 @@ export const InfoCard: React.FC<InfoCardProps> = ({
 };
 
 // InfoCard Component
-interface InfoCardPropservice {
+{/* interface InfoCardPropservice {
   
   title: string;
   content: string;
@@ -111,7 +111,7 @@ export const InfoCardservice: React.FC<InfoCardProps> = ({
       </div>
     </div>
   );
-};
+}; */}
 
 // AchievementsCard Component
 interface AchievementsCardProps {
