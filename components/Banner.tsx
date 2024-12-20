@@ -14,10 +14,13 @@ import { Pagination, Autoplay } from 'swiper/modules';
 const Banner = () => {
   const sliderContent = [
     { 
-      title: "Transform Your Business Today", 
-      subtitle: "Innovative solutions tailored to accelerate your growth.", 
+      title: "Future-Proof Your Career.", 
+      subtitle: "Accelerate your journey with expert-led training in Emerging Technologies.", 
       
     },
+
+
+
     { 
       title: "Empower Your Workforce", 
       subtitle: "Prepare your team for the future of work.", 
@@ -39,41 +42,37 @@ const Banner = () => {
         pagination={{ clickable: true }}
       >
         {banners.map(({ image }, index) => (
-          <SwiperSlide key={index}>
-            <div className="relative w-full h-[calc(100vh)] mx-auto flex flex-col lg:flex-row lg:justify-center">
-              
-              <Image 
-                src={image} 
-                alt={`Banner ${index + 1}`} 
-                layout="fill" 
-                objectFit="cover" 
-                className="w-full h-full"
-              />
-              
-               <div className='absolute top-1/2 data-aos="fade-up" left-4 transform -translate-y-1/2 text-white z-10'>
-               
-                {/* Title */}
-                <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold">
-                  {sliderContent[index]?.title}
-                </h1>
-                
-                {/* Subtitle */}
-                <p className="mt-1 text-sm md:text-lg lg:text-3xl font-light text-secondary">
-                  {sliderContent[index]?.subtitle}
-                </p>
-              
-                   {/*  <CustomButton
-          title='Explore Now'
-          btnType='button'
-          containerStyles='bg-secondary p-3 rounded-lg mt-10 ml-10 border '
-          textStyles='text-white font-medium'/> */}
-            
+         <SwiperSlide key={index}>
+  <div className="relative w-full h-[calc(100vh)] mx-auto">
+  
+    <Image
+      src={image}
+      alt={`Banner ${index + 1}`}
+      layout="fill"
+      objectFit="cover"
+      className="w-full h-full"
+    />
+    <div className="absolute inset-0 bg-black bg-opacity-60" />
+    <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white z-10 px-4">
+  
+      <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-secondary">
+        {sliderContent[index]?.title}
+      </h1>
+      <p className="mt-4 text-sm md:text-2lg lg:text-3xl font-light text-gray-300">
+        {sliderContent[index]?.subtitle}
+      </p>
 
-             </div> 
-             
-              <div className="absolute inset-0 bg-black bg-opacity-40" />
-            </div>
-          </SwiperSlide>
+      {/* Button 
+      <CustomButton
+        title="Explore Now"
+        btnType="button"
+        containerStyles="bg-secondary p-3 rounded-lg mt-6"
+        textStyles="text-white font-medium"
+      /> */}
+    </div>
+  </div>
+</SwiperSlide>
+
         ))}
       </Swiper>
     </div>

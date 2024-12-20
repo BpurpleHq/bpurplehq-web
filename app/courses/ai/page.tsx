@@ -15,7 +15,7 @@ const page = () => {
           title='School of Artificial Intelligence'
           subtitle='Embark on a journey into the realm of Artificial Intelligence (AI) with our specialized learning path. From machine learning algorithms to neural network architectures, delve into the intricacies of AI technology. Gain hands-on experience in building intelligent systems capable of performing tasks that traditionally require human intelligence.'
           image='/ai.jpeg'
-          status='We are currently taking applications!'
+          status='We are NOT currently taking applications!'
         />        
       </section>
       <section className='bg-extra'>

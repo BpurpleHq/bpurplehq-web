@@ -15,7 +15,7 @@ const page = () => {
           title='Cybersecurity'
           subtitle='Dive into the world of cybersecurity and learn how to protect systems, networks, and data from digital threats. From understanding fundamental security principles to implementing advanced techniques, this learning path equips you with the skills needed to safeguard information assets and mitigate cyber risks.'
           image='/cyberimage.png'
-          status='We are currently NOT taking applications!'
+          status='Applications are now Open!!'
         />        
       </section>
       <section className='bg-extra'>

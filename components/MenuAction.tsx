@@ -13,11 +13,11 @@ const MenuAction = () => {''
           textStyles='text-dark'
         /> 
       </Link> **/}
-     <Link href='/faq/ask-a-question'>  {/**changed the button name and url **/}
+     <Link href='https://forms.zohopublic.com/adminbpur1/form/EventRegistration/formperma/ESSiUnpCMVKFJxdZGBPpARTvLi1ku3G9TcRdVn8K7MI'>  
         <CustomButton
-          title='Enquiries? Contact Us'
+          title='Sign Me Up'
           btnType='button'
-          containerStyles='bg-secondary p-3 rounded-lg'
+          containerStyles='bg-secondary p-3 rounded-lg pr-5 pl-5'
           textStyles='text-dark font-medium'
         />
       </Link> 

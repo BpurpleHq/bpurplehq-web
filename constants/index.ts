@@ -7,7 +7,7 @@ import testimonial1 from '../public/testimonial1.png';
 import testimonial2 from '../public/testimonial2.png';
 import cooperateIcon from '../public/cooperateIcon.svg';
 import individualIcon from '../public/individualIcon.svg';
-import GISIMAGE from '../public/gis.png';
+import GISIMAGE from '../public/cloud3.png';
 import virtualImage from '../public/virtualImage.png';
 import productImage from '../public/products.png';
 import dataImage from '../public/data.png';
@@ -232,7 +232,7 @@ export const learningPath = [
         id: 1,
         image: cyb,
         title: 'Cybersecurity',
-        description: 'Dive into the world of cybersecurity and learn how to protect systems, networks, and data from digital threats.',
+        description: 'Dive into the world of cybersecurity and learn how to protect systems, networks, and data from digital threatsCybersecurity best practices, Security terms and concepts, Network Security, OwASP, PTES and Security testing',
         duration: '12-16 weeks',
         url: '/courses/cybersecurity',
     },
@@ -265,36 +265,17 @@ export const learningPath = [
         image: AIImage,
         title: 'School of AI',
         description: 'Embark on a journey into the realm of AI, from machine learning to neural networks, delve into the intricacies of AI technology. ',
-        duration: 'N/A',
+        duration: 'TBA',
         url: '/courses/ai',
     },
      {
         id: 8,
         image: GISIMAGE,
-        title: 'Geographic Information Systems',
-        description: 'Explore the fascinating field of GIS, learn how to capture, store, analyze, and visualize spatial data to solve real-world problems',
-        duration: '12-14 weeks',
-        url: '/courses/course-gis',
-    }, 
-   
-    {
-        id: 2,
-        image: QAImage,
-        title: 'Software Testing (QA)',
-        description: 'Master the art of software testing, explore testing methodologies, strategies, and tools used to ensure software quality and reliability.  ',
-        duration: '8-10 weeks',
-        url: '/courses/software-quality-assurance',
-    },
-   
-  
-    {
-        id: 6,
-        image: VAImage,
-        title: 'Virtual Assistant',
-        description: 'Enter the world of virtual assistants and learn how to design, develop, and deploy conversational AI applications. ',
-        duration: 'N/A',
-        url: '#', //replace # with '/blockchain-school',
-    },
+        title: 'Cloud Computing',
+        description: 'Coming Soon!',
+        duration: 'TBA',
+        url: '#',
+    }
     
      
 ];

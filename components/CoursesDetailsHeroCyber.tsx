@@ -12,7 +12,7 @@ const CourseDetailsHeroCyber = ({ title, subtitle, status, image }: CourseDetail
                 <h2 className='text-primary text-center lg:text-start text-headline-3 lg:text-headline-2 mt-4 lg:mt-0'>{title}</h2>
                 <p className='lg:w-[698px] text-primary mt-3'>{subtitle}</p>
                 <div className='flex justify-center lg:justify-start gap-3 mt-4'>
-                    <Link href='https://forms.gle/ubN1UipLdP3oUcCj8' target="_blank" rel="noopener noreferrer">
+                    <Link href='https://forms.zohopublic.com/adminbpur1/form/EventRegistration/formperma/ESSiUnpCMVKFJxdZGBPpARTvLi1ku3G9TcRdVn8K7MI' target="_blank" rel="noopener noreferrer">
                         <CustomButton
                             title='Apply Now'
                             btnType='button'
@@ -33,7 +33,7 @@ const CourseDetailsHeroCyber = ({ title, subtitle, status, image }: CourseDetail
                 </div>
             </div>
             <div>
-                <Image src={image} alt={title} width={450} height={300} className='rounded-lg' />
+                <Image src={image} alt={title} width={650} height={400} className='rounded-lg' />
             </div>
         </div>
     )

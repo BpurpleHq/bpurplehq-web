@@ -57,7 +57,7 @@ const CourseDetailBody = () => {
 </p>
           </div>
           <div className='flex justify-center gap-6 mt-6'>
-          <Link href='https://forms.gle/ubN1UipLdP3oUcCj8' target="_blank" rel="noopener noreferrer">
+          <Link href='https://forms.zohopublic.com/adminbpur1/form/EventRegistration/formperma/ESSiUnpCMVKFJxdZGBPpARTvLi1ku3G9TcRdVn8K7MI' target="_blank" rel="noopener noreferrer">
                     <CustomButton
                         title="I'm Interested"
                         btnType='button'
