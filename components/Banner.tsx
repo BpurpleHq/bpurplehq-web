@@ -52,7 +52,7 @@ const Banner = () => {
       objectFit="cover"
       className="w-full h-full"
     />
-    <div className="absolute inset-0 bg-black bg-opacity-60" />
+    <div className="absolute inset-0 bg-black bg-opacity-30" />
     <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white z-10 px-4">
   
       <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-secondary">
