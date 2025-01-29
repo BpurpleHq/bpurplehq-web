@@ -15,7 +15,7 @@ const MenuAction = () => {''
       </Link> **/}
      <Link href='https://forms.zohopublic.com/adminbpur1/form/EventRegistration/formperma/ESSiUnpCMVKFJxdZGBPpARTvLi1ku3G9TcRdVn8K7MI'>  
         <CustomButton
-          title='Sign Me Up'
+          title='Bootcamp Sign-Up'
           btnType='button'
           containerStyles='bg-secondary p-3 rounded-lg pr-5 pl-5'
           textStyles='text-dark font-medium'

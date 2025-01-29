@@ -32,7 +32,7 @@ const Footer = () => {
           <Link href='/'> <Image src='/twitter.svg' alt='twitter logo' width={30} height={30} /> </Link>
           </div>
             <div>
-            <p className='text-body-2 text-center'>&copy; 2024 bpurpleHQ All Rights Reserved, with 💜 from bpurple Technologies.</p>
+            <p className='text-body-2 text-center'>&copy; 2025 Bpurple Technology All Rights Reserved, with 💜 from bpurpleHQ.</p>
             <div className='flex justify-center items-center gap-[8px] mt-1 text-body-2'>
               <Link href='/'>
                <p>Privacy Policy</p> 

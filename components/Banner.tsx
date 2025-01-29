@@ -58,7 +58,7 @@ const Banner = () => {
       <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-secondary">
         {sliderContent[index]?.title}
       </h1>
-      <p className="mt-4 text-sm md:text-2lg lg:text-3xl font-light text-gray-300">
+      <p className="mt-4 text-sm md:text-2lg lg:text-3xl font-bold text-gray-200">
         {sliderContent[index]?.subtitle}
       </p>
 

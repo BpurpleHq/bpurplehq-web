@@ -25,6 +25,7 @@ export default function Home() {
     
     <section className='bg-extra' data-aos="fade-up">
         <Banner />
+
       </section>
       
       <section className='bg-white flex flex-col-reverse lg:flex-row gap-5 lg:gap-0 relative z-0 max-w-[1440px] mx-auto sm:px-16 px-3 pt-[10px] mb-[20px] lg:mb-0 pb-7 lg:pb-0 mt-5' data-aos="fade-up">
