@@ -11,6 +11,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Link from 'next/link';
 import { AchievementsCard, Card, InfoCard, TestimonialCard } from '@/components/InfoCard';
+import HeroCarousel from "@/components/hero-carousel";
+import ClientsLogo from "@/components/clients";
 
 export default function Home() {
 
@@ -24,7 +26,8 @@ export default function Home() {
     <main className="w-full relative">
     
     <section className='bg-extra' data-aos="fade-up">
-        <Banner />
+        <HeroCarousel />
+        <ClientsLogo />
 
       </section>
       
