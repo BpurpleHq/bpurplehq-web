@@ -8,7 +8,7 @@ const montserrat = Montserrat({ subsets: ['latin'] })
 
 // Enhanced metadata configuration
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://www.bpurplehq.org'),
+  metadataBase: new URL('https://www.bpurplehq.org'),
   title: {
     default: 'bpurple Technology | Home',
     template: '%s | bpurpleHQ'
