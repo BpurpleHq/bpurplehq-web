@@ -1,3 +1,8 @@
+
+
+
+
+
 "use client"
 
 import { useEffect } from 'react';
@@ -80,8 +85,8 @@ export default function Home() {
         <div className="flex gap-8 flex-col lg:flex-row lg:justify-between md:items-center px-[54px] pb-4 mt-10">
           <Image
             src="/contact.png"
-            height={350}
-            width={550}
+            height={150}
+            width={350}
             alt="image"
             className="flex-1 mt-5 lg:mt-0"
           />

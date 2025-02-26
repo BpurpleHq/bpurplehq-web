@@ -65,7 +65,7 @@ export default function HeroCarousel() {
 
   return (
     <div className="relative overflow-hidden bg-background" ref={emblaRef}>
-      <div className="flex h-[70vh]">
+      <div className="flex h-[75vh]">
         {slides.map((slide, index) => (
           <div key={index} className="flex-[0_0_100%] relative min-w-0">
             {/* Image with gradient overlay */}

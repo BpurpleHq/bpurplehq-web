@@ -36,7 +36,7 @@ export default function ClientLogos() {
   return (
     <section className="py-5 bg-muted/30">
       <div className="container mx-auto px-4">
-        <h2 className="text-xl font-semibold text-center mb-4">Industry Leaders</h2>
+        <h2 className="text-xl font-semibold text-center m-1">Industry Leaders</h2>
 
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex">
