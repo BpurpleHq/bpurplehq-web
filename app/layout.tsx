@@ -7,8 +7,8 @@ import Script from 'next/script'
 const montserrat = Montserrat({ subsets: ['latin'] })
 
 // Enhanced metadata configuration
-export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL),
+export const metadata = {
+
   title: {
     default: 'bpurple Technology | Home',
     template: '%s | bpurpleHQ'
@@ -33,7 +33,6 @@ export const metadata: Metadata = {
     follow: true
   }
 }
-
 export default function RootLayout({
   children,
 }: {
