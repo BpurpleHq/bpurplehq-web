@@ -9,7 +9,7 @@ const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'bpurpleHQ | Home',
-  description: 'Unlocking business needs with customized technology solutions',
+  description: 'Unlocking business needs with customized technology solutions.',
 }
 
 export default function RootLayout({
