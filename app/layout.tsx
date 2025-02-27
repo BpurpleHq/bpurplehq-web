@@ -3,7 +3,6 @@ import { Montserrat } from 'next/font/google'
 import { Footer, Navbar, Upcoming } from '@/components'
 import Head from 'next/head'
 
-const gtag = `https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_GA_ID}`;
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -20,21 +19,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-       {/* Google Analytics Measurement ID*/}
-       <script async src={gtag} />
-         
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_GA_ID}', {
-                  page_path: window.location.pathname
-                });
-              `,
-            }}
-          />
+       
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2T268S3X0Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2T268S3X0Z');
+</script>
       </Head>
       <body className= {montserrat.className}>
         <Navbar />
