@@ -38,12 +38,12 @@ export default function Home() {
       
       <section className='bg-white flex flex-col-reverse lg:flex-row gap-5 lg:gap-0 relative z-0 max-w-[1440px] mx-auto sm:px-16 px-3 pt-[10px] mb-[20px] lg:mb-0 pb-7 lg:pb-0 mt-5' data-aos="fade-up">
         <div className='flex flex-col lg:justify-start lg:items-start lg:mt-[50px] w-full lg:max-w-[60%] flex-1'>
-        <h1 className='text-headline-3 lg:text-headline-2 text-secondary text-center md:text-start lg:mb-10'>#Innovation<span className='text-primary'>Meets</span>Culture</h1>
-          <h1 className='text-headline-2 text-primary text-center md:text-start'>Unlocking Business Potential with Customized  <span className='text-secondary'>Technology Solutions</span></h1>
+        <h1 className='text-headline-3 lg:text-headline-2 text-primary text-center md:text-start lg:mb-10'>There is so much more DATA</h1>
+          {/*<h1 className='text-headline-2 text-primary text-center md:text-start'>Unlocking Business Potential with Customized  <span className='text-secondary'>Technology Solutions</span></h1>*/}
         
-         <p className='text-body lg:text-headline-4 text-primary mt-5 lg:w-[80%]'>Bridging the gap between Technology and Business with our range of cutting-edge technology solutions, Technology Trainings and Consultation Services  </p>  
+         <p className='text-body lg:text-headline-4 mt-5 lg:w-[80%]'>Today, you have access to an unprecedented volume of data, and it’s time to unlock its full potential. Relying on guesswork, intuition, or outdated habits could mean you’re overlooking valuable opportunities buried in the data you’ve meticulously collected. </p>  
 
-         {/** <p className='text-body lg:text-headline-4 text-primary mt-5 lg:w-[80%]'>We are nurturing next-gen human capital in Information Technology, backed with leadership, character and building capacity to thrive in a dynamic tech ecosystem </p>  *}
+         <p className='text-body lg:text-headline-4 mt-5 lg:w-[80%]'>Our customized data discovery report will help you assess your current data capabilities and provide tailored insights into the most impactful areas for growth and potential returns on investment. </p>
 
           {/* <p className='text-body lg:text-headline-4 text-primary mt-4 lg:w-[75%]'>We are part of the solution in building a <span className='text-secondary text-headline-3'>SKILLED</span> continent.</p> */}
          

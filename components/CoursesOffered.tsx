@@ -40,7 +40,7 @@ const CoursesOffered = () => {
                 <CustomButton
                   title='Explore Course'
                   btnType='button'
-                  containerStyles='w-full bg-secondary hover:bg-primary rounded-lg py-3 transition-all duration-300'
+                  containerStyles='w-full bg-primary hover:bg-secondary rounded-lg py-3 transition-all duration-300'
                   textStyles='text-white font-medium text-center'
                 />
               </Link>

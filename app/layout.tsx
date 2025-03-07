@@ -3,12 +3,13 @@ import { Montserrat } from 'next/font/google'
 import { Footer, Navbar, Upcoming } from '@/components'
 import Head from 'next/head'
 
+const gtag = `https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_GA_ID}`;
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'bpurpleHQ | Home',
-  description: 'Unlocking business needs with customized technology solutions.',
+  description: 'Unlocking business needs with customized technology solutions',
 }
 
 export default function RootLayout({
@@ -19,15 +20,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-       
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2T268S3X0Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2T268S3X0Z');
-</script>
+       {/* Google Analytics Measurement ID*/}
+       <script async src={gtag} />
+         
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.GOOGLE_GA_ID}', {
+                  page_path: window.location.pathname
+                });
+              `,
+            }}
+          />
       </Head>
       <body className= {montserrat.className}>
         <Navbar />

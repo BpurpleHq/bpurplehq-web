@@ -47,14 +47,13 @@ const InfoSection = ({
 const Page = () => {
   return (
     <main className="w-full">
-      <InfoSection
-        title={<>Expert Web & APP <span className="text-secondary">Development</span> Services</>}
-        content="Elevate your online presence with our expert web development services. We design and build custom, responsive, and secure websites that meet your unique business needs and goals. Let's get started."
-        imageSrc="/frame444.jpeg"
-        imageAlt="workforce image"
-        additionalContent={["Contact us to bring your vision to life."]}
+       <InfoSection
+        title={<> <span className="text-secondary">Data Team </span>as a Service</>}
+        content="Our service is crafted to adapt to your evolving business needs, ensuring expert guidance is provided at optimal times when it will have the greatest impact. This allows your team to concentrate on key business strategies. Fuel your business growth with strategic insights and maintain a flexible, cost-effective approach to leading with data."
+        imageSrc="/dataImg.svg"
+        imageAlt="Dataservices"
+        additionalContent={["We enable businesses to understand their data—structured or unstructured, elevating insights to an entirely new level without worrying about data quality issues."]}
       />
-
       <InfoSection
         title={<>Prepare and <span className="text-secondary">Empower</span> your labor force for the <span className="text-secondary">future</span> of work.</>}
         content="The future of work is shaped by transformative trends such as automation, artificial intelligence, remote collaboration, and a shift toward skill-based employment. As industries embrace digitization and innovation, organizations must ensure their teams are agile, resilient, and equipped to handle emerging technologies and roles."
@@ -64,6 +63,16 @@ const Page = () => {
         imageFirst={true}
         additionalContent={["Let bpurpleHQ help you make that team a dream come true. Contact us clicking the button below"]}
       />
+
+      <InfoSection
+        title={<>Expert Web & APP <span className="text-secondary">Development</span> Services</>}
+        content="Elevate your online presence with our expert web development services. We design and build custom, responsive, and secure websites that meet your unique business needs and goals. Let's get started."
+        imageSrc="/frame444.jpeg"
+        imageAlt="workforce image"
+        additionalContent={["Contact us to bring your vision to life."]}
+      />
+
+      
 
       <InfoSection
         title={<>Drive Your Business with <span className="text-secondary">Tailored Solutions</span> for Your Unique Need.</>}
