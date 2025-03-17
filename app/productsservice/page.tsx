@@ -11,6 +11,7 @@ export const metadata = {
 const page = () => {
   return (
     <div>
+    
       <section className='sm:px-16 px-6 lg:py-10 py-4'>
         <div className='max-w-[1440px] mx-auto flex flex-col lg:flex-row lg:justify-between'>
           <Image src='/comHeroImage.png' alt='community banner' width={700} height={309} />

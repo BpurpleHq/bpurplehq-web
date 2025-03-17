@@ -20,19 +20,21 @@ const InfoSection = ({
   additionalContent?: string[];
   imageFirst?: boolean;
 }) => (
+
+
   <section className={`bg-${reverse ? 'extra' : 'white'}`}>
     <div className={`max-w-[1440px] mx-auto flex flex-col-reverse lg:flex-row justify-between items-center sm:px-16 px-6 lg:py-10 py-4 ${imageFirst ? 'lg:flex-row-reverse' : ''}`}>
       <div className={`lg:w-1/2 ${!imageFirst ? 'm-5 lg:m-5' : 'm-10'}`}>
         <Image 
           src={imageSrc} 
           alt={imageAlt} 
-          width={700} 
+          width={500} 
           height={550} 
           className="rounded-2xl w-full h-auto"
         />
       </div>
       <div className="lg:w-1/2 mt-5 lg:mt-0">
-        <h2 className="text-headline-3 text-center lg:text-start lg:text-headline-2 text-primary lg:w-[522px]">
+        <h2 className="text-headline-3 text-center lg:text-start lg:text-headline-2 text-black lg:w-[522px]">
           {title}
         </h2>
         <p className="lg:w-[560px] mt-3">{content}</p>
@@ -46,9 +48,35 @@ const InfoSection = ({
 
 const Page = () => {
   return (
-    <main className="w-full">
+
+    <main className=" relative w-full">
+        <section className="bg-black pt-10 pb-6" data-aos="fade-up">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center">
+          
+            {/* Text Content */}
+            <div className="lg:w-1/2 m-2 text-center lg:text-left">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-300 leading-tight">
+                Empower Your Future: Comprehensive Tech Training Solutions 
+
+              </h1>
+              <p className="mt-4 text-lg text-gray-300">
+                Discover our cutting-edge courses, certifications, and programs designed to equip you with in-demand skills in data, AI, and beyond—crafted to shape the next generation of tech leaders.</p>
+              {/*<button className="mt-6 bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700">
+                View Courses
+              </button>*/}
+            </div>
+            {/* Image Collage */}
+            <div className="lg:w-1/2 mt-8 lg:mt-0">
+              {/* Placeholder images */}
+              <img src="/aboutImg.png?w=200" alt="" className="rounded-lg" />
+              
+            </div>
+            
+          </div>
+        </section>
+
        <InfoSection
-        title={<> <span className="text-secondary">Data Team </span>as a Service</>}
+        title={<> <span className="text-gray-600">Data Team </span>as a Service</>}
         content="Our service is crafted to adapt to your evolving business needs, ensuring expert guidance is provided at optimal times when it will have the greatest impact. This allows your team to concentrate on key business strategies. Fuel your business growth with strategic insights and maintain a flexible, cost-effective approach to leading with data."
         imageSrc="/dataImg.svg"
         imageAlt="Dataservices"
@@ -61,7 +89,7 @@ const Page = () => {
         imageAlt="workforce image"
         reverse={true}
         imageFirst={true}
-        additionalContent={["Let bpurpleHQ help you make that team a dream come true. Contact us clicking the button below"]}
+        additionalContent={["Let bpurpleHQ help you make that team a dream come true."]}
       />
 
       <InfoSection
@@ -85,7 +113,7 @@ const Page = () => {
         ]}
       />
 
-      <section className="max-w-[1440px] mx-auto sm:px-16 px-6 lg:py-10 py-4 bg-extra">
+      <section className="max-w-[1440px] mx-auto sm:px-16 px-6 lg:py-10 py-4 bg-extra" data-aos="fade-up">
         <h2 className="text-headline-3 text-primary text-center">Transform your labor force</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-3">
           {workforceCard.map(({ id, title, content }) => (

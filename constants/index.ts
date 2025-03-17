@@ -63,7 +63,7 @@ export const menuLinks = [
 
     {
         id: 1,
-        title: 'Trainings',
+        title: 'Academy',
         url: '/courses',
     },
     {

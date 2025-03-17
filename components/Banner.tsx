@@ -14,13 +14,15 @@ import { Pagination, Autoplay } from 'swiper/modules';
 const Banner = () => {
   const sliderContent = [
     { 
-      title: "Future-Proof Your Career.", 
-      subtitle: "Accelerate your journey with expert-led training in Emerging Technologies.", 
+      title: "Unlock Insights, Optimize Systems, Scale Confidently", 
+      subtitle: "Expert Data Analytics, Data Engineering, and Infrastructure Solutions.", 
       
     },
-
-
-
+    // { 
+    //   title: "Future-Proof Your Career.", 
+    //   subtitle: "Accelerate your journey with expert-led training in Emerging Technologies.", 
+      
+    // },
     { 
       title: "Empower Your Workforce", 
       subtitle: "Prepare your team for the future of work.", 

@@ -5,10 +5,10 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className='bg-primary'>
+    <footer className='bg-black'>
       <div className='max-w-[1440px] mx-auto flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10'>
         <Link href='/' className=''>
-          <Image src='/logoWhite.svg' alt='logo' width={150} height={150} />
+          <Image src='/newlogo.png' alt='logo' width={150} height={150} />
         </Link>
         <div className='grid grid-cols-2 md:grid-cols-4 gap-3'>
           {footerLinks.map((link) => (

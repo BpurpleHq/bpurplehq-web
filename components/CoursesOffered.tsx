@@ -7,7 +7,7 @@ import CustomButton from './CustomButton'
 const CoursesOffered = () => {
   return (
     <div className='max-w-[1440px] mx-auto sm:px-16 px-6 py-10'>
-      <h3 className='text-headline-3 lg:text-headline-2 text-secondary font-bold tracking-tight mb-6'>
+      <h3 className='text-headline-3 lg:text-headline-2 text--gray-900 font-bold tracking-tight mb-6'>
         The Learning Paths
       </h3>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-9'>
@@ -40,7 +40,7 @@ const CoursesOffered = () => {
                 <CustomButton
                   title='Explore Course'
                   btnType='button'
-                  containerStyles='w-full bg-primary hover:bg-secondary rounded-lg py-3 transition-all duration-300'
+                  containerStyles='w-full bg-black hover:bg-black rounded-lg py-3 transition-all duration-300'
                   textStyles='text-white font-medium text-center'
                 />
               </Link>

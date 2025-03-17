@@ -38,7 +38,7 @@ export default function Home() {
       
       <section className='bg-white flex flex-col-reverse lg:flex-row gap-5 lg:gap-0 relative z-0 max-w-[1440px] mx-auto sm:px-16 px-3 pt-[10px] mb-[20px] lg:mb-0 pb-7 lg:pb-0 mt-5' data-aos="fade-up">
         <div className='flex flex-col lg:justify-start lg:items-start lg:mt-[50px] w-full lg:max-w-[60%] flex-1'>
-        <h1 className='text-headline-3 lg:text-headline-2 text-primary text-center md:text-start lg:mb-10'>There is so much more DATA</h1>
+        <h1 className=' md:text-5xl font-bold text-gray-900 leading-tight text-headline-3 lg:text-headline-2 text-center md:text-start lg:mb-10'>There is so much more DATA</h1>
           {/*<h1 className='text-headline-2 text-primary text-center md:text-start'>Unlocking Business Potential with Customized  <span className='text-secondary'>Technology Solutions</span></h1>*/}
         
          <p className='text-body lg:text-headline-4 mt-5 lg:w-[80%]'>Today, you have access to an unprecedented volume of data, and it’s time to unlock its full potential. Relying on guesswork, intuition, or outdated habits could mean you’re overlooking valuable opportunities buried in the data you’ve meticulously collected. </p>  
@@ -159,7 +159,7 @@ export default function Home() {
        
         
         <div className="flex justify-center items-center">
-          <h2 className="sm:px-10 text-center text-primary m-5 lg:text-headline-2 text-headline-3">
+          <h2 className="sm:px-10 text-center text-primary m-5 lg:text-headline-2 text-headline-3 font-bold text-gray-900 leading-tight">
             What Client Says About Us
           </h2>
         </div>
@@ -187,10 +187,10 @@ export default function Home() {
       
 
 
-      <section className='bg-white' data-aos="fade-up">
+     {/* <section className='bg-white' data-aos="fade-up">
         <Products />
       </section>
-      
+      */}
       
     </main>
   )

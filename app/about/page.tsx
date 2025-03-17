@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { type Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'bpurple | About',
+  title: 'bpurpleHQ | About US',
 };
 
 interface ValueCardProps {
@@ -57,8 +57,34 @@ const MissionSection = ({ title, content, variant, align = 'start' }: MissionSec
 
 export default function AboutPage() {
   return (
-    <main>
-      <section className="max-w-[1440px] mx-auto sm:px-16 px-6 pt-4 pb-14">
+    <main className=" relative w-full">
+        <section className="bg-gray-50 pt-10 pb-6" data-aos="fade-up">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center">
+          
+            {/* Text Content */}
+            <div className="lg:w-1/2 m-2 text-center lg:text-left">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
+                Creating a Unique Experience That Put YOU First.
+
+              </h1>
+              <p className="mt-4 text-lg text-gray-800">
+                We are focused on providing high-quality tech services, products, training, hiring, and consulting to businesses 
+              and individuals looking to acquire and develop their tech skills.</p>
+              {/*<button className="mt-6 bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700">
+                View Courses
+              </button>*/}
+            </div>
+            {/* Image Collage */}
+            <div className="lg:w-1/2 mt-8 lg:mt-0">
+              {/* Placeholder images */}
+              <img src="" alt="" className="rounded-lg" />
+              
+            </div>
+            
+          </div>
+        </section>
+
+      {/*<section className="max-w-[1440px] mx-auto sm:px-16 px-6 pt-4 pb-14">
         <h3 className="lg:text-headline-4 text-headline-3 text-primary lg:mb-12 mb-10 underline font-bold lg:text-mid">
           About Us
         </h3>
@@ -77,7 +103,7 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       
 
