@@ -107,7 +107,7 @@ export default function AboutPage() {
 
       
 
-     <section className="max-w-[1440px] mx-auto sm:px-16 px-6 lg:py-16 py-8 bg-extra bg-gradient-to-br from-background to-muted">
+     <section className="max-w-[1440px] mx-auto sm:px-16 px-6 lg:py-16 py-8 bg-extra bg-gradient-to-br from-background to-muted" data-aos="fade-up">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="group hover:scale-105 transition-transform duration-300">
             <div className="bg-card rounded-xl p-6 h-full shadow-lg hover:shadow-xl transition-shadow">

@@ -13,5 +13,5 @@ export interface CourseDetailsHeroProps {
     title: string;
     subtitle: string;
     status: string;
-    image: string;
+    // image: string;
 };
