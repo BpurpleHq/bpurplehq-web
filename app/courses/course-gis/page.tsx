@@ -16,7 +16,7 @@ const page = () => {
           subtitle='   Explore the fascinating field of Geographic Information Systems (GIS) through our specialized learning path. Learn how to capture, store, analyze, and visualize spatial data to solve real-world problems. From mapping and spatial analysis to geospatial database management, this path equips you with the skills needed to work with geospatial technologies across diverse industries..
           
           Start off your career today as a GIS specialist. Learn to design high quality digital maps using geographical data and analyze spatial and non-spatial information. '
-          // image='/gis.png'
+          
           status='We are currently taking applications!'
         />        
       </section>

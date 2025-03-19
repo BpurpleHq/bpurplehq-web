@@ -4,7 +4,7 @@ import React from 'react'
 import CustomButton from './CustomButton'
 import Link from 'next/link';
 
-const CourseDetailsHeroQA = ({ title, subtitle, status, image }: CourseDetailsHeroProps) => {
+const CourseDetailsHeroQA = ({ title, subtitle, status}: CourseDetailsHeroProps) => {
     return (
         <div className='max-w-[1440px] mx-auto flex flex-col-reverse lg:flex-row lg:justify-between'>
             <div className='flex lg:justify-center lg:items-center'>

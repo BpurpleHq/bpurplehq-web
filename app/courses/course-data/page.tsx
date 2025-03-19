@@ -14,7 +14,7 @@ const page = () => {
         <CoursesDetailsHeroDA
           title='School of Data'
           subtitle='Unlock the power of data with our comprehensive Data School learning path. Explore data collection, analysis, visualization, and interpretation techniques across various domains. Whether you are a beginner or an experienced data enthusiast, this path caters to individuals seeking to harness data-driven insights for informed decision-making.'
-          // image='/herolady.png'
+         
           status='We are currently taking applications!'
         />        
       </section>
