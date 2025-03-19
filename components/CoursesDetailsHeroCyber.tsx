@@ -32,9 +32,9 @@ const CourseDetailsHeroCyber = ({ title, subtitle, status, image }: CourseDetail
                 <p className='text-primary font-semibold mt-4'>{status}</p>
                 </div>
             </div>
-            <div>
+            {/*<div>
                 <Image src={image} alt={title} width={650} height={400} className='rounded-lg' />
-            </div>
+            </div>*/}
         </div>
     )
 };

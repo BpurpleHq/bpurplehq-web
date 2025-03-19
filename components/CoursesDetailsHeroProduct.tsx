@@ -32,9 +32,9 @@ const CoursesDetailsHeroPrd = ({ title, subtitle, status, image }: CourseDetails
                 <p className='text-primary font-semibold mt-4'>{status}</p>
                 </div>
             </div>
-            <div>
+           {/* <div>
                 <Image src={image} alt={title} width={550} height={400} className='rounded-lg' />
-            </div>
+            </div>*/}
         </div>
     )
 };

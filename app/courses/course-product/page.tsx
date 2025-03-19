@@ -14,7 +14,7 @@ const page = () => {
         <CoursesDetailsHeroPrd
           title='School of Products'
           subtitle='Learn the art and science of product development through our Products School learning path. Explore product management methodologies, user experience design principles, and agile development practices. Whether you aspire to create innovative software products or manage product lifecycles effectively, this path prepares you for success in the competitive product landscape.'
-          image='/productImage.png'
+          // image='/productImage.png'
           status='Applications are Open!'
         />        
       </section>

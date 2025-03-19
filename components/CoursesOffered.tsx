@@ -21,8 +21,9 @@ const CoursesOffered = () => {
                 src={image} 
                 alt={title} 
                 fill
-                className='object-cover transition-transform duration-500 group-hover:scale-105' 
+                className='object-cover transition-transform duration-500 group-hover:scale-90' 
               />
+              <div className='absolute inset-0 bg-black/40'></div>
             </div>
             <div className='p-6 space-y-4'>
               <h4 className='text-xl font-semibold text-primary line-clamp-1 group-hover:text-secondary transition-colors'>

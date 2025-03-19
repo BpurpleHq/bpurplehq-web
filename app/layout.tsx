@@ -38,7 +38,7 @@ export default function RootLayout({
       </Head>
       <body className= {montserrat.className}>
         <Navbar />
-       {/*<Upcoming />*/}
+       <Upcoming />
 
         <main className='pt-[1px]'>{children}</main>
         <Footer />

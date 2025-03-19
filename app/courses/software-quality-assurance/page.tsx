@@ -14,7 +14,7 @@ const page = () => {
         <CoursesDetailsHero
           title='Software Development in Test (SDET)'
           subtitle='Master the art of software testing with our comprehensive learning path. Explore testing methodologies, strategies, and tools used to ensure software quality and reliability. From manual testing techniques to automated testing frameworks, this path covers a wide range of testing approaches to help you become a proficient software tester.'
-          image='/qa.png'
+          // image='/qa.png'
           status='Applications is Open!'
         />        
       </section>

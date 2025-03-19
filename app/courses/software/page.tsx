@@ -14,7 +14,7 @@ const page = () => {
         <CoursesDetailsHeroSW
           title='Software Engineering'
           subtitle='Master the craft of software engineering with our comprehensive learning path. From software design and development methodologies to testing and deployment strategies, this path covers the full software development lifecycle. Whether you are interested in front-end development, back-end engineering, or full-stack development, our curriculum provides the essential skills and knowledge to thrive in the software industry.'
-          image='/bphq.png'
+          // image='/bphq.png'
           status='We are currently taking applications!'
         />        
       </section>
