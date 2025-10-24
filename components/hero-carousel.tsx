@@ -1,20 +1,24 @@
+'use client';
+
 import { useState, useCallback, useEffect } from 'react';
+import { useRouter } from 'next/navigation'
 import useEmblaCarousel from 'embla-carousel-react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import slideimg1 from '@/public/newslider3.jpg'; 
-import slideimg4 from '@/public/newslider5.jpeg'; 
-import slideimg3 from '@/public/newslider4.jpg'; 
 import Link from 'next/link';
+import slideimg1 from '@/public/newslider3.jpg';
+import slideimg4 from '@/public/newslider5.jpeg';
+import slideimg3 from '@/public/newslider4.jpg';
 
-// Define TypeScript interface for slide
 interface Slide {
   title: string;
   subtitle: string;
-  image: string;
+  image: any; // Use 'any' for Next.js image imports
   primaryButton: string;
   secondaryButton: string;
 }
+
+
 
 const SLIDE_INTERVAL = 5000;
 
@@ -92,37 +96,44 @@ export default function HeroCarousel() {
                 className="object-cover"
                 priority={index === 0} // Add priority for first image
               />
-              <div className="absolute inset-0 bg-extra opacity-80" />
+              <div className="absolute inset-0 bg-extra opacity-90" />
             </div>
 
-            {/* Content */}
-            <div className="relative h-full flex items-center">
+             {/* Content */}
+            <div className="relative h-full flex items-center z-10">
               <div className="container mx-auto px-6">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="max-w-2xl text-bpurpleDark"
+                  className="max-w-2xl bg-bpurpleDark backdrop-blur-md rounded-xl p-8 text-white"
+                  aria-live="polite"
                 >
-                  <h1 className="text-5xl md:text-6xl font-bold mb-4">
+                  <h1 className="text-4xl md:text-6xl font-bold mb-4 font-sans">
                     {slide.title}
                   </h1>
-                  <p className="text-xl md:text-2xl mb-8 opacity-90">
+                  <p className="text-lg md:text-xl mb-8 opacity-90 font-sans">
                     {slide.subtitle}
                   </p>
                   <div className="flex gap-4">
-                   <Link href='/solutions' onClick={() => router.push('/productsservice/solutions')}> 
-                    <button className="bg-white text-bpurpleDark border border-bpurpleDark px-6 py-3 rounded-lg hover:bg-black hover:text-white">
-                      {slide.primaryButton}
-                    </button>
-                   </Link> 
-                   <Link href='/faq' onClick={() => router.push('/faq/ask-a-question')}>
-                    <button className="bg-transparent border border-bpurpleDark text-bpurpleDark px-6 py-3 rounded-lg hover:bg-white/10">
-                      {slide.secondaryButton}
-                    </button>
+                    <Link href="/productsservice/solutions">
+                      <motion.button
+                        className="cta-button"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {slide.primaryButton}
+                      </motion.button>
                     </Link>
-
-                    
+                    <Link href="/faq">
+                      <motion.button
+                        className="cta-secondary"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {slide.secondaryButton}
+                      </motion.button>
+                    </Link>
                   </div>
                 </motion.div>
               </div>

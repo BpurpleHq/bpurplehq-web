@@ -12,7 +12,7 @@ import 'aos/dist/aos.css';
 import Link from 'next/link';
 import { AchievementsCard, Card, InfoCard, TestimonialCard } from '@/components/InfoCard';
 import HeroCarousel from "@/components/hero-carousel";
-import Fp from "/components/Fp";
+import Fp from "@/components/Fp";
 import { motion } from "framer-motion";
 
 export default function Home() {
