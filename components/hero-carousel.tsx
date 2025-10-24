@@ -1,33 +1,48 @@
 import { useState, useCallback, useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import slideimg1 from '@/public/newslider3.jpg'; 
+import slideimg4 from '@/public/newslider5.jpeg'; 
+import slideimg3 from '@/public/newslider4.jpg'; 
+import Link from 'next/link';
 
+// Define TypeScript interface for slide
+interface Slide {
+  title: string;
+  subtitle: string;
+  image: string;
+  primaryButton: string;
+  secondaryButton: string;
+}
 
 const SLIDE_INTERVAL = 5000;
 
-const slides = [
+const slides: Slide[] = [
   {
     title: "Driving Digital Transformation",
-    subtitle: "Bridging the Gap Between Vision and Reality with Our Advanced Solutions",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1600",
+    subtitle:
+      "Transform your business by seamlessly integrating innovative technologies, streamlining operations, and aligning strategic vision with actionable solutions to achieve sustainable growth and competitive advantage.",
+    image: slideimg1,
     primaryButton: "Get Started",
-    secondaryButton: "Learn More"
+    secondaryButton: "Contact Us",
   },
   {
     title: "Optimising Workforce and Workflows",
-    subtitle: "Prepare your team for the future of work, with cutting-edge technology",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600",
-    primaryButton: "Join Now",
-    secondaryButton: "Watch Demo"
+    subtitle:
+      "Empower your team with advanced tools and automation, fostering collaboration, boosting productivity, and preparing your organization for the dynamic demands of the modern workplace.",
+    image: slideimg4,
+    primaryButton: "Our Services",
+    secondaryButton: "Contact Us",
   },
   {
-   
     title: "Innovating Tomorrow, Today",
-    subtitle: "Empowering Businesses with Cutting-Edge Technology Solutions", 
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600",
-    primaryButton: "Start Free",
-    secondaryButton: "View Features"
-  }
+    subtitle:
+      "Unlock your business's potential with state-of-the-art technology solutions, designed to drive innovation, enhance efficiency, and position your organization at the forefront of industry advancements.",
+    image: slideimg3,
+    primaryButton: "Our Services",
+    secondaryButton: "Contact Us",
+  },
 ];
 
 export default function HeroCarousel() {
@@ -70,12 +85,14 @@ export default function HeroCarousel() {
           <div key={index} className="flex-[0_0_100%] relative min-w-0">
             {/* Image with gradient overlay */}
             <div className="absolute inset-0">
-              <img
+              <Image
                 src={slide.image}
                 alt={slide.title}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                priority={index === 0} // Add priority for first image
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/40" />
+              <div className="absolute inset-0 bg-extra opacity-80" />
             </div>
 
             {/* Content */}
@@ -85,7 +102,7 @@ export default function HeroCarousel() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="max-w-2xl text-white"
+                  className="max-w-2xl text-bpurpleDark"
                 >
                   <h1 className="text-5xl md:text-6xl font-bold mb-4">
                     {slide.title}
@@ -93,7 +110,20 @@ export default function HeroCarousel() {
                   <p className="text-xl md:text-2xl mb-8 opacity-90">
                     {slide.subtitle}
                   </p>
-                
+                  <div className="flex gap-4">
+                   <Link href='/solutions' onClick={() => router.push('/productsservice/solutions')}> 
+                    <button className="bg-white text-bpurpleDark border border-bpurpleDark px-6 py-3 rounded-lg hover:bg-black hover:text-white">
+                      {slide.primaryButton}
+                    </button>
+                   </Link> 
+                   <Link href='/faq' onClick={() => router.push('/faq/ask-a-question')}>
+                    <button className="bg-transparent border border-bpurpleDark text-bpurpleDark px-6 py-3 rounded-lg hover:bg-white/10">
+                      {slide.secondaryButton}
+                    </button>
+                    </Link>
+
+                    
+                  </div>
                 </motion.div>
               </div>
             </div>
@@ -112,6 +142,7 @@ export default function HeroCarousel() {
                 ? 'bg-white scale-125'
                 : 'bg-white/50 hover:bg-white/70'
             }`}
+            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>

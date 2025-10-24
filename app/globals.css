@@ -22,6 +22,22 @@ html {
   }
 }
 
+
+@layer components {
+  .hero-gradient {
+    @apply bg-gradient-to-br from-bpurplePrimary to-black; /* Diagonal gradient */
+  }
+  .cta-button {
+    @apply bg-gradient-to-r from-white to-white text-bpurpleDark py-3 px-6 rounded-lg hover:scale-105 transition-all duration-300;
+  }
+  .cta-secondary {
+    @apply border-2 border-lavender text-lavender py-3 px-6 rounded-lg hover:bg-lavender hover:text-bpurpleDark transition-all duration-300;
+  }
+  .glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_15px_5px_rgba(168,85,247,0.5)];
+  }
+}
+
 .swiper-container {
   width: 480px;
 }

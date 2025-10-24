@@ -13,7 +13,13 @@ module.exports = {
         'extra': '#F6EDF6',
         'white': '#FFFFFF',
         'dark': '#212121',
+        'bpurpleDark': '#1A1A2E',
+        'bpurplePrimary': '#6B46C1',
+        'bpurpleLight': '#A855F7',
+        'lavender': '#C4B5FD',
+        'electricBlue': '#3B82F6'
       },
+      
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
       },

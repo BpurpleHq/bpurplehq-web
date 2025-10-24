@@ -45,7 +45,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <div className={`bg-black bg-opacity-95 w-full flex justify-between items-center sm:px-16 px-3 py-4 ${color ? 'shadow-lg' : ''}`}>
+            <div className={`bg-black w-full flex justify-between items-center sm:px-16 px-3 py-4 ${color ? 'shadow-lg' : ''}`}>
                 <Link href='/'>
                     <Image src='/newlogo.png' width={120} height={120} alt='Bpurple logo' />
                 </Link>
