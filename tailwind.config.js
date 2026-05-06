@@ -89,5 +89,15 @@ module.exports = {
       }
     },
   },
+  // tailwind.config.ts
+fontFamily: {
+  // ✅ Keep all existing fonts untouched
+  montserrat: ["Montserrat", "sans-serif"],
+  "open-sans": ["Open Sans", "sans-serif"],
+
+  // ✅ Add these two new ones
+  heading: ["Syne", "sans-serif"],
+  body:    ["Inter", "sans-serif"],
+},
   plugins: [],
 }

@@ -53,3 +53,23 @@ html {
     width: 768px;
   }
 }
+
+/* ── New Hero Utilities (additive only) ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 1rem;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #a78bfa, #818cf8, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-brand-muted {
+  color: #A09AB8;
+}
