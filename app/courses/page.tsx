@@ -39,7 +39,7 @@ const page = () => {
         </div>
       </section>  
        <section>
-        {/*<Metrics />*/}
+        <Metrics />
       </section>
       <section>
         <CoursesOffered />
