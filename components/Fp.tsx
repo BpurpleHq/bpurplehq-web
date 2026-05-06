@@ -80,7 +80,7 @@ const PARTNER_LOGOS = [
   { name: "Partner 2", src: "/LDSEP.png", width: 120, height: 40 },
   { name: "Partner 3", src: "/TC.png", width: 40, height: 10},
   { name: "Partner 4", src: "/1.png", width: 180, height: 120 },
-  { name: "Partner 5", src: "/2.png", width: 120, height: 80 },
+  { name: "Partner 5", src: "/2.png", width: 120, height: 80 }, 
 
 ];
 
@@ -175,76 +175,67 @@ const ScrollIndicator = memo(() => {
 
 ScrollIndicator.displayName = "ScrollIndicator";
 
-// Partner Marquee Component
+
+
 const PartnerMarquee = memo(() => {
-  // Duplicate logos for seamless loop
-  const duplicatedLogos = [...PARTNER_LOGOS, ...PARTNER_LOGOS];
+  const items = [...PARTNER_LOGOS, ...PARTNER_LOGOS];
 
   return (
-    <motion.div
-      className="w-full overflow-hidden py-8 mt-12"
-      initial={{ opacity: 0, y: 30 }}
+    <motion.section
+      className="w-full py-8 mt-12"
+      initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 1.0, duration: 0.8, ease: "easeOut" }}
+      transition={{ delay: 0.8, duration: 0.7, ease: "easeOut" }}
     >
       <div className="flex flex-col items-center gap-4 mb-6">
-        <span className="text-sm text-brand-muted tracking-widest uppercase">
+        <span className="text-sm text-brand-muted tracking-[0.3em] uppercase">
           Trusted By Industry Leaders
         </span>
       </div>
-      
-      <div className="relative">
-        {/* Gradient overlays for smooth fade */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#0D0D1A] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#0D0D1A] to-transparent z-10 pointer-events-none" />
-        
-        {/* Marquee container */}
-        <div className="flex">
-          <motion.div
-            className="flex gap-12 md:gap-16 items-center"
-            animate={{
-              x: [0, -50 * PARTNER_LOGOS.length],
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 30,
-                ease: "linear",
-              },
-            }}
-          >
-            {duplicatedLogos.map((partner, index) => (
-              <div
-                key={`${partner.name}-${index}`}
-                className="flex-shrink-0 flex items-center justify-center px-4 
-                           opacity-60 hover:opacity-100 transition-opacity duration-300
-                           filter grayscale hover:grayscale-0"
-                style={{ minWidth: "140px" }}
-              >
-                <div className="relative w-full h-12 flex items-center justify-center">
-                  <Image
-                    src={partner.src}
-                    alt={partner.name}
-                    width={partner.width}
-                    height={partner.height}
-                    className="object-contain max-w-full h-auto"
-                    loading="lazy"
-                    quality={85}
-                  />
-                </div>
+
+      <div className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-transparent via-[#0D0D1A]/70 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-transparent via-[#0D0D1A]/70 to-transparent" />
+
+        <motion.div
+          className="flex w-max items-center gap-10 md:gap-14"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            duration: 28,
+            ease: "linear",
+            repeat: Infinity,
+          }}
+          style={{ willChange: "transform" }}
+        >
+          {items.map((partner, index) => (
+            <div
+              key={`${partner.name}-${index}`}
+              className="flex-shrink-0 flex items-center justify-center px-4 opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+              style={{ minWidth: "140px" }}
+            >
+              <div className="relative flex h-12 w-full items-center justify-center">
+                <Image
+                  src={partner.src}
+                  alt={partner.name}
+                  width={partner.width}
+                  height={partner.height}
+                  className="h-auto max-w-full object-contain"
+                  loading="lazy"
+                  quality={85}
+                />
               </div>
-            ))}
-          </motion.div>
-        </div>
+            </div>
+          ))}
+        </motion.div>
       </div>
-    </motion.div>
+    </motion.section>
   );
 });
 
 PartnerMarquee.displayName = "PartnerMarquee";
 
-// Background Layer Component (Memoized)
+
+
 const BackgroundLayer = memo(({ bgY }: { bgY: any }) => {
   return (
     <motion.div className="absolute inset-0 pointer-events-none" style={{ y: bgY }}>
@@ -448,7 +439,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Partner Marquee */}
-        {/*<PartnerMarquee />*/}
+        <PartnerMarquee />
       </motion.div>
 
       {/* ── Bottom Gradient Fade ── */}

@@ -234,7 +234,8 @@ export const learningPath = [
         title: 'Cybersecurity',
         description: 'Dive into the world of cybersecurity and learn how to protect systems, networks, and data from digital threatsCybersecurity best practices, Security terms and concepts, Network Security, OwASP, PTES and Security testing',
         duration: '12-16 weeks',
-        url: '/courses/cybersecurity',
+        // url: '/courses/cybersecurity',
+         url: '#',
     },
      {
         id: 3,
@@ -242,7 +243,8 @@ export const learningPath = [
         title: 'School of Products',
         description: ' Learn the art of building cutting-edge products, explore methodologies, user experience design principles, and agile development practices',
         duration: '12-14 weeks',
-        url: '/courses/course-product',
+        // url: '/courses/course-product',
+        url: '#',
     },
       {
         id: 4,
@@ -250,7 +252,8 @@ export const learningPath = [
         title: 'Data School',
         description: 'Unlock the power of data, explore data collection, analysis, visualization, and interpretation techniques for decision making. ',
         duration: '12-14 weeks',
-        url: '/courses/course-data', 
+        // url: '/courses/course-data', 
+        url: '#',
     },
     {
         id: 5,
@@ -258,7 +261,8 @@ export const learningPath = [
         title: 'Software Engineering',
         description: ' Master the craft of software engineering from design and methodologies to testing and deployment strategies.',
         duration: '12-14 weeks',
-        url: '/courses/software',
+        // url: '/courses/software',
+        url: '#',
     },
      {
         id: 7,
@@ -266,7 +270,8 @@ export const learningPath = [
         title: 'School of AI',
         description: 'Embark on a journey into the realm of AI, from machine learning to neural networks, delve into the intricacies of AI technology. ',
         duration: 'TBA',
-        url: '/courses/ai',
+        // url: '/courses/ai',
+        url: '#',
     },
      {
         id: 8,
