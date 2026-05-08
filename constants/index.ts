@@ -9,16 +9,17 @@ import cooperateIcon from '../public/cooperateIcon.svg';
 import individualIcon from '../public/individualIcon.svg';
 import GISIMAGE from '../public/cloud3.png';
 import virtualImage from '../public/virtualImage.png';
-import productImage from '../public/products.png';
-import dataImage from '../public/data.png';
-import swImage from '../public/sw.png';
+import productImage from '../public/image5.jpg';
+import dataImage from '../public/image6.jpg';
+import swImage from '../public/AIPM.jpeg';
 import VAImage from '../public/va.png';
 import QAImage from '../public/qa.png';
-import AIImage from '../public/ai.png';
-import cyb from '../public/cyberimage.png';
+import AIImage from '../public/image4.jpg';
+import cyb from '../public/cyber.png';
+import cloud from '../public/image7.jpg';
 import dataimg from '../public/data.png';
 import blockchainImage from '../public/blockchainImage.png';
-import aiImage from '../public/ai.png';
+import aiImage from '../public/image4.jpg';
 import slideimg1 from '../public/slideimg1.jpg';
 import slideimg2 from '../public/slideimg2.jpg';
 import slideimg3 from '../public/slideimg3.jpg';
@@ -237,6 +238,15 @@ export const learningPath = [
         // url: '/courses/cybersecurity',
          url: '#',
     },
+    {
+        id: 7,
+        image: AIImage,
+        title: 'School of AI',
+        description: 'Embark on a journey into the realm of AI, from machine learning to neural networks, delve into the intricacies of AI technology. ',
+        duration: 'TBA',
+        // url: '/courses/ai',
+        url: '#',
+    },
      {
         id: 3,
         image: productImage,
@@ -264,18 +274,10 @@ export const learningPath = [
         // url: '/courses/software',
         url: '#',
     },
-     {
-        id: 7,
-        image: AIImage,
-        title: 'School of AI',
-        description: 'Embark on a journey into the realm of AI, from machine learning to neural networks, delve into the intricacies of AI technology. ',
-        duration: 'TBA',
-        // url: '/courses/ai',
-        url: '#',
-    },
+     
      {
         id: 8,
-        image: GISIMAGE,
+        image: cloud,
         title: 'Cloud Computing',
         description: 'Coming Soon!',
         duration: 'TBA',

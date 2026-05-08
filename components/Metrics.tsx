@@ -7,10 +7,6 @@ import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-
-
-
-// Sample metrics data (replace with actual import from '@/constants')
 const metrics = [
   {
     id: 1,
@@ -32,73 +28,105 @@ const metrics = [
   },
 ];
 
-// Fallback component for empty or missing metrics
-const FallbackMetrics = () => (
-  <div className="bg-red-100 text-red-700 p-4 rounded-lg text-center">
-    No metrics available. Please check the metrics data in '@/constants'.
-  </div>
+const GlowOrb = ({ className = "" }) => (
+  <div
+    className={`absolute w-64 h-64 rounded-full bg-gradient-to-br from-purple-500 via-violet-500 to-fuchsia-500 opacity-20 blur-3xl ${className}`}
+  />
 );
 
 const Metrics = () => {
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
+    AOS.init({ duration: 1000, once: true, easing: "ease-out-cubic" });
   }, []);
 
-  // Animation variants for cards
   const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-    hover: { scale: 1.05, transition: { duration: 0.3 } },
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.6, delay: i * 0.1, ease: "easeOut" },
+    }),
+    hover: {
+      scale: 1.04,
+      y: -8,
+      transition: { duration: 0.4, ease: "easeOut" },
+    },
   };
 
   return (
-    <section
-      className="bg-extra py-12 md:py-16"
-      data-aos="fade-up"
-    >
-      <div className="container mx-auto px-6 md:px-12 lg:px-16">
-        <h2 className="text-4xl md:text-4xl font-bold text-bpurpleDark font-montserrat text-center mb-8">
-          Our Impact in Numbers
-        </h2>
-        {metrics && metrics.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-[1440px] mx-auto text-bpurpleDark">
-            {metrics.map(({ id, figure, title, image }) => (
-              <motion.div
-                key={id}
-                className="flex items-center gap-4 p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
-                variants={cardVariants}
-                initial="hidden"
-                animate="visible"
-                whileHover="hover"
-                role="article"
-                aria-labelledby={`metric-title-${id}`}
-              >
-                <div className="relative w-16 h-16">
-                  <Image
-                    src={image}
-                    alt={`${title} icon`}
-                    fill
-                    className="object-contain"
-                  />
+    <section className="relative bg-[#0a071f] py-20 md:py-28 overflow-hidden">
+      {/* Background Glow Orbs */}
+      <GlowOrb className="-top-32 -left-32" />
+      <GlowOrb className="top-1/3 -right-40 w-96 h-96" />
+      <GlowOrb className="bottom-10 left-1/4 w-80 h-80" />
+
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-300 via-violet-300 to-fuchsia-300 bg-clip-text text-transparent font-montserrat tracking-tight">
+            Our Impact in Numbers
+          </h2>
+          <p className="mt-4 text-gray-400 text-lg max-w-md mx-auto">
+            Real results. Real growth.
+          </p>
+        </motion.div>
+
+        {/* Metrics Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {metrics.map(({ id, figure, title, image }, index) => (
+            <motion.div
+              key={id}
+              custom={index}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              whileHover="hover"
+              viewport={{ once: true }}
+              className="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-purple-500/30 transition-all duration-500 shadow-2xl"
+            >
+              {/* Subtle inner glow on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500" />
+
+              <div className="flex items-start gap-6 relative z-10">
+                {/* Icon with glow */}
+                <div className="relative w-20 h-20 flex-shrink-0">
+                  <div className="absolute inset-0 bg-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
+                  <div className="relative w-full h-full bg-gradient-to-br from-purple-600 to-violet-600 rounded-2xl flex items-center justify-center border border-white/20">
+                    <Image
+                      src={image}
+                      alt={`${title} icon`}
+                      fill
+                      className="object-contain p-4"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <p
-                    id={`metric-title-${id}`}
-                    className="text-3xl md:text-4xl font-bold text-bpurpleDark font-montserrat"
-                  >
+
+                {/* Content */}
+                <div className="pt-1">
+                  <p className="text-3xl md:text-4xl font-bold text-white font-montserrat tracking-tighter">
                     {figure}
                   </p>
-                  <p className="text-lg text-gray-700 font-open-sans font-semibold mt-2">
+                  <p className="text-xl text-gray-300 font-medium mt-3 leading-tight">
                     {title}
                   </p>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        ) : (
-          <FallbackMetrics />
-        )}
+              </div>
+
+              {/* Bottom accent line */}
+              <div className="absolute bottom-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-purple-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+            </motion.div>
+          ))}
+        </div>
       </div>
+
+      {/* Very subtle code pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
     </section>
   );
 };
