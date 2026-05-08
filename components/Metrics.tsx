@@ -39,20 +39,6 @@ const Metrics = () => {
     AOS.init({ duration: 1000, once: true, easing: "ease-out-cubic" });
   }, []);
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 40, scale: 0.95 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.6, delay: i * 0.1, ease: "easeOut" },
-    }),
-    hover: {
-      scale: 1.04,
-      y: -8,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
-  };
 
   return (
     <section className="relative bg-[#0a071f] py-20 md:py-28 overflow-hidden">
@@ -83,7 +69,6 @@ const Metrics = () => {
             <motion.div
               key={id}
               custom={index}
-              variants={cardVariants}
               initial="hidden"
               whileInView="visible"
               whileHover="hover"
