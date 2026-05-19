@@ -138,7 +138,7 @@ export default function AboutUs() {
               
               
                <span className="text-gradient font-heading text-3xl sm:text-4xl lg:text-5xl font-bold
-                         text-white leading-tight">5 years delivering</span>
+                         text-white leading-tight">Delivering Technology and Organizational Value</span>
              
 
               {/* Glowing dots inside card */}

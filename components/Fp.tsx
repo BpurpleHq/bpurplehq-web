@@ -1,14 +1,14 @@
 "use client";
 
 import { useEffect, useState, useRef, memo } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { motion, AnimatePresence, Variants, useScroll, useTransform } from "framer-motion";
 import {
   Cloud, Database, Shield, Code2, ChevronDown, ArrowRight
 } from "lucide-react";
 import GlowOrb from "./ui/GlowOrb";
 import SectionBadge from "./ui/SectionBadge";
 import Link from "next/link";
-import Image from "next/image";
+import HeroMarquee from "@/components/HeroMarq"; // Add this import
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -29,9 +29,9 @@ const HERO_SLIDES = [
     sub: "4,000+ professionals trained with industry-certified programs tailored to your workforce.",
   },
   {
-    heading: "Innovating Tomorrow,",
-    highlight: "Today",
-    sub: "Empower your team with advanced tools and automation, fostering collaboration, boosting productivity, and preparing your organization for the dynamic demands of the modern workplace.",
+    heading: "Backup That Gets You ",
+    highlight: "Back in Minutes.",
+    sub: "Backup and instant recovery for on‑prem, cloud and hybrid workloads — built for your businesses.",
   },
 ];
 
@@ -54,15 +54,6 @@ const FLOATING_ICONS = [
     size: 36,
     color: "text-amber-400",
   },
-  // {
-  //   Icon: Shield,
-  //   label: "Security",
-  //   position: "bottom-[20%] right-[9%]",
-  //   delay: 1.8,
-  //   duration: 5.5,
-  //   size: 34,
-  //   color: "text-purple-300",
-  // },
   {
     Icon: Code2,
     label: "AI",
@@ -74,46 +65,47 @@ const FLOATING_ICONS = [
   },
 ];
 
-// Partner logos - Replace these paths with your actual logo paths
-const PARTNER_LOGOS = [
-  { name: "Partner 1", src: "/unic.png", width: 60, height: 30 },
-  { name: "Partner 2", src: "/LDSEP.png", width: 120, height: 40 },
-  { name: "Partner 3", src: "/TC.png", width: 40, height: 10},
-  { name: "Partner 4", src: "/1.png", width: 180, height: 120 },
-  { name: "Partner 5", src: "/2.png", width: 120, height: 80 }, 
-
-];
-
 // ─── Animation Variants ───────────────────────────────────────────────────────
 
+
+
+// ─── Animation Variants ───────────────────────────────────────────────────────
 const textEnter = {
   hidden: { opacity: 0, y: 32, filter: "blur(8px)" },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { delay: i * 0.12, duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+    transition: { 
+      delay: i * 0.12, 
+      duration: 0.7, 
+      ease: "easeOut" as const,
+    },
   }),
   exit: {
     opacity: 0,
     y: -24,
     filter: "blur(6px)",
-    transition: { duration: 0.4, ease: "easeIn" },
-  },
-};
-
-const floatVariant = (delay: number, duration: number) => ({
-  animate: {
-    y: [0, -10, 0],
-    rotate: [0, 2, -2, 0],
-    transition: {
-      delay,
-      duration,
-      repeat: Infinity,
-      ease: "easeInOut" as const, // Add 'as const'
+    transition: { 
+      duration: 0.4, 
+      ease: "easeIn" as const,
     },
   },
+}
+
+// ─── Float Animation (not variants) ──────────────────────────────────────────
+const floatAnimation = (delay: number, duration: number) => ({
+  y: [0, -10, 0],
+  rotate: [0, 2, -2, 0],
+  transition: {
+    delay,
+    duration,
+    repeat: Infinity,
+    ease: "easeInOut",
+  },
 });
+
+
 
 // ─── Sub-components (Memoized for Performance) ────────────────────────────────
 
@@ -127,14 +119,7 @@ const FloatingIcon = memo(({
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: delay + 0.8, duration: 0.6, ease: "backOut" }}
     >
-      <motion.div
-        variants={floatVariant(delay, duration)}
-        animate="animate"
-        className="glass-card p-3 rounded-xl"
-        style={{ boxShadow: "0 0 20px rgba(106,13,173,0.25)" }}
-      >
-        <Icon size={size} className={color} strokeWidth={1.5} />
-      </motion.div>
+      
       <span className="text-xs text-brand-muted font-medium tracking-wide">
         {label}
       </span>
@@ -144,97 +129,7 @@ const FloatingIcon = memo(({
 
 FloatingIcon.displayName = "FloatingIcon";
 
-const ScrollIndicator = memo(() => {
-  const handleClick = () => {
-    document.getElementById("solutions")?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  return (
-    <motion.button
-      className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 2.2, duration: 0.8 }}
-      onClick={handleClick}
-      aria-label="Scroll to explore solutions"
-    >
-      <span className="text-xs text-brand-muted tracking-widest uppercase">
-        Scroll to Explore
-      </span>
-      <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-        className="w-8 h-8 rounded-full border border-purple-500/40 flex items-center 
-                   justify-center bg-purple-900/20 backdrop-blur-sm"
-      >
-        <ChevronDown size={16} className="text-purple-400" />
-      </motion.div>
-    </motion.button>
-  );
-});
-
-ScrollIndicator.displayName = "ScrollIndicator";
-
-
-
-const PartnerMarquee = memo(() => {
-  const items = [...PARTNER_LOGOS, ...PARTNER_LOGOS];
-
-  return (
-    <motion.section
-      className="w-full py-8 mt-12"
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.8, duration: 0.7, ease: "easeOut" }}
-    >
-      <div className="flex flex-col items-center gap-4 mb-6">
-        <span className="text-sm text-brand-muted tracking-[0.3em] uppercase">
-          Trusted By Industry Leaders
-        </span>
-      </div>
-
-      <div className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-transparent via-[#0D0D1A]/70 to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-transparent via-[#0D0D1A]/70 to-transparent" />
-
-        <motion.div
-          className="flex w-max items-center gap-10 md:gap-14"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            duration: 28,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-          style={{ willChange: "transform" }}
-        >
-          {items.map((partner, index) => (
-            <div
-              key={`${partner.name}-${index}`}
-              className="flex-shrink-0 flex items-center justify-center px-4 opacity-60 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
-              style={{ minWidth: "140px" }}
-            >
-              <div className="relative flex h-12 w-full items-center justify-center">
-                <Image
-                  src={partner.src}
-                  alt={partner.name}
-                  width={partner.width}
-                  height={partner.height}
-                  className="h-auto max-w-full object-contain"
-                  loading="lazy"
-                  quality={85}
-                />
-              </div>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-    </motion.section>
-  );
-});
-
-PartnerMarquee.displayName = "PartnerMarquee";
-
-
+// 
 
 const BackgroundLayer = memo(({ bgY }: { bgY: any }) => {
   return (
@@ -362,7 +257,7 @@ export default function Hero() {
             >
               <motion.h1
                 custom={0}
-              
+                variants={textEnter}
                 className="font-heading font-bold tracking-tight leading-[1.1]
                            text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white
                            px-4"
@@ -371,7 +266,7 @@ export default function Hero() {
               </motion.h1>
               <motion.span
                 custom={1}
-                
+                variants={textEnter}
                 className="font-heading font-bold tracking-tight leading-[1.1]
                            text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gradient
                            mt-1 block px-4"
@@ -400,9 +295,10 @@ export default function Hero() {
           </AnimatePresence>
         </div>
 
+
         {/* CTA Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row items-center gap-4 mb-4"
+          className="flex flex-col sm:flex-row items-center gap-4 mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.7, ease: "easeOut" }}
@@ -438,9 +334,16 @@ export default function Hero() {
           </Link>
         </motion.div>
 
-        {/* Partner Marquee */}
-        <PartnerMarquee />
+        {/* Hero Marquee - Added here, removed PartnerMarquee */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+        >
+          <HeroMarquee />
+        </motion.div>
       </motion.div>
+
 
       {/* ── Bottom Gradient Fade ── */}
       <div

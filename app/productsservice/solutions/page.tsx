@@ -157,23 +157,21 @@ const Page = () => {
                 
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight"
               >
-                Empower Your Future:{" "}
+                Recover fast. Sleep easy.{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-amber-400">
-                  Comprehensive Tech Training Solutions
+                  Reduce risk and meet compliance.
                 </span>
               </motion.h1>
               <motion.p
                 
                 className="mt-6 text-lg sm:text-xl text-gray-300 leading-relaxed"
               >
-                Discover our cutting-edge courses, certifications, and programs
-                designed to equip you with in-demand skills in data, AI, and
-                beyond—crafted to shape the next generation of tech leaders.
+                AI‑driven detection, automated threat analysis and trusted recovery orchestration — protect data and accelerate your Data & AI journey.
               </motion.p>
               <motion.div className="mt-8">
-                <Link href="/courses">
+                <Link href="/contact">
                   <button className="group inline-flex items-center gap-2 bg-gradient-to-r from-purple-700 to-violet-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-purple-700/50 hover:scale-105 transition-all duration-300">
-                    View Courses
+                    Contact Us
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </Link>
@@ -225,6 +223,8 @@ const Page = () => {
         ]}
       />
 
+
+
       {/* Workforce Empowerment */}
       <InfoSection
         title={
@@ -248,6 +248,73 @@ const Page = () => {
           "Remote collaboration tools",
         ]}
       />
+
+      <section className="relative bg-gradient-to-br from-[#0F0C29] via-[#1a0533] to-[#0D0D1A] pt-32 pb-20 lg:pt-40 lg:pb-28">
+        {/* Background Gradient Orbs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-violet-600/20 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            {/* Text Content */}
+            <motion.div
+              className="w-full lg:w-1/2 text-center lg:text-left"
+              initial="hidden"
+              animate="visible"
+              variants={staggerContainer}
+            >
+              <motion.h1
+                
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight"
+              >
+                Empower Your Future:{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-amber-400">
+                  Comprehensive Tech Training Solutions
+                </span>
+              </motion.h1>
+              <motion.p
+                
+                className="mt-6 text-lg sm:text-xl text-gray-300 leading-relaxed"
+              >
+                Discover our cutting-edge courses, certifications, and programs
+                designed to equip you with in-demand skills in data, AI, and
+                beyond—crafted to shape the next generation of tech leaders.
+              </motion.p>
+              <motion.div className="mt-8">
+                <Link href="/courses">
+                  <button className="group inline-flex items-center gap-2 bg-gradient-to-r from-purple-700 to-violet-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-purple-700/50 hover:scale-105 transition-all duration-300">
+                    View Courses
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                </Link>
+              </motion.div>
+            </motion.div>
+
+            {/* Hero Image */}
+            <motion.div
+              className="w-full lg:w-1/2"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <div className="relative">
+                <Image
+                  src="/aboutImg.png"
+                  alt="Tech training solutions"
+                  width={600}
+                  height={600}
+                  className="w-full h-auto rounded-2xl shadow-2xl"
+                  priority
+                  quality={90}
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/20 to-transparent rounded-2xl pointer-events-none" />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* Web & App Development */}
       <InfoSection
@@ -293,6 +360,8 @@ const Page = () => {
           "Competitive edge through innovation",
         ]}
       />
+
+  
 
       {/* Transform Your Labor Force */}
       <section className="bg-gradient-to-br from-purple-50 to-lavender-50 py-16 lg:py-24">
