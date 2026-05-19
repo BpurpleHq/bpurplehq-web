@@ -24,6 +24,7 @@ const MARQUEE_ROW_2: MarqueePartner[] = [
   { name: "Transformation College of Business and Technology", logoText: "Transformation College of Business and Technology", color: "text-violet-400" },
   { name: "Flowmono", logoText: "Flowmono", color: "text-orange-400" },
   { name: "LD-SEP", logoText: "Leadership Development-Skill Empowerment", color: "text-teal-400" },
+  { name: "ProDevs", logoText: "ProDevs", color: "text-teal-400" },
 
 ];
 
