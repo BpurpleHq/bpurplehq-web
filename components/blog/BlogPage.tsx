@@ -15,8 +15,6 @@ import { BLOG_POSTS, BlogPost } from "@/lib/blog-data";
 
 // ─── Types ─────────────────────────────────────────────────────────────────────
 
-
-
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
 const CATEGORIES = [
@@ -28,9 +26,7 @@ const CATEGORIES = [
   { label: "Digital Transform", icon: Rss,        color: "text-emerald-600", bg: "bg-emerald-100", border: "border-emerald-200" },
 ];
 
-
 // ─── Animation Variants ────────────────────────────────────────────────────────
-
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -40,11 +36,10 @@ const fadeUp = {
     transition: {
       delay: i * 0.1,
       duration: 0.5,
-      ease: [0.25, 0.1, 0.25, 1] as const, // Add 'as const' or use a string like "easeOut"
+      ease: [0.25, 0.1, 0.25, 1] as const,
     },
   }),
 };
-
 
 // ─── Blog Card ─────────────────────────────────────────────────────────────────
 
@@ -93,14 +88,6 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
 
       {/* Content */}
       <div className="flex flex-col flex-1 p-6">
-        {/* Meta */}
-        {/*<div className="flex items-center gap-3 mb-3 flex-wrap">
-          <span className="flex items-center gap-1 text-[10px] text-purple-500/55">
-            <Calendar size={10} /> {post.date}
-          </span>
-         
-        </div>*/}
-
         {/* Title */}
         <h3 className="font-heading font-bold text-[#1A0533] text-base leading-snug
                        mb-2 line-clamp-2 group-hover:text-purple-800
@@ -113,32 +100,11 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
           {post.excerpt}
         </p>
 
-        {/* Tags */}
-       {/* <div className="flex flex-wrap gap-1.5 mb-5">
-          {post.tags.slice(0, 2).map((tag) => (
-            <span
-              key={tag}
-              className="text-[9px] font-semibold px-2 py-0.5 rounded-full
-                         bg-purple-100 text-purple-600 border border-purple-200/50"
-            >
-              #{tag}
-            </span>
-          ))}
-        </div>*/}
-
         {/* Footer */}
         <div className="flex items-center justify-between pt-4
-                        border-t border-purple-100">
+                        border-t border-purple-100 mt-auto">
 
           <div className="flex items-center gap-2">
-            <button
-              onClick={() => setLiked((l) => !l)}
-              className="flex items-center gap-1 text-[10px] text-purple-400/60
-                         hover:text-rose-500 transition-colors"
-            >
-              
-            </button>
-
             <Link href={`/blog/${post.id}`}>
               <motion.button
                 className="flex items-center gap-1.5 px-4 py-2 rounded-full
@@ -290,18 +256,14 @@ export default function BlogPage() {
   const [searchOpen, setSearchOpen]         = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
 
-  // const featured = BLOG_POSTS.filter((p) => p.featured);
-
   const filtered = BLOG_POSTS.filter((post) => {
     const matchesCategory =
       activeCategory === "All" || post.category === activeCategory;
     const matchesSearch =
       searchQuery === "" ||
-      post.title.toLowerCase().includes(searchQuery.toLowerCase()) 
+      post.title.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
-
-  const grid = filtered.filter((p) => activeCategory !== "All" || searchQuery !== "");
 
   return (
     <main className="relative overflow-hidden">
@@ -348,7 +310,6 @@ export default function BlogPage() {
           ref={heroRef}
           className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         >
-
           <motion.h1
             className="font-heading font-bold text-5xl sm:text-6xl lg:text-7xl
                        text-[#1A0533] leading-[1.08] mt-6 mb-5"
@@ -378,8 +339,6 @@ export default function BlogPage() {
             Cloud, AI, cybersecurity, and digital transformation — written by
             practitioners for Nigerian and African business leaders.
           </motion.p>
-
-   
         </div>
 
         {/* Wave into body */}
@@ -414,8 +373,7 @@ export default function BlogPage() {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      
-
+          
           {/* ── Articles Grid ── */}
           <div className="mb-6 flex items-center gap-3">
             <span className="font-heading font-bold text-[#1A0533] text-xl">
@@ -467,11 +425,9 @@ export default function BlogPage() {
                 transition={{ duration: 0.35 }}
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
               >
-                {(activeCategory === "All" && !searchQuery ? grid : filtered).map(
-                  (post, i) => (
-                    <BlogCard key={post.id} post={post} index={i} />
-                  )
-                )}
+                {filtered.map((post, i) => (
+                  <BlogCard key={post.id} post={post} index={i} />
+                ))}
               </motion.div>
             )}
           </AnimatePresence>
