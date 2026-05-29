@@ -43,7 +43,9 @@ export const BLOG_POSTS: BlogPost[] = [
       </br>
       <h2><strong>  What Is Data and Cloud Sovereignty?  </strong></h2></br>
       
-   <p> Data Sovereignty refers to the principle that data is subject to the laws and governance of the country where it is collected or stored. It ensures that sensitive information whether citizen records, financial transactions, or intellectual property  remains under local jurisdiction. Cloud Sovereignty takes this further by demanding that the underlying cloud infrastructure (servers, storage, and operations) is controlled by entities operating within local legal frameworks, minimizing foreign government access risks and ensuring full compliance with local data protection laws.In Africa, this means keeping critical data on the continent rather than routing it through data centers in Europe or the United States.</p>
+   <p> Data Sovereignty refers to the principle that data is subject to the laws and governance of the country where it is collected or stored. It ensures that sensitive information whether citizen records, financial transactions, or intellectual property  remains under local jurisdiction.</p>
+   </br>
+   <p>Cloud Sovereignty takes this further by demanding that the underlying cloud infrastructure (servers, storage, and operations) is controlled by entities operating within local legal frameworks, minimizing foreign government access risks and ensuring full compliance with local data protection laws.In Africa, this means keeping critical data on the continent rather than routing it through data centers in Europe or the United States.</p>
       </br>
 
  <h2><strong>  Why Sovereignty Matters for African Enterprises </strong></h2></br>

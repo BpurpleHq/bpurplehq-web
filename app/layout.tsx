@@ -2,6 +2,7 @@ import './globals.css'
 import { Montserrat, Open_Sans, Syne, Inter } from "next/font/google";
 import { Footer, Navbar, Upcoming } from '@/components'
 import Head from 'next/head'
+import { Analytics } from "@vercel/analytics/next"
 
 const gtag = `https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_GA_ID}`;
 
@@ -48,6 +49,7 @@ export default function RootLayout({
           />
       </Head>
       <body className= {montserrat.className}>
+        <Analytics /> 
         <Navbar />
        {/*<Upcoming />*/}
 
