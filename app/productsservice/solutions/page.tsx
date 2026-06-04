@@ -1,11 +1,10 @@
 "use client";
 
-import { workforceCard } from "@/constants";
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Shield, Cloud, Database, Users, Code2 } from "lucide-react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -24,111 +23,102 @@ const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
-    },
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
   },
 };
 
-const InfoSection = ({
+// More Flexible Service Section Component
+const ServiceSection = ({
   title,
+  subtitle,
   content,
   imageSrc,
   imageAlt,
-  bgColor = "bg-white",
-  additionalContent = [],
   imageFirst = false,
   features = [],
+  ctaText = "Get Started",
+  ctaLink = "/contact",
+  bgColor = "bg-white",
 }: {
   title: React.ReactNode;
+  subtitle?: string;
   content: string;
   imageSrc: string;
   imageAlt: string;
-  bgColor?: string;
-  additionalContent?: string[];
   imageFirst?: boolean;
   features?: string[];
+  ctaText?: string;
+  ctaLink?: string;
+  bgColor?: string;
 }) => (
   <section className={`${bgColor} py-16 lg:py-24`}>
-    <div
-      className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col ${
-        imageFirst ? "lg:flex-row-reverse" : "lg:flex-row"
-      } items-center gap-8 lg:gap-16`}
-    >
-      {/* Image */}
-      <motion.div
-        className="w-full lg:w-1/2"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className={`flex flex-col ${imageFirst ? "lg:flex-row-reverse" : "lg:flex-row"} items-center gap-12 lg:gap-16`}>
         
-      >
-        <div className="relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-purple-500/20 transition-shadow duration-500">
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            width={600}
-            height={600}
-            className="w-full h-auto object-cover"
-            quality={90}
-          />
-          <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/10 to-transparent pointer-events-none" />
-        </div>
-      </motion.div>
-
-      {/* Content */}
-      <motion.div
-        className="w-full lg:w-1/2"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={staggerContainer}
-      >
-        <motion.h2
+        {/* Image */}
+        <motion.div
+          className="w-full lg:w-1/2"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
           variants={fadeInUp}
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight"
         >
-          {title}
-        </motion.h2>
-
-        <motion.p
-          
-          className="mt-6 text-base sm:text-lg text-gray-700 leading-relaxed"
-        >
-          {content}
-        </motion.p>
-
-        {additionalContent.map((text, index) => (
-          <motion.p
-            key={index}
-            
-            className="mt-4 text-base sm:text-lg text-gray-700 leading-relaxed"
-          >
-            {text}
-          </motion.p>
-        ))}
-
-        {features.length > 0 && (
-          <motion.div variants={fadeInUp} className="mt-6 space-y-3">
-            {features.map((feature, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700">{feature}</span>
-              </div>
-            ))}
-          </motion.div>
-        )}
-
-        <motion.div variants={fadeInUp} className="mt-8">
-          <Link href="/contact">
-            <button className="group inline-flex items-center gap-2 bg-gradient-to-r from-purple-700 to-violet-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-purple-700/50 hover:scale-105 transition-all duration-300">
-              Get Started
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </Link>
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl hover:shadow-purple-500/30 transition-all duration-500">
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              width={700}
+              height={500}
+              className="w-full h-auto object-cover"
+              quality={90}
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-purple-900/20 to-transparent" />
+          </div>
         </motion.div>
-      </motion.div>
+
+        {/* Content */}
+        <motion.div
+          className="w-full lg:w-1/2"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          <motion.h2 variants={fadeInUp} className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            {title}
+          </motion.h2>
+
+          {subtitle && (
+            <motion.p variants={fadeInUp} className="mt-3 text-xl text-purple-700 font-medium">
+              {subtitle}
+            </motion.p>
+          )}
+
+          <motion.p variants={fadeInUp} className="mt-6 text-lg text-gray-700 leading-relaxed">
+            {content}
+          </motion.p>
+
+          {features.length > 0 && (
+            <motion.div variants={fadeInUp} className="mt-8 space-y-4">
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-purple-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">{feature}</span>
+                </div>
+              ))}
+            </motion.div>
+          )}
+
+          <motion.div variants={fadeInUp} className="mt-10">
+            <Link href={ctaLink}>
+              <button className="group inline-flex items-center gap-3 bg-gradient-to-r from-purple-700 to-violet-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-purple-700/50 hover:scale-105 transition-all duration-300">
+                {ctaText}
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </Link>
+          </motion.div>
+        </motion.div>
+      </div>
     </div>
   </section>
 );
@@ -136,310 +126,173 @@ const InfoSection = ({
 const Page = () => {
   return (
     <main className="relative w-full overflow-hidden">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#0F0C29] via-[#1a0533] to-[#0D0D1A] pt-32 pb-20 lg:pt-40 lg:pb-28">
-        {/* Background Gradient Orbs */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-violet-600/20 rounded-full blur-3xl" />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            {/* Text Content */}
-            <motion.div
-              className="w-full lg:w-1/2 text-center lg:text-left"
-              initial="hidden"
-              animate="visible"
-              variants={staggerContainer}
-            >
-              <motion.h1
-                
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight"
-              >
-                Recover fast. Sleep easy.{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-amber-400">
-                  Reduce risk and meet compliance.
-                </span>
-              </motion.h1>
-              <motion.p
-                
-                className="mt-6 text-lg sm:text-xl text-gray-300 leading-relaxed"
-              >
-                AI‑driven detection, automated threat analysis and trusted recovery orchestration — protect data and accelerate your Data & AI journey.
-              </motion.p>
-              <motion.div className="mt-8">
-                <Link href="/contact">
-                  <button className="group inline-flex items-center gap-2 bg-gradient-to-r from-purple-700 to-violet-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-purple-700/50 hover:scale-105 transition-all duration-300">
-                    Contact Us
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </Link>
-              </motion.div>
-            </motion.div>
-
-            {/* Hero Image */}
-            <motion.div
-              className="w-full lg:w-1/2"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <div className="relative">
-                <Image
-                  src="/aboutImg.png"
-                  alt="Tech training solutions"
-                  width={600}
-                  height={600}
-                  className="w-full h-auto rounded-2xl shadow-2xl"
-                  priority
-                  quality={90}
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/20 to-transparent rounded-2xl pointer-events-none" />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Data Team as a Service */}
-      <InfoSection
-        title={
-          <>
-            <span className="text-gray-700">Data Team</span> as a Service
-          </>
-        }
-        content="Our service is crafted to adapt to your evolving business needs, ensuring expert guidance is provided at optimal times when it will have the greatest impact. This allows your team to concentrate on key business strategies. Fuel your business growth with strategic insights and maintain a flexible, cost-effective approach to leading with data."
-        imageSrc="/dataImg.svg"
-        imageAlt="Data services"
-        bgColor="bg-gradient-to-br from-purple-50 to-lavender-50"
-        additionalContent={[
-          "We enable businesses to understand their data—structured or unstructured, elevating insights to an entirely new level without worrying about data quality issues.",
-        ]}
-        features={[
-          "Expert data analysis and insights",
-          "Flexible, scalable solutions",
-          "Cost-effective approach to data management",
-        ]}
-      />
-
-
-
-      {/* Workforce Empowerment */}
-      <InfoSection
-        title={
-          <>
-            Prepare and{" "}
-            <span className="text-purple-700">Empower</span> your labor force
-            for the <span className="text-purple-700">future</span> of work.
-          </>
-        }
-        content="The future of work is shaped by transformative trends such as automation, artificial intelligence, remote collaboration, and a shift toward skill-based employment. As industries embrace digitization and innovation, organizations must ensure their teams are agile, resilient, and equipped to handle emerging technologies and roles."
-        imageSrc="/frame1.png"
-        imageAlt="Workforce empowerment"
-        bgColor="bg-white"
-        imageFirst={true}
-        additionalContent={[
-          "Let bpurpleHQ help you make that team a dream come true.",
-        ]}
-        features={[
-          "Future-ready training programs",
-          "AI and automation expertise",
-          "Remote collaboration tools",
-        ]}
-      />
-
-      <section className="relative bg-gradient-to-br from-[#0F0C29] via-[#1a0533] to-[#0D0D1A] pt-32 pb-20 lg:pt-40 lg:pb-28">
-        {/* Background Gradient Orbs */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-violet-600/20 rounded-full blur-3xl" />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            {/* Text Content */}
-            <motion.div
-              className="w-full lg:w-1/2 text-center lg:text-left"
-              initial="hidden"
-              animate="visible"
-              variants={staggerContainer}
-            >
-              <motion.h1
-                
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight"
-              >
-                Empower Your Future:{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-amber-400">
-                  Comprehensive Tech Training Solutions
-                </span>
-              </motion.h1>
-              <motion.p
-                
-                className="mt-6 text-lg sm:text-xl text-gray-300 leading-relaxed"
-              >
-                Discover our cutting-edge courses, certifications, and programs
-                designed to equip you with in-demand skills in data, AI, and
-                beyond—crafted to shape the next generation of tech leaders.
-              </motion.p>
-              <motion.div className="mt-8">
-                <Link href="/courses">
-                  <button className="group inline-flex items-center gap-2 bg-gradient-to-r from-purple-700 to-violet-600 text-white font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-purple-700/50 hover:scale-105 transition-all duration-300">
-                    View Courses
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </Link>
-              </motion.div>
-            </motion.div>
-
-            {/* Hero Image */}
-            <motion.div
-              className="w-full lg:w-1/2"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <div className="relative">
-                <Image
-                  src="/aboutImg.png"
-                  alt="Tech training solutions"
-                  width={600}
-                  height={600}
-                  className="w-full h-auto rounded-2xl shadow-2xl"
-                  priority
-                  quality={90}
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/20 to-transparent rounded-2xl pointer-events-none" />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Web & App Development */}
-      <InfoSection
-        title={
-          <>
-            Expert Web & APP{" "}
-            <span className="text-purple-700">Development</span> Services
-          </>
-        }
-        content="Elevate your online presence with our expert web development services. We design and build custom, responsive, and secure websites that meet your unique business needs and goals. Let's get started."
-        imageSrc="/frame444.jpeg"
-        imageAlt="Web development services"
-        bgColor="bg-gradient-to-br from-purple-50 to-lavender-50"
-        additionalContent={["Contact us to bring your vision to life."]}
-        features={[
-          "Custom web and mobile applications",
-          "Responsive, modern designs",
-          "Secure and scalable solutions",
-        ]}
-      />
-
-      {/* Tailored Solutions */}
-      <InfoSection
-        title={
-          <>
-            Drive Your Business with{" "}
-            <span className="text-purple-700">Tailored Solutions</span> for Your
-            Unique Need.
-          </>
-        }
-        content="Every business operates differently, with unique processes, priorities, and pain points. Generic tools often fall short in addressing specific needs, resulting in inefficiencies and missed opportunities. Our tailored solutions are designed to fit your operations perfectly, ensuring maximum effectiveness and a competitive edge."
-        imageSrc="/frame2.png"
-        imageAlt="Tailored business solutions"
-        bgColor="bg-white"
-        imageFirst={true}
-        additionalContent={[
-          "Your business deserves solutions that are as unique as your processes. Let us help you unlock new efficiencies, improve performance, and achieve your goals with tailored strategies designed for your success. Contact us to schedule a consultation to learn how we can help drive your business with amazing, customized solutions.",
-          "Together, we'll take your business to the next level!",
-        ]}
-        features={[
-          "Customized to your business processes",
-          "Maximize efficiency and performance",
-          "Competitive edge through innovation",
-        ]}
-      />
-
-  
-
-      {/* Transform Your Labor Force */}
-      <section className="bg-gradient-to-br from-purple-50 to-lavender-50 py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
+      {/* Page Intro */}
+      <section className="pt-20 pb-16 bg-gradient-to-br from-[#0F0C29] via-[#1a0533] to-[#0D0D1A]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-12"
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight"
           >
-            Transform Your Labor Force
-          </motion.h2>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={staggerContainer}
-          >
-            {workforceCard.map(({ id, title, content }) => (
-              <motion.div
-                key={id}
-                
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 hover:-translate-y-2"
-              >
-                <h4 className="font-bold text-xl text-center text-gray-900 mb-4">
-                  {title}
-                </h4>
-                <p className="text-center text-gray-700 leading-relaxed">
-                  {content}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="relative bg-gradient-to-br from-[#0F0C29] via-[#1a0533] to-[#0D0D1A] py-20 lg:py-28">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl" />
-        </div>
-
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight"
-          >
-            Ready to Transform Your Business?
-          </motion.h2>
+            Technology Solutions That <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-amber-400">Drive Real Results</span>
+          </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-lg sm:text-xl text-gray-300"
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mt-6 text-xl text-gray-300"
           >
-            Let's discuss how our solutions can help you achieve your goals.
+            Sovereign Cloud • Data Resilience • Training • Consulting • Solutions
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-10"
-          >
-            <Link href="/faq/ask-a-question">
-              <button className="group inline-flex items-center gap-2 bg-gradient-to-r from-purple-700 to-violet-600 text-white font-semibold px-10 py-5 rounded-full shadow-lg hover:shadow-purple-700/50 hover:scale-105 transition-all duration-300">
-                Get in Touch
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        </div>
+      </section>
+
+      {/* Services Overview Grid */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: Cloud, title: "Sovereign Cloud Services", desc: "Migration, optimization, and managed cloud solutions." },
+              { icon: Shield, title: "Data Resilience & Backup", desc: "Enterprise backup, recovery, and disaster protection with Veeam." },
+              { icon: Database, title: "Data Storage & Management", desc: "Secure, scalable, and high-performance data solutions." },
+              { icon: Users, title: "Training & Workforce Development", desc: "Future-ready tech training and certification programs." },
+              { icon: Code2, title: "Custom Development", desc: "Bespoke web, mobile, and enterprise applications." },
+            ].map((service, index) => (
+              <motion.div
+                key={index}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className="p-8 border border-gray-100 rounded-3xl hover:border-purple-200 hover:shadow-xl transition-all group"
+              >
+                <service.icon className="w-12 h-12 text-purple-600 mb-6" />
+                <h3 className="text-2xl font-semibold text-gray-900 mb-3">{service.title}</h3>
+                <p className="text-gray-600">{service.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Veeam Partnership Spotlight */}
+      <ServiceSection
+        title="Enterprise-Grade Data Resilience"
+        subtitle="Delivering Global standards locally"
+        content="As a trusted partner, we deliver best-in-class backup, recovery, and data management solutions. Protect your critical data against ransomware, human error, and disasters with automated, AI-powered protection."
+        imageSrc="/cyber.png" 
+        imageAlt="V Partnership"
+        features={[
+          "Ransomware protection & rapid recovery",
+          "Cloud & hybrid backup strategies",
+          "Automated disaster recovery orchestration",
+          "Compliance-ready solutions (NDPC, NITDA, ISO, etc.)",
+        ]}
+        ctaText="Explore Veeam Solutions"
+        bgColor="bg-gradient-to-br from-purple-50 to-violet-50"
+      />
+
+      {/* Cloud Services */}
+      <ServiceSection
+        title="Cloud Services & Migration"
+        content="Seamlessly migrate to the cloud and optimize your infrastructure with our expert cloud consulting and management services. We support AWS, Azure, Google Cloud, and multi-cloud environments."
+        imageSrc="/image7.jpg"
+        imageAlt="Cloud Services"
+        features={[
+          "Cloud strategy and assessment",
+          "Migration and modernization",
+          "Managed cloud operations",
+          "Cost optimization and governance",
+        ]}
+        imageFirst={true}
+      />
+
+      {/* Data Storage */}
+      <ServiceSection
+        title="Secure Data Storage Solutions"
+        content="High-performance, scalable, and secure data storage solutions designed for today’s data-intensive businesses."
+        imageSrc="/frame2.png"
+        imageAlt="Data Storage"
+        features={[
+          "On-premise, cloud & hybrid storage",
+          "Data lifecycle management",
+          "High availability and redundancy",
+          "Performance optimization",
+        ]}
+      />
+
+      {/* Training & Consulting */}
+      <ServiceSection
+        title="Technology Training & Consulting"
+        content="Empower your workforce with industry-relevant skills and strategic technology consulting that drives digital transformation."
+        imageSrc="/frame1.png"
+        imageAlt="Training and Consulting"
+        imageFirst={true}
+        features={[
+          "Customized corporate training programs",
+          "AI, Cloud, Cybersecurity & Data Science",
+          "Certification preparation",
+          "Digital transformation consulting",
+        ]}
+      />
+
+      {/* Custom Development */}
+      <ServiceSection
+        title="Custom Web & Application Development"
+        content="Build powerful, scalable, and user-centric digital solutions tailored to your exact business requirements."
+        imageSrc="/frame444.jpeg"
+        imageAlt="Web and App Development"
+        features={[
+          "Custom web and mobile applications",
+          "Enterprise software solutions",
+          "Modern, responsive, and secure platforms",
+          "Seamless integration with existing systems",
+        ]}
+      />
+
+      {/* Why bPurple */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Partner with Us?</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
+            We combine deep technical expertise with a client-first approach to deliver measurable business outcomes.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            {[
+              "Global Partnership",
+              "Experienced Cloud & Data Experts",
+              "End-to-End Service Delivery",
+              "Proven Track Record",
+              "Flexible Engagement Models",
+              "Ongoing Support & Training",
+            ].map((item, i) => (
+              <div key={i} className="bg-white p-6 rounded-2xl shadow-sm">
+                <CheckCircle2 className="w-8 h-8 text-purple-600 mx-auto mb-4" />
+                <p className="font-medium text-gray-800">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="relative bg-gradient-to-br from-[#0F0C29] via-[#1a0533] to-[#0D0D1A] py-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
+            Ready to Secure, Scale, and Transform Your Business?
+          </h2>
+          <p className="mt-6 text-xl text-gray-300">
+            Let’s discuss how our Cloud, Data, and Technology solutions can help you achieve your goals.
+          </p>
+          <div className="mt-10">
+            <Link href="/contact">
+              <button className="group inline-flex items-center gap-3 bg-white text-gray-900 font-semibold px-10 py-5 rounded-full text-lg hover:bg-gray-100 transition-all duration-300">
+                Talk to Our Experts
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>
@@ -447,3 +300,5 @@ const Page = () => {
 };
 
 export default Page;
+
+

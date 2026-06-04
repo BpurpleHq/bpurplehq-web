@@ -126,7 +126,7 @@ function RelatedCard({ post }: { post: BlogPost }) {
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.55 }}
     >
-      <Link href={`/blog/${post.id}`}>
+      <Link href={`/blog/${post.slug}`}>
         <div className="group flex gap-4 p-4 rounded-2xl bg-white/60
                         backdrop-blur-sm border border-purple-200/50
                         hover:border-purple-400/60 hover:-translate-y-1
@@ -390,7 +390,7 @@ export default function BlogPostPage({
               />
 
               {/* Tags */}
-             {/* <div className="mt-12 pt-8 border-t border-purple-200/50">
+             <div className="mt-12 pt-8 border-t border-purple-200/50">
                 <div className="flex items-center gap-2 flex-wrap">
                   <Tag size={14} className="text-purple-400" />
                   {post.tags.map((tag) => (
@@ -404,7 +404,7 @@ export default function BlogPostPage({
                     </span>
                   ))}
                 </div>
-              </div>*/}
+              </div>
 
               {/* Bottom CTA */}
               <motion.div

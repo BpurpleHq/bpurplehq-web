@@ -105,7 +105,7 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
                         border-t border-purple-100 mt-auto">
 
           <div className="flex items-center gap-2">
-            <Link href={`/blog/${post.id}`}>
+            <Link href={`/blog/${post.slug}`}>
               <motion.button
                 className="flex items-center gap-1.5 px-4 py-2 rounded-full
                            text-white text-[10px] font-semibold"
@@ -426,7 +426,7 @@ export default function BlogPage() {
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
               >
                 {filtered.map((post, i) => (
-                  <BlogCard key={post.id} post={post} index={i} />
+                  <BlogCard key={post.slug} post={post} index={i} />
                 ))}
               </motion.div>
             )}

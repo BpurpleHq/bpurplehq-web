@@ -3,6 +3,7 @@ import CustomButton from '@/components/CustomButton'
 import Image from 'next/image'
 import React from 'react'
 
+
 export const metadata = {
   title: 'bpurpleHQ | Courses',
 };
@@ -44,6 +45,7 @@ const page = () => {
       <section>
         <CoursesOffered />
       </section>
+      
      
     </main>
   )
