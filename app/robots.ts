@@ -10,7 +10,8 @@ export default function robots(): MetadataRoute.Robots {
           '/',
           '/blog',
           '/blog/*',       
-          // '/productservice/solutions',
+          '/productservice/solutions',
+          '/academy',
          
         ],
         disallow: [

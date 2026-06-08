@@ -1,0 +1,67 @@
+# bPurple Technology LTD (bpurplehq.org)
+
+> Modern Technology Partner in Africa — Cloud, Data Resilience, AI, Training & Consulting.
+
+## Company Overview
+bPurple Technology LTD is a Nigerian technology services company specializing in helping organizations across Africa with digital transformation. We combine enterprise-grade technical solutions with practical workforce training.
+
+**Core Expertise:**
+- Cloud Services & Migration (AWS, Azure, Sovereign Cloud)
+- Data Storage & Management
+- Data Resilience & Backup (Official Veeam Partner)
+- Cybersecurity, Privacy & Compliance (NDPR, GDPR, ISO)
+- AI & Data Analytics
+- Custom Software Development
+- Corporate Technology Training & Certification
+- IT Consulting & Digital Transformation
+
+## Key Offerings
+
+### Cloud Solutions
+- Cloud strategy, migration, and managed services
+- Hybrid & multi-cloud architectures
+- Cost optimization and governance
+
+### Data Resilience
+- Enterprise backup and disaster recovery
+- Ransomware protection & rapid recovery
+- Hybrid cloud backup strategies
+- Compliance-ready solutions
+
+### Training & Workforce Development
+- Hands-on technical training programs
+- Leadership & digital skills development
+- Corporate upskilling and certification preparation
+- School of Tech programs
+
+### Other Services
+- Custom web & mobile application development
+- Data Analytics & Business Intelligence
+- Cybersecurity & Compliance consulting
+- Talent as a Service (TaaS)
+
+## Website Structure
+- **Home**: https://bpurplehq.org
+- **Solutions**: https://bpurplehq.org/productsservice/solutions
+- **Blog**: https://bpurplehq.org/blog (and /blog/[slug])
+- **About**: https://bpurplehq.org/about
+- **Contact**: https://bpurplehq.org/contact
+
+## Content Style & Values
+- Practical, business-focused insights
+- Strong emphasis on African enterprise challenges and opportunities
+- Compliance-first approach (especially NDPR)
+- Partnership-driven (Veeam and other leading vendors)
+- Results-oriented with measurable outcomes
+
+## Target Audience
+- Mid-to-large enterprises in Africa
+- Organizations undergoing digital transformation
+- Companies seeking reliable data protection and recovery
+- Businesses investing in workforce development
+
+---
+
+**Last Updated:** June 2026
+**Website:** https://bpurplehq.org
+**Location:** Nigeria (Africa-focused delivery)
