@@ -10,7 +10,7 @@ import { HiBars3BottomRight } from "react-icons/hi2";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Solutions", href: "/productsservice/solutions" },
-  { name: "Training", href: "/courses" },
+  { name: "Training", href: "/academy" },
   { name: "About", href: "/about" },
   // { name: "FAQs", href: "/faq" },
   { name: "Contact", href: "/contact" },

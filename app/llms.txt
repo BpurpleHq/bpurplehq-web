@@ -1,0 +1,38 @@
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+  const llmsContent = `# bPurple Technology LTD
+
+> Technology Servicing, Cloud Solutions, Data Resilience (Veeam Partner), Training & Consulting.
+
+## Company Overview
+- [Home](https://bpurplehq.org/) — Main company website
+- [Solutions](https://bpurplehq.org/solutions) — Cloud, Data Storage, Veeam, Training & Consulting
+
+## Blog & Insights
+Our blog features in-depth articles on cloud computing, data backup & recovery, Veeam best practices, cybersecurity, AI, workforce training, and technology trends.
+
+- [Blog Home](https://bpurplehq.org/blog)
+- [All Blog Posts](https://bpurplehq.org/blog)
+
+**Recent / Important Topics:**
+- Cloud migration strategies
+- Data resilience and ransomware protection with Veeam
+- Technology training and workforce development
+- Custom software development best practices
+
+## Contact & Services
+- [Contact Us](https://bpurplehq.org/contact)
+- [Book a Consultation](https://bpurplehq.org/contact)
+
+---
+
+Last updated: ${new Date().toISOString().split('T')[0]}
+`;
+
+  return new Response(llmsContent, {
+    headers: {
+      'Content-Type': 'text/plain; charset=utf-8',
+    },
+  });
+}

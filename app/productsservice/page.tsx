@@ -5,7 +5,7 @@ import Link from 'next/link';
 import React from 'react'
 
 export const metadata = {
-  title: 'bpurpleHQ | Community',
+  title: 'Bpurple Technology | Solutions',
 };
 
 const page = () => {

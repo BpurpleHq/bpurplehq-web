@@ -1,40 +1,20 @@
 "use client";
 
 import { useEffect, useState, useRef, memo } from "react";
-import { motion, AnimatePresence, Variants, useScroll, useTransform } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import {
-  Cloud, Database, Shield, Code2, ChevronDown, ArrowRight
+  Cloud,
+  Database,
+  Shield,
+  Code2,
+  Users,
+  ArrowRight,
 } from "lucide-react";
 import GlowOrb from "./ui/GlowOrb";
-import SectionBadge from "./ui/SectionBadge";
 import Link from "next/link";
-import HeroMarquee from "@/components/HeroMarq"; // Add this import
+import HeroMarquee from "@/components/HeroMarq";
 
-// ─── Data ────────────────────────────────────────────────────────────────────
-
-const HERO_SLIDES = [
-  {
-    heading: "Driving Digital",
-    highlight: "Transformation",
-    sub: "From cloud migration to workforce upskilling — we architect the future of your business.",
-  },
-  {
-    heading: "Optimising Workflows",
-    highlight: "With Intelligence",
-    sub: "Leverage advanced data analytics and cloud infrastructure to unlock unstoppable efficiency.",
-  },
-  {
-    heading: "Building Future-Ready",
-    highlight: "Teams & Leaders",
-    sub: "4,000+ professionals trained with industry-certified programs tailored to your workforce.",
-  },
-  {
-    heading: "Backup That Gets You ",
-    highlight: "Back in Minutes.",
-    sub: "Backup and instant recovery for on‑prem, cloud and hybrid workloads — built for your businesses.",
-  },
-];
-
+// ─── Floating Icons Data ─────────────────────────────────────────────────────
 const FLOATING_ICONS = [
   {
     Icon: Cloud,
@@ -55,6 +35,15 @@ const FLOATING_ICONS = [
     color: "text-amber-400",
   },
   {
+    Icon: Shield,
+    label: "Privacy",
+    position: "top-[45%] right-[15%]",
+    delay: 0.6,
+    duration: 5.8,
+    size: 38,
+    color: "text-emerald-400",
+  },
+  {
     Icon: Code2,
     label: "AI",
     position: "top-[55%] left-[3%]",
@@ -63,74 +52,86 @@ const FLOATING_ICONS = [
     size: 30,
     color: "text-amber-300",
   },
+  {
+    Icon: Users,
+    label: "Training",
+    position: "bottom-[28%] right-[10%]",   // ← Moved to right side near CTA
+    delay: 1.8,
+    duration: 5.4,
+    size: 36,
+    color: "text-violet-400",
+  },
 ];
 
-// ─── Animation Variants ───────────────────────────────────────────────────────
-
-
-
-// ─── Animation Variants ───────────────────────────────────────────────────────
+// ─── Animation Variants ─────────────────────────────────────────────────────
 const textEnter = {
   hidden: { opacity: 0, y: 32, filter: "blur(8px)" },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { 
-      delay: i * 0.12, 
-      duration: 0.7, 
-      ease: "easeOut" as const,
-    },
+    transition: { delay: i * 0.12, duration: 0.7, ease: "easeOut" as const },
   }),
   exit: {
     opacity: 0,
     y: -24,
     filter: "blur(6px)",
-    transition: { 
-      duration: 0.4, 
-      ease: "easeIn" as const,
-    },
+    transition: { duration: 0.4, ease: "easeIn" as const },
   },
-}
+};
 
-// ─── Float Animation (not variants) ──────────────────────────────────────────
+// Float Animation
+// ─── Float Animation ─────────────────────────────────────────────────────
 const floatAnimation = (delay: number, duration: number) => ({
-  y: [0, -10, 0],
-  rotate: [0, 2, -2, 0],
+  y: [0, -12, 0],
+  rotate: [0, 3, -3, 0],
   transition: {
     delay,
     duration,
     repeat: Infinity,
-    ease: "easeInOut",
+    ease: "easeInOut" as const,        // ← Fixed with 'as const'
+    repeatType: "reverse" as const,    // Added for smoother floating
   },
 });
 
+// ─── Floating Icon Component ────────────────────────────────────────────────
+const FloatingIcon = memo(
+  ({
+    Icon,
+    label,
+    position,
+    delay,
+    duration,
+    size,
+    color,
+  }: (typeof FLOATING_ICONS)[0]) => {
+    return (
+      <motion.div
+        className={`absolute ${position} hidden lg:flex flex-col items-center gap-1.5 pointer-events-none select-none z-10`}
+        initial={{ opacity: 0, scale: 0.6, y: 30 }}
+        animate={{ opacity: 0.95, scale: 1, y: 0 }}
+        transition={{ delay: delay + 0.6, duration: 0.8, ease: "easeOut" }}
+      >
+        {/* Icon with glow */}
+        <motion.div
+          animate={floatAnimation(delay, duration)}
+          className={`${color} drop-shadow-[0_0_15px_currentColor]`}
+        >
+          <Icon size={size} strokeWidth={1.7} />
+        </motion.div>
 
-
-// ─── Sub-components (Memoized for Performance) ────────────────────────────────
-
-const FloatingIcon = memo(({
-  Icon, label, position, delay, duration, size, color,
-}: (typeof FLOATING_ICONS)[0]) => {
-  return (
-    <motion.div
-      className={`absolute ${position} hidden lg:flex flex-col items-center gap-1.5 pointer-events-none select-none`}
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: delay + 0.8, duration: 0.6, ease: "backOut" }}
-    >
-      
-      <span className="text-xs text-brand-muted font-medium tracking-wide">
-        {label}
-      </span>
-    </motion.div>
-  );
-});
+        {/* Label */}
+        <span className="text-[10px] sm:text-xs text-brand-muted font-medium tracking-widest uppercase text-center">
+          {label}
+        </span>
+      </motion.div>
+    );
+  }
+);
 
 FloatingIcon.displayName = "FloatingIcon";
 
-// 
-
+// ─── Background Layer ───────────────────────────────────────────────────────
 const BackgroundLayer = memo(({ bgY }: { bgY: any }) => {
   return (
     <motion.div className="absolute inset-0 pointer-events-none" style={{ y: bgY }}>
@@ -143,14 +144,6 @@ const BackgroundLayer = memo(({ bgY }: { bgY: any }) => {
             linear-gradient(90deg, rgba(155,89,182,0.5) 1px, transparent 1px)
           `,
           backgroundSize: "60px 60px",
-        }}
-      />
-
-      {/* Noise Texture Overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
         }}
       />
 
@@ -178,13 +171,11 @@ const BackgroundLayer = memo(({ bgY }: { bgY: any }) => {
         animate={false}
       />
 
-      {/* Radial highlight under text */}
+      {/* Radial Highlight */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                   w-[800px] h-[400px] rounded-full pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full pointer-events-none"
         style={{
-          background:
-            "radial-gradient(ellipse, rgba(106,13,173,0.12) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(106,13,173,0.12) 0%, transparent 70%)",
         }}
       />
     </motion.div>
@@ -193,8 +184,7 @@ const BackgroundLayer = memo(({ bgY }: { bgY: any }) => {
 
 BackgroundLayer.displayName = "BackgroundLayer";
 
-// ─── Main Hero Component ──────────────────────────────────────────────────────
-
+// ─── Main Hero Component ─────────────────────────────────────────────────────
 export default function Hero() {
   const [current, setCurrent] = useState(0);
   const [isPlaying] = useState(true);
@@ -205,10 +195,12 @@ export default function Hero() {
     target: heroRef,
     offset: ["start start", "end start"],
   });
+
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
   const contentY = useTransform(scrollYProgress, [0, 0.6], ["0%", "-15%"]);
 
+  // Auto slide
   useEffect(() => {
     if (!isPlaying) return;
 
@@ -226,27 +218,24 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center overflow-hidden
-                 bg-gradient-to-br from-[#0F0C29] via-[#1a0533] to-[#0D0D1A]"
+      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#0F0C29] via-[#1a0533] to-[#0D0D1A]"
       aria-label="Hero Section"
     >
-      {/* ── Background Parallax Layer ── */}
+      {/* Background Layer */}
       <BackgroundLayer bgY={bgY} />
 
-      {/* ── Floating Tech Icons ── */}
-      {FLOATING_ICONS.map((icon) => (
-        <FloatingIcon key={icon.label} {...icon} />
+      {/* Floating Icons */}
+      {FLOATING_ICONS.map((icon, index) => (
+        <FloatingIcon key={index} {...icon} />
       ))}
 
-      {/* ── Main Content ── */}
+      {/* Main Content */}
       <motion.div
-        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
-                   pt-24 sm:pt-28 pb-24 sm:pb-32 flex flex-col items-center text-center"
+        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-24 sm:pb-32 flex flex-col items-center text-center"
         style={{ opacity: contentOpacity, y: contentY }}
       >
         {/* Headline Slider */}
-        <div className="mt-6 mb-6 min-h-[120px] sm:min-h-[140px] md:min-h-[160px] lg:min-h-[200px]
-                        flex flex-col items-center justify-center">
+        <div className="mt-6 mb-6 min-h-[120px] sm:min-h-[140px] md:min-h-[160px] lg:min-h-[200px] flex flex-col items-center justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -258,18 +247,14 @@ export default function Hero() {
               <motion.h1
                 custom={0}
                 variants={textEnter}
-                className="font-heading font-bold tracking-tight leading-[1.1]
-                           text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white
-                           px-4"
+                className="font-heading font-bold tracking-tight leading-[1.1] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white px-4"
               >
                 {slide.heading}
               </motion.h1>
               <motion.span
                 custom={1}
                 variants={textEnter}
-                className="font-heading font-bold tracking-tight leading-[1.1]
-                           text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gradient
-                           mt-1 block px-4"
+                className="font-heading font-bold tracking-tight leading-[1.1] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gradient mt-1 block px-4"
               >
                 {slide.highlight}
               </motion.span>
@@ -277,9 +262,8 @@ export default function Hero() {
           </AnimatePresence>
         </div>
 
-        {/* Subtitle Slider */}
-        <div className="min-h-[60px] sm:min-h-[80px] flex items-center mb-8 sm:mb-10 
-                        max-w-xl md:max-w-2xl px-4">
+        {/* Subtitle */}
+        <div className="min-h-[60px] sm:min-h-[80px] flex items-center mb-8 sm:mb-10 max-w-xl md:max-w-2xl px-4">
           <AnimatePresence mode="wait">
             <motion.p
               key={`sub-${current}`}
@@ -287,54 +271,39 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
-              className="text-brand-muted text-sm sm:text-base md:text-lg lg:text-xl
-                         leading-relaxed text-center"
+              className="text-brand-muted text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed text-center"
             >
               {slide.sub}
             </motion.p>
           </AnimatePresence>
         </div>
 
-
-        {/* CTA Buttons */}
+        {/* CTA Button */}
         <motion.div
           className="flex flex-col sm:flex-row items-center gap-4 mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.7, ease: "easeOut" }}
+          transition={{ delay: 0.6, duration: 0.7 }}
         >
-          {/* Primary CTA */}
           <Link href="/productsservice/solutions" className="w-full sm:w-auto">
             <motion.button
-              className="group relative flex items-center justify-center gap-3 
-                         w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-full
-                         bg-gradient-to-r from-purple-700 to-violet-600
-                         text-white font-semibold text-sm sm:text-base overflow-hidden
-                         shadow-lg shadow-purple-900/40 hover:shadow-purple-700/60
-                         transition-shadow duration-300"
+              className="group relative flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-purple-700 to-violet-600 text-white font-semibold text-base overflow-hidden shadow-lg shadow-purple-900/40 hover:shadow-purple-700/60 transition-shadow"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
             >
-              {/* Shimmer effect */}
-              <span
-                className="absolute inset-0 w-full h-full bg-gradient-to-r
-                           from-transparent via-white/10 to-transparent
-                           -translate-x-full group-hover:translate-x-full
-                           transition-transform duration-700 ease-in-out"
-              />
-              <span className="relative">Explore Solutions</span>
+              <span className="relative">Explore Our Solutions</span>
               <motion.span
                 className="relative"
                 animate={{ x: [0, 4, 0] }}
-                transition={{ repeat: Infinity, duration: 2.8, ease: "easeInOut" }}
+                transition={{ repeat: Infinity, duration: 2.5 }}
               >
-                <ArrowRight size={18} />
+                <ArrowRight size={20} />
               </motion.span>
             </motion.button>
           </Link>
         </motion.div>
 
-        {/* Hero Marquee - Added here, removed PartnerMarquee */}
+        {/* Marquee */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -344,31 +313,41 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-
-      {/* ── Bottom Gradient Fade ── */}
+      {/* Bottom Fade & Wave */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-50 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent, rgba(13,13,26,0.95))",
-        }}
+        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+        style={{ background: "linear-gradient(to bottom, transparent, rgba(13,13,26,0.95))" }}
       />
 
-      {/* ── SVG Wave Bottom Divider ── */}
       <div className="absolute bottom-0 left-0 right-0 pointer-events-none overflow-hidden">
-        <svg
-          viewBox="0 0 1440 60"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z"
-            fill="#0D0D1A"
-          />
+        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full" preserveAspectRatio="none">
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z" fill="#0D0D1A" />
         </svg>
       </div>
     </section>
   );
 }
+
+// ─── Hero Slides Data ────────────────────────────────────────────────────────
+const HERO_SLIDES = [
+  {
+    heading: "Driving Digital",
+    highlight: "Transformation",
+    sub: "From cloud migration to workforce upskilling — we architect the future of your business.",
+  },
+  {
+    heading: "Optimising Workflows",
+    highlight: "With Intelligence",
+    sub: "Leverage advanced data analytics and cloud infrastructure to unlock unstoppable efficiency.",
+  },
+  {
+    heading: "Building Future-Ready",
+    highlight: "Teams & Leaders",
+    sub: "4,000+ professionals trained with industry-certified programs tailored to your workforce.",
+  },
+  {
+    heading: "Backup That Gets You",
+    highlight: "Back in Minutes",
+    sub: "Enterprise backup and instant recovery powered by Veeam — on‑prem, cloud and hybrid.",
+  },
+];

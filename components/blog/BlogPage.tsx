@@ -13,9 +13,6 @@ import GlowOrb from "@/components/ui/GlowOrb";
 import SectionBadge from "@/components/ui/SectionBadge";
 import { BLOG_POSTS, BlogPost } from "@/lib/blog-data";
 
-// ─── Types ─────────────────────────────────────────────────────────────────────
-
-// ─── Data ──────────────────────────────────────────────────────────────────────
 
 const CATEGORIES = [
   { label: "All",               icon: BookOpen,   color: "text-purple-600",  bg: "bg-purple-100",  border: "border-purple-200" },

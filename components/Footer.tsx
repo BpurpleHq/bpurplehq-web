@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
+
 const Footer = () => {
   return (
     <footer className='bg-black'>
@@ -35,13 +36,13 @@ const Footer = () => {
             <p className='text-body-2 text-center'>&copy; 2026 Bpurple Technology All Rights Reserved, with 💜 from bpurpleHQ.</p>
             <div className='flex justify-center items-center gap-[8px] mt-1 text-body-2'>
               <Link href='/'>
-               <p>Privacy Policy</p> 
+               <p> </p> 
               </Link>|  
               <Link href='/'>
-               <p> Terms of Use</p> 
+               <p> </p> 
               </Link>|   
               <Link href='/'>
-               <p> Cookie Policy</p> 
+               <p> </p> 
               </Link>  
             </div>
             </div>

@@ -12,7 +12,7 @@ import { BlogPost } from "@/lib/blog-data";
 import GlowOrb from "@/components/ui/GlowOrb";
 import SectionBadge from "@/components/ui/SectionBadge";
 
-// ─── Reading Progress Bar ──────────────────────────────────────────────────────
+
 
 function ReadingProgress() {
   const { scrollYProgress } = useScroll();

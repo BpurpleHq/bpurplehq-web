@@ -65,7 +65,7 @@ export const menuLinks = [
     {
         id: 1,
         title: 'Academy',
-        url: '/courses',
+        url: '/academy',
     },
     {
         id: 1,
@@ -90,7 +90,7 @@ export const footerLinks = [
 
 
       { title: "Products", url: "/Products/Services" },
-      { title: "Courses", url: "/courses" },
+      { title: "Courses", url: "/academy" },
       { title: "Contact Us", url: "/faq/ask-a-question" },
     
 
@@ -235,7 +235,7 @@ export const learningPath = [
         title: 'Cybersecurity',
         description: 'Dive into the world of cybersecurity and learn how to protect systems, networks, and data from digital threatsCybersecurity best practices, Security terms and concepts, Network Security, OwASP, PTES and Security testing',
         duration: '12-16 weeks',
-        // url: '/courses/cybersecurity',
+        // url: '/academy/cybersecurity',
          url: '#',
     },
     {
@@ -244,7 +244,7 @@ export const learningPath = [
         title: 'School of AI',
         description: 'Embark on a journey into the realm of AI, from machine learning to neural networks, delve into the intricacies of AI technology. ',
         duration: 'TBA',
-        // url: '/courses/ai',
+        // url: '/academy/ai',
         url: '#',
     },
      {
@@ -253,7 +253,7 @@ export const learningPath = [
         title: 'School of Products',
         description: ' Learn the art of building cutting-edge products, explore methodologies, user experience design principles, and agile development practices',
         duration: '12-14 weeks',
-        // url: '/courses/course-product',
+        // url: '/academy/course-product',
         url: '#',
     },
       {
@@ -262,7 +262,7 @@ export const learningPath = [
         title: 'Data School',
         description: 'Unlock the power of data, explore data collection, analysis, visualization, and interpretation techniques for decision making. ',
         duration: '12-14 weeks',
-        // url: '/courses/course-data', 
+        // url: '/academy/course-data', 
         url: '#',
     },
     {
@@ -271,7 +271,7 @@ export const learningPath = [
         title: 'Software Engineering',
         description: ' Master the craft of software engineering from design and methodologies to testing and deployment strategies.',
         duration: '12-14 weeks',
-        // url: '/courses/software',
+        // url: '/academy/software',
         url: '#',
     },
      
@@ -453,7 +453,7 @@ export const communityLink = [
         id: 1,
         title: 'Career',
         content: 'Break into tech like a PRO, start your journey with us.',
-        url: '/courses',
+        url: '/academy',
     },
     {
         id: 2,

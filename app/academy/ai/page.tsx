@@ -4,7 +4,7 @@ import CoursesDetailsHeroAI from '@/components/CoursesDetailsHeroAI';
 import React from 'react'
 
 export const metadata = {
-  title: 'bpurpleHQ | Courses - AI',
+  title: 'Bpurple Technology | AI',
 };
 
 const page = () => {
