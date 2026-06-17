@@ -84,29 +84,24 @@ export default function Page() {
     submitData.append("subject", formData.subject.trim());
     submitData.append("message", formData.message.trim());
 
-    await fetch(
+    const response = await fetch(
       "https://script.google.com/macros/s/AKfycbwxeWjZY29FNK739iyRTywSIVKsh9x6wRmOyYvnhLDL6mmJgMPvdFf02FGd_HJw11W5/exec",
       {
         method: "POST",
         body: submitData,
-        mode: "no-cors"         
+        mode: "no-cors"
       }
     );
 
     setSubmitStatus("success");
     setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      subject: "",
-      message: "",
+      name: "", email: "", phone: "", company: "", subject: "", message: ""
     });
 
     setTimeout(() => setSubmitStatus("idle"), 5000);
 
   } catch (error) {
-    console.error("Form submission error:", error);
+    console.error("Submission error:", error);
     setSubmitStatus("error");
   } finally {
     setIsSubmitting(false);
