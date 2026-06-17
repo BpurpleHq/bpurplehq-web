@@ -68,46 +68,85 @@ export default function Page() {
       [e.target.name]: e.target.value,
     });
   };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus("idle");
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus("idle");
-
-    try {
-      // Replace with your actual Google Sheets API endpoint or backend endpoint
-      const response = await fetch("https://script.google.com/macros/s/AKfycbwxeWjZY29FNK739iyRTywSIVKsh9x6wRmOyYvnhLDL6mmJgMPvdFf02FGd_HJw11W5/exec", {
+  try {
+    const response = await fetch(
+      "https://script.google.com/macros/s/AKfycbwxeWjZY29FNK739iyRTywSIVKsh9x6wRmOyYvnhLDL6mmJgMPvdFf02FGd_HJw11W5/exec",
+      {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          ...formData,
-          timestamp: new Date().toISOString(),
-        }),
-      });
-
-      if (response.ok) {
-        setSubmitStatus("success");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          company: "",
-          subject: "",
-          message: "",
-        });
-        setTimeout(() => setSubmitStatus("idle"), 5000);
-      } else {
-        setSubmitStatus("error");
+        body: JSON.stringify(formData),   // No need to send timestamp
       }
-    } catch (error) {
-      console.error("Form submission error:", error);
+    );
+
+    const result = await response.json();
+
+    if (response.ok && result.status === "success") {
+      setSubmitStatus("success");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        subject: "",
+        message: "",
+      });
+      setTimeout(() => setSubmitStatus("idle"), 5000);
+    } else {
       setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
     }
-  };
+  } catch (error) {
+    console.error("Form submission error:", error);
+    setSubmitStatus("error");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+  //   setSubmitStatus("idle");
+
+  //   try {
+  //     // Replace with your actual Google Sheets API endpoint or backend endpoint
+  //     const response = await fetch("https://script.google.com/macros/s/AKfycbwxeWjZY29FNK739iyRTywSIVKsh9x6wRmOyYvnhLDL6mmJgMPvdFf02FGd_HJw11W5/exec", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         ...formData,
+  //         timestamp: new Date().toISOString(),
+  //       }),
+  //     });
+
+  //     if (response.ok) {
+  //       setSubmitStatus("success");
+  //       setFormData({
+  //         name: "",
+  //         email: "",
+  //         phone: "",
+  //         company: "",
+  //         subject: "",
+  //         message: "",
+  //       });
+  //       setTimeout(() => setSubmitStatus("idle"), 5000);
+  //     } else {
+  //       setSubmitStatus("error");
+  //     }
+  //   } catch (error) {
+  //     console.error("Form submission error:", error);
+  //     setSubmitStatus("error");
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
 
   return (
     <main className="relative w-full overflow-hidden">
