@@ -69,7 +69,7 @@ export default function Page() {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+ const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
   setIsSubmitting(true);
   setSubmitStatus("idle");
@@ -84,30 +84,27 @@ export default function Page() {
     submitData.append("subject", formData.subject.trim());
     submitData.append("message", formData.message.trim());
 
-    const response = await fetch(
+    await fetch(
       "https://script.google.com/macros/s/AKfycbwxeWjZY29FNK739iyRTywSIVKsh9x6wRmOyYvnhLDL6mmJgMPvdFf02FGd_HJw11W5/exec",
       {
         method: "POST",
         body: submitData,
+        mode: "no-cors"         
       }
     );
 
-    const resultText = await response.text();
+    setSubmitStatus("success");
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      subject: "",
+      message: "",
+    });
 
-    if (response.ok && resultText.trim() === "success") {
-      setSubmitStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        subject: "",
-        message: "",
-      });
-      setTimeout(() => setSubmitStatus("idle"), 5000);
-    } else {
-      setSubmitStatus("error");
-    }
+    setTimeout(() => setSubmitStatus("idle"), 5000);
+
   } catch (error) {
     console.error("Form submission error:", error);
     setSubmitStatus("error");
