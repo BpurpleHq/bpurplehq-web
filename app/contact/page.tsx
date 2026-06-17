@@ -68,85 +68,53 @@ export default function Page() {
       [e.target.name]: e.target.value,
     });
   };
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-  setSubmitStatus("idle");
 
-  try {
-    const response = await fetch(
-      "https://script.google.com/macros/s/AKfycbwxeWjZY29FNK739iyRTywSIVKsh9x6wRmOyYvnhLDL6mmJgMPvdFf02FGd_HJw11W5/exec",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),   // No need to send timestamp
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const submitData = new FormData();
+      
+      submitData.append("name", formData.name.trim());
+      submitData.append("email", formData.email.trim());
+      submitData.append("phone", formData.phone.trim());
+      submitData.append("company", formData.company.trim());
+      submitData.append("subject", formData.subject.trim());
+      submitData.append("message", formData.message.trim());
+
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbwxeWjZY29FNK739iyRTywSIVKsh9x6wRmOyYvnhLDL6mmJgMPvdFf02FGd_HJw11W5/exec",
+        {
+          method: "POST",
+          body: submitData,
+        }
+      );
+
+      const result = await response.json();
+
+      if (response.ok && result.status === "success") {
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          subject: "",
+          message: "",
+        });
+        setTimeout(() => setSubmitStatus("idle"), 5000);
+      } else {
+        setSubmitStatus("error");
       }
-    );
-
-    const result = await response.json();
-
-    if (response.ok && result.status === "success") {
-      setSubmitStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        subject: "",
-        message: "",
-      });
-      setTimeout(() => setSubmitStatus("idle"), 5000);
-    } else {
+    } catch (error) {
+      console.error("Form submission error:", error);
       setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    console.error("Form submission error:", error);
-    setSubmitStatus("error");
-  } finally {
-    setIsSubmitting(false);
-  }
-};
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   setIsSubmitting(true);
-  //   setSubmitStatus("idle");
-
-  //   try {
-  //     // Replace with your actual Google Sheets API endpoint or backend endpoint
-  //     const response = await fetch("https://script.google.com/macros/s/AKfycbwxeWjZY29FNK739iyRTywSIVKsh9x6wRmOyYvnhLDL6mmJgMPvdFf02FGd_HJw11W5/exec", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         ...formData,
-  //         timestamp: new Date().toISOString(),
-  //       }),
-  //     });
-
-  //     if (response.ok) {
-  //       setSubmitStatus("success");
-  //       setFormData({
-  //         name: "",
-  //         email: "",
-  //         phone: "",
-  //         company: "",
-  //         subject: "",
-  //         message: "",
-  //       });
-  //       setTimeout(() => setSubmitStatus("idle"), 5000);
-  //     } else {
-  //       setSubmitStatus("error");
-  //     }
-  //   } catch (error) {
-  //     console.error("Form submission error:", error);
-  //     setSubmitStatus("error");
-  //   } finally {
-  //     setIsSubmitting(false);
-  //   }
-  // };
+  };
 
   return (
     <main className="relative w-full overflow-hidden">
@@ -254,10 +222,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-semibold text-gray-700 mb-2"
-                    >
+                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
                       Full Name *
                     </label>
                     <input
@@ -273,10 +238,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   </div>
 
                   <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-semibold text-gray-700 mb-2"
-                    >
+                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
                       Email Address *
                     </label>
                     <input
@@ -294,10 +256,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label
-                      htmlFor="phone"
-                      className="block text-sm font-semibold text-gray-700 mb-2"
-                    >
+                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
                       Phone Number
                     </label>
                     <input
@@ -312,10 +271,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   </div>
 
                   <div>
-                    <label
-                      htmlFor="company"
-                      className="block text-sm font-semibold text-gray-700 mb-2"
-                    >
+                    <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
                       Company Name
                     </label>
                     <input
@@ -331,10 +287,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-semibold text-gray-700 mb-2"
-                  >
+                  <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
                     Subject *
                   </label>
                   <select
@@ -356,10 +309,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-semibold text-gray-700 mb-2"
-                  >
+                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
                     Message *
                   </label>
                   <textarea
@@ -442,46 +392,6 @@ const handleSubmit = async (e: React.FormEvent) => {
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Map Section (Optional) */}
-      <section className="bg-white py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Visit Our Office
-            </h2>
-            <p className="text-lg text-gray-700">
-              We'd love to meet you in person at our Lagos office
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="rounded-2xl overflow-hidden shadow-2xl h-96 bg-gray-200"
-          >
-            {/* Replace with actual Google Maps embed or map component */}
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7052088417244!2d3.3792057!3d6.4280556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjUnNDEuMCJOIDPCsDIyJzQ1LjEiRQ!5e0!3m2!1sen!2sng!4v1234567890"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Office Location"
-            />
-          </motion.div>
         </div>
       </section>
     </main>
