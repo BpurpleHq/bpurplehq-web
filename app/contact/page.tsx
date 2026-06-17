@@ -76,7 +76,7 @@ export default function Page() {
 
     try {
       // Replace with your actual Google Sheets API endpoint or backend endpoint
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbwxeWjZY29FNK739iyRTywSIVKsh9x6wRmOyYvnhLDL6mmJgMPvdFf02FGd_HJw11W5/exec", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
