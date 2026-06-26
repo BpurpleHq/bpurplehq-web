@@ -75,7 +75,7 @@ Local data centers dramatically reduce latency for African users. Providers are 
       </br>
  <p> While sovereign solutions may carry a modest premium initially, they often deliver better total cost of ownership through efficiency, scalability, and avoided penalties.</p>
   </br>
-      <h2><strong>Business Continuity and Resilience </strong></h2>
+      <h2><strong> Business Continuity and Resilience </strong></h2>
       </br>
  <p> Local infrastructure built by African-focused providers enhances resilience against global outages, geopolitical tensions, and international bandwidth issues. This is vital for enterprises targeting Africa’s growing digital economy.</p>
  </br>
@@ -217,7 +217,7 @@ Are you ready to take control of your data?</p>
       </p></br>
       <p> This is hard to do for a few reasons: </p> </br>
       <ul>
-        <li>1. Curricula in some fields may not always keep pace with industry needs..</li>
+        <li>1. Curriculum in some fields may not always keep pace with industry needs.</li>
         <li>2. Limited access to modern equipment, laboratories, and infrastructure</li>
         <li>3. Not all students get the chance to go through industrial training and internship experiences.</li>
       <li>4. Many students have few opportunities to meet with practitioners prior to graduation.</li>
@@ -234,6 +234,7 @@ Are you ready to take control of your data?</p>
       </br>
       <p>Institutions and employers have different but complementary roles to play in the development of the workforce.
 Universities are institutions that are supposed to provide academic instruction, intellectual growth, and disciplinary expertise. 
+</br>
 Employers, on the other hand, are on the front lines in dynamic industries and frequently have immediate knowledge of emerging trends, technologies, and workplace expectations.
 </br> When these two sectors collaborate, students have the opportunity to benefit from experiences that either sector cannot offer alone.
 
@@ -276,9 +277,9 @@ Thus, private sector bridge programs can be more than just a way to prepare stud
 
        <h2> <strong> Bpurple Next-Gen Bridge Program: What We Have Done So Far</strong></h2>
       </br>
-<p>Through the bpurple Next-Gen Bridge Program, we have trained over 50 college students and university graduates with the practical technology skills and real-world experience needed to thrive in today's job market. Each cohort builds more than skills, it builds solids mind and develop character with excellence at the core, we a driving community of young Nigerians ready to enter the workforce with confidence and purpose. With core focus on:</p></br>
+<p>Through the Bpurple Next-Gen Bridge Program, we have trained over 50 college students and university graduates with the practical technology skills and real-world experience needed to thrive in today's job market. Each cohort builds more than skills, it builds solids mind and develop character with excellence at the core, we a driving community of young Nigerians ready to enter the workforce with confidence and purpose. With core focus on:</p></br>
       <ul>
-          <li>1. Design Thiniking</li>
+          <li>1. Design Thinking</li>
           <li>2. Entrepreneurial mindset</li>
           <li>3. Innovation Capabilities</li>
           <li>4. Workplace Literacy</li>
