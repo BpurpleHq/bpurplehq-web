@@ -90,7 +90,7 @@ export const footerLinks = [
 
 
       { title: "Products", url: "/Products/Services" },
-      { title: "Courses", url: "/academy" },
+      { title: "Academy", url: "/academy" },
       { title: "Contact Us", url: "/faq/ask-a-question" },
     
 

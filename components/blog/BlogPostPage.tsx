@@ -27,91 +27,7 @@ function ReadingProgress() {
   );
 }
 
-// ─── Share Button ──────────────────────────────────────────────────────────────
 
-// function ShareMenu({ title }: { title: string }) {
-//   const [open, setOpen]     = useState(false);
-//   const [copied, setCopied] = useState(false);
-//   const url = typeof window !== "undefined" ? window.location.href : "";
-
-//   const copyLink = () => {
-//     navigator.clipboard.writeText(url);
-//     setCopied(true);
-//     setTimeout(() => setCopied(false), 2000);
-//   };
-
-//   return (
-//     <div className="relative">
-//       <motion.button
-//         onClick={() => setOpen((o) => !o)}
-//         className="flex items-center gap-2 px-4 py-2.5 rounded-full
-//                    bg-white/70 backdrop-blur-sm border border-purple-200/60
-//                    text-purple-700 text-xs font-semibold
-//                    hover:border-purple-400 transition-all"
-//         whileHover={{ scale: 1.04 }}
-//         whileTap={{ scale: 0.96 }}
-//       >
-//         <Share2 size={13} /> Share
-//       </motion.button>
-
-//       {open && (
-//         <motion.div
-//           initial={{ opacity: 0, scale: 0.9, y: 8 }}
-//           animate={{ opacity: 1, scale: 1, y: 0 }}
-//           className="absolute top-12 right-0 bg-white/90 backdrop-blur-md
-//                      border border-purple-200/60 rounded-2xl p-3
-//                      shadow-xl shadow-purple-200/40 min-w-[180px] z-20"
-//         >
-//           {[
-//             {
-//               label: "Twitter / X",
-//               icon: Twitter,
-//               href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
-//               color: "text-sky-500",
-//             },
-//             {
-//               label: "LinkedIn",
-//               icon: Linkedin,
-//               href: `https://linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
-//               color: "text-blue-600",
-//             },
-//             {
-//               label: "Facebook",
-//               icon: Facebook,
-//               href: `https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-//               color: "text-blue-500",
-//             },
-//           ].map(({ label, icon: Icon, href, color }) => (
-//             <a
-//               key={label}
-//               href={href}
-//               target="_blank"
-//               rel="noopener noreferrer"
-//               className="flex items-center gap-3 px-3 py-2.5 rounded-xl
-//                          hover:bg-purple-50 transition-colors text-xs
-//                          text-purple-800 font-medium"
-//             >
-//               <Icon size={14} className={color} /> {label}
-//             </a>
-//           ))}
-//           <button
-//             onClick={copyLink}
-//             className="flex items-center gap-3 px-3 py-2.5 rounded-xl w-full
-//                        hover:bg-purple-50 transition-colors text-xs
-//                        text-purple-800 font-medium"
-//           >
-//             {copied ? (
-//               <Check size={14} className="text-emerald-500" />
-//             ) : (
-//               <Copy size={14} className="text-purple-500" />
-//             )}
-//             {copied ? "Copied!" : "Copy Link"}
-//           </button>
-//         </motion.div>
-//       )}
-//     </div>
-//   );
-// }
 
 // ─── Related Card ──────────────────────────────────────────────────────────────
 
@@ -229,29 +145,7 @@ export default function BlogPostPage({
             </Link>
           </motion.div>
 
-          {/* Category + meta */}
-         {/* <motion.div
-            className="flex flex-wrap items-center gap-3 mb-5"
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.55 }}
-          >
-            <span
-              className={`text-xs font-bold tracking-wider uppercase px-3 py-1.5
-                          rounded-full bg-purple-100 border border-purple-200 ${post.categoryColor}`}
-            >
-              {post.category}
-            </span>
-            <span className="flex items-center gap-1 text-xs text-purple-500/60">
-              <Calendar size={11} /> {post.date}
-            </span>
-            <span className="flex items-center gap-1 text-xs text-purple-500/60">
-              <Clock size={11} /> {post.readTime}
-            </span>
-            <span className="flex items-center gap-1 text-xs text-purple-500/60">
-              <Eye size={11} /> {post.views} views
-            </span>
-          </motion.div>*/}
+  
 
           {/* Title */}
           <motion.h1
@@ -274,45 +168,7 @@ export default function BlogPostPage({
             {post.excerpt}
           </motion.p>
 
-          {/* Author row + actions */}
-          {/*<motion.div
-            className="flex flex-col sm:flex-row sm:items-center justify-between
-                       gap-4 pb-8 border-b border-purple-200/50"
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.28, duration: 0.55 }}
-          >
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br
-                              from-purple-600 to-violet-700 flex items-center
-                              justify-center text-white font-bold text-sm">
-                B
-              </div>
-              <div>
-                <p className="text-[#1A0533] text-sm font-semibold">{post.author}</p>
-                <p className="text-purple-500/55 text-xs">{post.authorRole}</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <motion.button
-                onClick={() => setLiked((l) => !l)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-full
-                            text-xs font-semibold border transition-all duration-300 ${
-                              liked
-                                ? "bg-rose-50 border-rose-300 text-rose-600"
-                                : "bg-white/70 border-purple-200/60 text-purple-700"
-                            }`}
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.96 }}
-              >
-                <Heart size={13} className={liked ? "fill-rose-500 text-rose-500" : ""} />
-                {liked ? post.likes + 1 : post.likes}
-              </motion.button>
-
-              <ShareMenu title={post.title} />
-            </div>
-          </motion.div>*/}
+         
         </div>
       </section>
 
