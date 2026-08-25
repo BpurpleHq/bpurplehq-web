@@ -144,7 +144,8 @@ const Page = () => {
           "Limitless Collaboration",
           "Ubiquitous intelligent interactions",
         ]}
-        ctaText="Explore Solutions"
+        ctaText="Explore Devices"
+        ctaLink = "/intelligent-collaboration",
         bgColor="bg-gradient-to-br from-purple-50 to-violet-50"
       />
 
