@@ -17,13 +17,13 @@ const metrics = [
   {
     id: 2,
     figure: "10+",
-    title: "Solutions Deployed",
+    title: "Emerging Technology Programs",
     image: "/check.png",
   },
   {
     id: 3,
-    figure: "99.9%",
-    title: "Systems Secured",
+    figure: "10+",
+    title: "Industry Partnerships",
     image: "/handshake.png",
   },
 ];
@@ -41,7 +41,7 @@ const Metrics = () => {
 
 
   return (
-    <section className="relative bg-[#0a071f] py-20 md:py-28 overflow-hidden">
+    <section className="relative bg-[#0a071f] py-20 md:py-10 overflow-hidden">
       {/* Background Glow Orbs */}
       <GlowOrb className="-top-32 -left-32" />
       <GlowOrb className="top-1/3 -right-40 w-96 h-96" />
@@ -49,19 +49,7 @@ const Metrics = () => {
 
       <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
         {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-300 via-violet-300 to-fuchsia-300 bg-clip-text text-transparent font-montserrat tracking-tight">
-            Our Impact in Numbers
-          </h2>
-          <p className="mt-4 text-gray-400 text-lg max-w-md mx-auto">
-            Real results. Real growth.
-          </p>
-        </motion.div>
+      
 
         {/* Metrics Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">

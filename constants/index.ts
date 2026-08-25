@@ -67,6 +67,12 @@ export const menuLinks = [
         title: 'Academy',
         url: '/academy',
     },
+
+    {
+        id: 4,
+        title: 'IdeaHub',
+        url: '/intelligent-collaboratiom',
+    },
     {
         id: 1,
         title: 'Connect with us',

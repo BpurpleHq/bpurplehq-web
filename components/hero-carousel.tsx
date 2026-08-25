@@ -62,7 +62,7 @@ export default function AboutUs() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+          className="grid grid-cols-1 lg:grid-cols-1 gap-16 items-center"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -78,8 +78,8 @@ export default function AboutUs() {
               className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold
                          text-white leading-tight"
             >
-              Over{" "}
-              <span className="text-gradient">5 years delivering</span>{" "}
+              10+{" "}
+              <span className="text-gradient">years delivering</span>{" "}
               technology excellence
             </motion.h2>
 
@@ -122,38 +122,7 @@ export default function AboutUs() {
             </motion.div>
           </motion.div>
 
-          {/* Right Illustration / Image Column */}
-          <motion.div
-            variants={itemVariants}
-            className="rounded-3xl glass-card p-6 lg:p-8 border border-white/15
-                       shadow-xl hover:shadow-2xl hover:border-purple-500/40
-                       transition-all duration-300 hover:-translate-y-1
-                       flex items-center justify-center"
-          >
-            <div className="w-full max-w-md aspect-square rounded-2xl
-                            bg-gradient-to-br from-purple-900 via-violet-900 to-amber-900
-                            flex flex-col items-center justify-center p-6
-                            relative overflow-hidden">
-              
-              
-              
-               <span className="text-gradient font-heading text-3xl sm:text-4xl lg:text-5xl font-bold
-                         text-white leading-tight">Delivering Technology and Organizational Value</span>
-             
-
-              {/* Glowing dots inside card */}
-              <div className="absolute inset-0 opacity-20">
-                <div
-                  className="absolute w-20 h-20 rounded-full bg-purple-400 blur-xl
-                             top-6 right-6"
-                />
-                <div
-                  className="absolute w-16 h-16 rounded-full bg-amber-400 blur-xl
-                             bottom-6 left-6"
-                />
-              </div>
-            </div>
-          </motion.div>
+       
         </motion.div>
       </div>
     </section>

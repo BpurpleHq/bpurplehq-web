@@ -336,9 +336,9 @@ const HERO_SLIDES = [
     sub: "From cloud migration to workforce upskilling — we architect the future of your business.",
   },
   {
-    heading: "Optimising Workflows",
-    highlight: "With Intelligence",
-    sub: "Leverage advanced data analytics and cloud infrastructure to unlock unstoppable efficiency.",
+    heading: "Redefining Meetings",
+    highlight: "with Intelligence",
+    sub: "LOur all-in-one collaboration endpoints integrate professional audio and video, hardware–software engineering and native cloud services to ensure flawless collaboration.",
   },
   {
     heading: "Building Future-Ready",

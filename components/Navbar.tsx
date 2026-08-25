@@ -11,8 +11,8 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "Solutions", href: "/productsservice/solutions" },
   { name: "Training", href: "/academy" },
+  { name: "Ideahub", href: "/intelligent-collaboration" },
   { name: "About", href: "/about" },
-  // { name: "FAQs", href: "/faq" },
   { name: "Contact", href: "/contact" },
   { name: "Blog", href: "/blog" },
 ];

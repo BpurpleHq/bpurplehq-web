@@ -14,6 +14,7 @@ import WhyUs from "@/components/WhyUs";
 import DataDiscovery from "@/components/DataDiscovery";
 import Solutions from "@/components/Solutions";
 import Partners from "@/components/Partners";
+import Ideahub from "@/components/Idhb";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -29,6 +30,10 @@ export default function Home() {
   
     <section>
         <HeroCarousel />
+      </section>
+
+       <section>
+        <Ideahub />
       </section>
 
       <section>

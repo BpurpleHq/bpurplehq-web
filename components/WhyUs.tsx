@@ -407,7 +407,7 @@ export default function WhyChooseUs() {
             Ready to experience the Bpurple difference firsthand?
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/faq">
+            {/*<Link href="/faq">
               <motion.button
                 className="group relative flex items-center gap-3 px-8 py-4 rounded-full
                            bg-gradient-to-r from-purple-700 to-violet-600
@@ -430,7 +430,7 @@ export default function WhyChooseUs() {
                   <ArrowRight size={18} />
                 </motion.span>
               </motion.button>
-            </Link>
+            </Link>*/}
 
             <Link href="/productsservice/solutions">
               <motion.button

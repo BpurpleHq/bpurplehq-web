@@ -136,24 +136,24 @@ const Page = () => {
           >
             Technology Solutions That <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-amber-400">Drive Real Results</span>
           </motion.h1>
-          <motion.p
+          {/*<motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="mt-6 text-xl text-gray-300"
           >
             Sovereign Cloud • Data Resilience • Training • Consulting • Solutions
-          </motion.p>
+          </motion.p>*/}
         </div>
       </section>
 
       {/* Services Overview Grid */}
-      <section className="py-16 bg-white">
+     {/* <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { icon: Cloud, title: "Sovereign Cloud Services", desc: "Migration, optimization, and managed cloud solutions." },
-              { icon: Shield, title: "Data Resilience & Backup", desc: "Enterprise backup, recovery, and disaster protection with Veeam." },
+              { icon: Shield, title: "Data Resilience & Backup", desc: "Enterprise backup, recovery, and disaster protection." },
               { icon: Database, title: "Data Storage & Management", desc: "Secure, scalable, and high-performance data solutions." },
               { icon: Users, title: "Training & Workforce Development", desc: "Future-ready tech training and certification programs." },
               { icon: Code2, title: "Custom Development", desc: "Bespoke web, mobile, and enterprise applications." },
@@ -173,9 +173,26 @@ const Page = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section>*/}
 
-      {/* Veeam Partnership Spotlight */}
+       {/* ideahub */}
+      <ServiceSection
+        title="Intelligent Collaboration"
+        content="Our all-in-one collaboration endpoints integrate professional audio and video, flawless device collaboration and deep integration with professional conferencing systems to accelerate industry digitalization."
+        imageSrc="/bee.png"
+        imageAlt="ideahub"
+        features={[
+          "4K crystal clear visual and sound",
+          "Open and Fast Integration",
+          "Limitless Collaboration",
+          "Ubiquitous intelligent interactions",
+        ]}
+         ctaText="Explore Devices"
+         ctaLink = "/intelligent-collaboration"
+        imageFirst={true}
+      />
+
+      {/*  Partnership Spotlight */}
       <ServiceSection
         title="Enterprise-Grade Data Resilience"
         subtitle="Delivering Global standards locally"
@@ -188,7 +205,7 @@ const Page = () => {
           "Automated disaster recovery orchestration",
           "Compliance-ready solutions (NDPC, NITDA, ISO, etc.)",
         ]}
-        ctaText="Explore Veeam Solutions"
+        ctaText="Explore Solutions"
         bgColor="bg-gradient-to-br from-purple-50 to-violet-50"
       />
 
