@@ -145,7 +145,7 @@ const Page = () => {
           "Ubiquitous intelligent interactions",
         ]}
         ctaText="Explore Devices"
-        ctaLink = "/intelligent-collaboration",
+        ctaLink = "/intelligent-collaboration"
         bgColor="bg-gradient-to-br from-purple-50 to-violet-50"
       />
 
