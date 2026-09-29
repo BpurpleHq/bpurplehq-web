@@ -66,6 +66,14 @@ export const menuLinks = [
         id: 1,
         title: 'Academy',
         url: '/academy',
+        children: [
+      {
+        id: 11,
+        title: 'Stack-NextGen',
+        url: '/stack-nextgen',
+      },
+      
+    ],
     },
 
     {

@@ -22,49 +22,49 @@ const CURRICULUM = [
   {
     num: "1",
     name: "Foundation",
-    weeks: "Week 1",
+    // weeks: "Week 1",
     hook: "Know who you are online, before someone else decides for you.",
     advanced: false,
   },
   {
     num: "2",
     name: "Systems",
-    weeks: "Week 2",
+    // weeks: "Week 2",
     hook: "See how the internet, files, and the cloud actually work — the machinery behind every scam and every safeguard.",
     advanced: false,
   },
   {
     num: "3",
     name: "Trusted",
-    weeks: "Week 3",
+    // weeks: "Week 3",
     hook: "Learn the law that protects your data under the NDPA 2023 — and how to use it.",
     advanced: false,
   },
   {
     num: "4",
     name: "Secure",
-    weeks: "Week 4",
+    // weeks: "Week 4",
     hook: "Learn to catch a scam before it catches you — fake alerts, phishing links, SIM-swap fraud.",
     advanced: false,
   },
   {
     num: "5",
     name: "Intelligence",
-    weeks: "Week 5",
+    // weeks: "Week 5",
     hook: "Tell a real video from a deepfake, and use AI without losing your data or your judgement.",
     advanced: false,
   },
   {
     num: "6",
     name: "Build",
-    weeks: "Week 6",
+    // weeks: "Week 6",
     hook: "Turn what you've learned into something you can teach others — a poster, a skit, a project.",
     advanced: false,
   },
   {
     num: "7",
-    name: "Sovereign",
-    weeks: "Week 7 · Advanced",
+    name: "Sovereign Cloud",
+    // weeks: "Week 7 · Advanced",
     hook: "Go deeper into Nigeria's National Digital Cloud Policy — and the careers it's creating.",
     advanced: true,
   },
@@ -72,11 +72,11 @@ const CURRICULUM = [
 
 const LEARNER_BENEFITS = [
   
-"- Career head start: Get an early introduction to in-demand fields like cybersecurity, data protection, and cloud computing.",
-"- Zero-barrier entry: Join the pilot at no cost, so anyone can start learning immediately.",
-"- Practical, Nigeria-focused skills: Work through real-life scenarios like fake bank alerts, SMS and EMail phishing attempts, and deepfake scams instead of abstract theory.",
-"- Recognised achievement: Earn a completion certificate, with top performers gaining recognition to showcase your skills." ,
-"- Confidence to handle real online threats: Individuals gain practical skills to identify and respond to common scams.",
+"Career head start: Get an early introduction to in-demand fields like cybersecurity, data protection, and cloud computing.",
+"Zero-barrier entry: Join the cohort at no cost, so anyone can start learning immediately.",
+"Practical, Nigeria-focused skills: Work through real-life scenarios like fake bank alerts, SMS and EMail phishing attempts, and deepfake scams instead of abstract theory.",
+"Recognised achievement: Earn a completion certificate, with top performers gaining recognition to showcase your skills." ,
+"Confidence to handle real online threats: Individuals gain practical skills to identify and respond to common scams.",
 
 ];
 
@@ -190,13 +190,13 @@ export default function StackNextGenLanding() {
     >
       {/* Nav */}
       <nav className={styles.nav}>
-        <div className={styles.navMark}>
+        {/* <div className={styles.navMark}>
           STACK
-        </div>
+        </div> */}
         <div className={styles.navLinks}>
-          <a href="#about">About</a>
+          {/* <a href="#about">About</a>
           <a href="#curriculum">Curriculum</a>
-          <a href="#benefits">Benefits</a>
+          <a href="#benefits">Benefits</a> */}
         </div>
         <a href="#signup" className={styles.navCta}>
           Join STACK.
@@ -274,9 +274,9 @@ export default function StackNextGenLanding() {
               What STACK NextGen is
             </h2>
             <p>
-              STACK NextGen is Nigeria&apos;s first Olympiad-style learning programme built
-              around security, data privacy, and AI literacy, designed for young Nigerians in
-              secondary schools and universities, and built entirely on Nigerian scenarios: NIN
+              STACK NextGen is Nigeria&apos;s first realworld-style learning programme built
+              around security, data privacy, cloud and AI literacy, designed for young Nigerians weather in
+              secondary schools, universities or out of school, and built entirely on Nigerian scenarios: NIN, BVN
               slips leaked on WhatsApp Status, fake JAMB links, fake bank alerts at the market,
               and deepfakes of public figures.
             </p>
@@ -332,7 +332,7 @@ export default function StackNextGenLanding() {
               <div className={styles.pathDot}>{m.num}</div>
               <div className={styles.pathBody}>
                 <h3>{m.name}</h3>
-                <span className={styles.pathWeeks}>{m.weeks}</span>
+                {/* <span className={styles.pathWeeks}>{m.weeks}</span> */}
                 {m.advanced && <span className={styles.pathBadge}>Advanced track</span>}
                 <p className={styles.pathHook}>{m.hook}</p>
               </div>
@@ -372,7 +372,7 @@ export default function StackNextGenLanding() {
       <section id="signup" className={styles.signupSection}>
         <div className={styles.signupInner}>
           <div className={styles.signupIntro}>
-            <h2>Join the pilot</h2>
+            <h2>Join the cohort</h2>
             <p>
               Tell us a bit about yourself and we&apos;ll get you set up — whether you&apos;re
               here to learn, or here to teach.
