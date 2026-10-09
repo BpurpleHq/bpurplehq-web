@@ -14,6 +14,7 @@ import { useRouter } from 'next/navigation'
 import Spec from "@/components/Ideahub/Spec";
 import Prod from "@/components/Ideahub/Product";
 import DataDiscovery from "@/components/DataDiscovery";
+import IdealHero from "@/components/Ideahub/idealhero";
 
 
 export default function Home() {
@@ -22,10 +23,8 @@ export default function Home() {
       
   return (
     <main className="w-full relative">
-      
-      <section>
-            <Prod />
-      </section>
+       <section><IdealHero /></section>
+      <section><Prod /></section>
       <section>
             <Spec />
       </section>

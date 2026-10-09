@@ -15,7 +15,6 @@
   background: var(--cream);
   color: var(--ink);
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 .page * {
@@ -149,7 +148,7 @@
   color: var(--paper);
 }
 
-/* Hero mockup: a flagged fake-alert message card */
+/* Hero mockup */
 .heroVisual {
   position: relative;
   display: flex;
@@ -169,8 +168,15 @@
 }
 
 @keyframes settle {
-  from { opacity: 0; transform: rotate(-2deg) translateY(14px); }
-  to { opacity: 1; transform: rotate(-2deg) translateY(0); }
+  from {
+    opacity: 0;
+    transform: rotate(-2deg) translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(-2deg) translateY(0);
+  }
 }
 
 .alertHead {
@@ -189,8 +195,6 @@
   font-size: 0.92rem;
   line-height: 1.5;
   color: var(--ink);
-  overflow-wrap: anywhere;
-  word-break: break-word;
 }
 
 .alertFlag {
@@ -251,6 +255,7 @@
 
 /* ---------- Section shell ---------- */
 .section {
+  width: 100%;
   max-width: 1240px;
   margin: 0 auto;
   padding: 88px 6vw;
@@ -297,7 +302,7 @@
 
 .pillarRow {
   display: grid;
-  grid-template-columns: 90px 1fr;
+  grid-template-columns: 90px minmax(0, 1fr);
   gap: 18px;
   padding: 20px 0;
   border-bottom: 1px solid var(--rule);
@@ -325,125 +330,83 @@
 
 /* ---------- Curriculum path ---------- */
 .path {
-  position: relative;
-  display: grid;
-  gap: 22px;
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 8px 0 0;
-}
+  --dot-size: 44px;
+  --line-width: 2px;
 
-.path::before {
-  content: "";
-  position: absolute;
-  left: 24px;
-  top: 10px;
-  bottom: 10px;
-  width: 2px;
-  background: rgba(27, 42, 74, 0.18);
+  position: relative;
+  margin-left: calc(var(--dot-size) / 2);
+  border-left: var(--line-width) solid var(--rule);
 }
 
 .pathRow {
   position: relative;
-  display: grid;
-  grid-template-columns: 52px minmax(0, 1fr);
-  gap: 18px;
-  align-items: start;
+  padding: 0 0 40px calc(var(--dot-size) / 2 + 18px);
+}
+
+.pathRow:last-child {
+  padding-bottom: 4px;
 }
 
 .pathDot {
-  position: relative;
-  z-index: 1;
-  width: 48px;
-  height: 48px;
-  border-radius: 999px;
-  background: var(--navy);
-  color: var(--paper);
+  position: absolute;
+  top: 0;
+  left: calc(-1 * var(--dot-size) / 2 - var(--line-width) / 2);
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--navy);
+  color: var(--navy);
   font-family: var(--font-display);
-  font-size: 1.05rem;
   font-weight: 700;
-  display: grid;
-  place-items: center;
-  border: 3px solid var(--cream);
-  box-shadow: 0 0 0 2px rgba(27, 42, 74, 0.08);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pathRow.advanced .pathDot {
-  background: var(--gold);
-  color: var(--navy-deep);
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--navy);
 }
 
 .pathBody {
-  background: rgba(255, 255, 255, 0.45);
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  padding: 18px 20px;
-  box-shadow: 0 10px 24px rgba(18, 29, 51, 0.04);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px 16px;
   min-width: 0;
 }
 
 .pathBody h3 {
-  margin: 0 0 8px;
-  color: var(--navy);
   font-family: var(--font-display);
-  font-size: 1.2rem;
-  line-height: 1.2;
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin: 0;
 }
 
 .pathWeeks {
-  display: inline-block;
-  margin-bottom: 8px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: 0.82rem;
   color: var(--ink-soft);
 }
 
 .pathHook {
+  flex-basis: 100%;
   margin: 0;
-  color: var(--ink-soft);
-  line-height: 1.7;
   font-size: 0.98rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  max-width: 60ch;
 }
 
 .pathBadge {
-  display: inline-flex;
-  align-items: center;
-  margin-left: 10px;
-  padding: 5px 9px;
-  border-radius: 999px;
-  background: rgba(200, 155, 60, 0.14);
-  border: 1px solid rgba(200, 155, 60, 0.36);
-  color: var(--navy);
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
-}
-
-.pathRow.advanced .pathBody {
-  border-color: rgba(200, 155, 60, 0.35);
-}
-
-@media (max-width: 560px) {
-  .path::before {
-    left: 18px;
-  }
-
-  .pathRow {
-    grid-template-columns: 40px minmax(0, 1fr);
-    gap: 12px;
-  }
-
-  .pathDot {
-    width: 38px;
-    height: 38px;
-    font-size: 0.9rem;
-  }
-
-  .pathBody {
-    padding: 16px 16px;
-  }
+  color: var(--gold-soft);
+  background: var(--navy);
+  padding: 3px 9px;
+  border-radius: 20px;
 }
 
 /* ---------- Benefits split ---------- */
@@ -577,6 +540,7 @@
 
 .formField input,
 .formField select {
+  width: 100%;
   padding: 11px 12px;
   border: 1px solid var(--rule);
   border-radius: 4px;
@@ -584,7 +548,6 @@
   color: var(--ink);
   background: #fff;
   font-family: var(--font-body);
-  min-height: 46px;
 }
 
 .formField input:focus,
@@ -644,27 +607,62 @@
   text-decoration: none;
 }
 
+/* ---------- Consent ---------- */
+.consentBlock {
+  margin: 4px 0 18px;
+  padding: 14px 16px;
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+
+.consentRow {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+
+.consentRow + .consentRow {
+  margin-top: 12px;
+}
+
+.consentRow input[type="checkbox"] {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--navy);
+  cursor: pointer;
+}
+
+.consentRow a {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.submitBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.submitBtn:disabled:hover {
+  background: var(--gold);
+}
+
+.formError {
+  margin: 12px 0 0;
+  font-size: 0.88rem;
+  color: var(--alert);
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 880px) {
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    padding-top: 52px;
-  }
-
-  .heroText h1 {
-    max-width: none;
-  }
-
-  .heroVisual {
-    order: -1;
-    justify-content: flex-start;
-  }
-
-  .alertCard {
-    max-width: 100%;
-  }
-
+  .hero,
   .aboutGrid,
   .benefits,
   .signupInner {
@@ -695,6 +693,14 @@
   .navLinks {
     display: none;
   }
+
+  .heroVisual {
+    order: -1;
+  }
+
+  .signupInner {
+    gap: 32px;
+  }
 }
 
 @media (max-width: 560px) {
@@ -703,64 +709,48 @@
   }
 
   .hero {
-    padding: 40px 5vw 32px;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 48px 5vw 40px;
   }
 
-  .heroText p {
-    font-size: 1rem;
+  .section {
+    padding: 64px 5vw;
   }
 
-  .heroActions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .btnPrimary,
-  .btnSecondary {
-    width: 100%;
+  .sectionHead {
+    margin-bottom: 36px;
   }
 
   .stats {
-    grid-template-columns: 1fr;
+    padding: 24px 5vw;
   }
 
   .statItem {
-    border-left: none;
-    border-top: 1px solid rgba(251, 248, 242, 0.18);
-    padding-top: 18px;
+    padding: 0 10px;
   }
 
-  .statItem:first-child {
-    border-top: none;
-    padding-top: 0;
-  }
-
-  .section,
-  .signupSection {
-    padding-left: 5vw;
-    padding-right: 5vw;
+  .pillarRow {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 12px;
   }
 
   .formCard {
     padding: 24px 18px;
   }
 
-  .roleToggle {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .signupSection {
+    padding: 64px 5vw;
+  }
+
+  .footer {
+    padding: 32px 5vw;
   }
 }
 
+/* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   .alertCard {
     animation: none;
-  }
-
-  .navCta,
-  .btnPrimary,
-  .btnSecondary,
-  .roleBtn,
-  .submitBtn {
-    transition: none;
   }
 }

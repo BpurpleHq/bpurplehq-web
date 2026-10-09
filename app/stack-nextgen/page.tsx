@@ -1,3 +1,5 @@
+
+
 "use client";
 
 import { useState, type FormEvent } from "react";
@@ -18,66 +20,69 @@ const body = IBM_Plex_Sans({
 
 type Role = "learner" | "teacher";
 
+// ADDED: consent settings. Update the version whenever the Privacy Notice changes.
+const PRIVACY_NOTICE_VERSION = "2026-10-v1";
+const PRIVACY_NOTICE_URL = "/privacy"; // TODO: publish the notice at this path
+const PRIVACY_CONTACT_EMAIL = "privacy@bpurplehq.org"; // TODO: confirm real address
+
 const CURRICULUM = [
   {
     num: "1",
     name: "Foundation",
     // weeks: "Week 1",
-    hook: "Know who you are online, before someone else decides for you.",
+    hook: "Know who you are online - Understanding your digital identity, before someone else decides for you.",
     advanced: false,
   },
   {
     num: "2",
     name: "Systems",
     // weeks: "Week 2",
-    hook: "See how the internet, files, and the cloud actually work — the machinery behind every scam and every safeguard.",
+    hook: "See how the internet and cloud actually work.",
     advanced: false,
   },
   {
     num: "3",
     name: "Trusted",
     // weeks: "Week 3",
-    hook: "Learn the law that protects your data under the NDPA 2023 — and how to use it.",
+    hook: "Learn the law that protects your data and how to use it.",
     advanced: false,
   },
   {
     num: "4",
     name: "Secure",
     // weeks: "Week 4",
-    hook: "Learn to catch a scam before it catches you — fake alerts, phishing links, SIM-swap fraud.",
+    hook: "Learn to catch a scam before it catches you, fake alerts, phishing links, SIM-swap fraud.",
     advanced: false,
   },
   {
     num: "5",
     name: "Intelligence",
     // weeks: "Week 5",
-    hook: "Tell a real video from a deepfake, and use AI without losing your data or your judgement.",
+    hook: "Responsive use of AI, tell a real video from a deepfake, use AI without losing your data or your judgement.",
     advanced: false,
   },
   {
     num: "6",
     name: "Build",
     // weeks: "Week 6",
-    hook: "Turn what you've learned into something you can teach others — a poster, a skit, a project.",
+    hook: "Turn what you've learned into something you can teach.",
     advanced: false,
   },
   {
     num: "7",
     name: "Sovereign Cloud",
     // weeks: "Week 7 · Advanced",
-    hook: "Go deeper into Nigeria's National Digital Cloud Policy — and the careers it's creating.",
+    hook: "Fundamentals into Nigeria's Sovereign Cloud and the careers it's creating.",
     advanced: true,
   },
 ];
 
 const LEARNER_BENEFITS = [
-  
-"Career head start: Get an early introduction to in-demand fields like cybersecurity, data protection, and cloud computing.",
-"Zero-barrier entry: Join the cohort at no cost, so anyone can start learning immediately.",
-"Practical, Nigeria-focused skills: Work through real-life scenarios like fake bank alerts, SMS and EMail phishing attempts, and deepfake scams instead of abstract theory.",
-"Recognised achievement: Earn a completion certificate, with top performers gaining recognition to showcase your skills." ,
-"Confidence to handle real online threats: Individuals gain practical skills to identify and respond to common scams.",
-
+  "Career head start: Get an early introduction to in-demand fields like cybersecurity, data protection, and cloud computing.",
+  "Zero-barrier entry: Join the cohort at no cost, so anyone can start learning immediately.",
+  "Practical, Nigeria-focused skills: Work through real-life scenarios like fake bank alerts, SMS and email phishing attempts, and deepfake scams instead of abstract theory.",
+  "Recognised achievement: Earn a completion certificate, with top performers gaining recognition to showcase your skills.",
+  "Confidence to handle real online threats: Individuals gain practical skills to identify and respond to common scams.",
 ];
 
 const TEACHER_BENEFITS = [
@@ -86,15 +91,15 @@ const TEACHER_BENEFITS = [
   // "\"Certified STACK Facilitator\" training and certificate",
   // "TrustMark recognition for your school",
   // "Be part of the first cohort of a national digital-safety programme",
-  "Coming Soon!!"
+  "Coming Soon!!",
 
-// - **Ready-to-deliver digital safety curriculum:** The school gains a complete, plug-and-play 60-minute lesson framework that can be integrated into existing timetables without extra development work.  
-// - **Consistent, high-quality delivery across classes:** Standardised facilitator scripts, timing guides, and answer keys ensure every session runs smoothly and uniformly, regardless of which staff member leads it.  
-// - **Enhanced staff capacity as an institutional asset:** By having teachers trained and certified as “STACK Facilitators,” the school builds internal expertise that strengthens its overall teaching capability in digital safety.  
-// - **Official TrustMark recognition for the institution:** The school itself receives TrustMark status, which can be used in communications with parents, regulators, and partners to demonstrate a verified commitment to digital safety.  
-// - **Pioneer positioning in a national programme:** As part of the first cohort, the school can brand itself as an early adopter and leader in national digital-safety education initiatives.  
-// - **Improved student outcomes and safety culture:** Students gain practical, Nigeria-relevant digital safety skills (e.g., spotting fake alerts, phishing, deepfakes), contributing to a safer, more responsible school community.  
-// - **Pathways to competitions and external visibility:** Students can progress to represent the school at the national STACK Olympiad, giving the institution additional opportunities for recognition and prestige.
+  // - **Ready-to-deliver digital safety curriculum:** The school gains a complete, plug-and-play 60-minute lesson framework that can be integrated into existing timetables without extra development work.
+  // - **Consistent, high-quality delivery across classes:** Standardised facilitator scripts, timing guides, and answer keys ensure every session runs smoothly and uniformly, regardless of which staff member leads it.
+  // - **Enhanced staff capacity as an institutional asset:** By having teachers trained and certified as "STACK Facilitators," the school builds internal expertise that strengthens its overall teaching capability in digital safety.
+  // - **Official TrustMark recognition for the institution:** The school itself receives TrustMark status, which can be used in communications with parents, regulators, and partners to demonstrate a verified commitment to digital safety.
+  // - **Pioneer positioning in a national programme:** As part of the first cohort, the school can brand itself as an early adopter and leader in national digital-safety education initiatives.
+  // - **Improved student outcomes and safety culture:** Students gain practical, Nigeria-relevant digital safety skills (e.g., spotting fake alerts, phishing, deepfakes), contributing to a safer, more responsible school community.
+  // - **Pathways to competitions and external visibility:** Students can progress to represent the school at the national STACK Olympiad, giving the institution additional opportunities for recognition and prestige.
 ];
 
 type FormState = {
@@ -123,6 +128,12 @@ export default function StackNextGenLanding() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [form, setForm] = useState<FormState>(emptyForm);
+  // ADDED: consent must be an affirmative action, so both start unticked.
+  const [privacyConsent, setPrivacyConsent] = useState(false);
+  const [guardianConsent, setGuardianConsent] = useState(false);
+
+  // ADDED: single source of truth for "is the form allowed to submit".
+  const consentComplete = privacyConsent && (role !== "learner" || guardianConsent);
 
   function updateField(field: keyof FormState, value: string) {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -145,10 +156,19 @@ export default function StackNextGenLanding() {
       email: form.email.trim(),
       phone: form.phone.trim(),
       school: form.school.trim(),
+      // ADDED: the API route rejects any signup without these.
+      privacyConsent,
+      guardianConsent: role === "learner" ? guardianConsent : null,
+      noticeVersion: PRIVACY_NOTICE_VERSION,
     };
 
     if (!payload.fullName || !payload.email || !payload.phone) {
       setSubmitError("Please complete all required fields.");
+      return;
+    }
+
+    if (!consentComplete) {
+      setSubmitError("Please tick the consent box(es) below to continue.");
       return;
     }
 
@@ -183,7 +203,7 @@ export default function StackNextGenLanding() {
     document.getElementById("signup")?.scrollIntoView({ behavior: "smooth" });
   }
 
-  return (
+       return (
     <div
       className={`${styles.page} ${display.variable} ${body.variable}`}
       style={{ fontFamily: "var(--font-body)" }}
@@ -208,9 +228,9 @@ export default function StackNextGenLanding() {
         <div className={styles.heroText}>
           <h1>Technology for NextGen.</h1>
           <p>
-            STACK NextGen teaches Nigerians (No Age Limits) about technology and data privacy, how to
-            recognise fraud, and how to use AI responsibly, through real local stories,
-            role-play, and just 60 minutes a week. No laptop or tech background required.
+            STACK NextGen teaches Nigerians (No Age Limits) about technolog, responsible use of AI, Cloud and data privacy, how to
+            recognise fraud, through real local stories,
+            role-play..
           </p>
           <div className={styles.heroActions}>
             <button className={styles.btnPrimary} onClick={() => scrollToSignup("learner")}>
@@ -225,14 +245,14 @@ export default function StackNextGenLanding() {
         {/* NOTE: rename these classes to match your page.module.css */}
         <div className={styles.heroVisual}>
           <div className={styles.alertCard}>
-            <div className={styles.alertHeader}>Sample lesson · Spot the fake alert</div>
+            <div className={styles.alertHeader}>Sample Lesson · Spot the fake alert</div>
             <div className={styles.alertBubble}>
               Dear customer, your account has been credited with ₦15,000. Ref: TXN-88213.
               Reply CONFIRM to release goods.
             </div>
             <div className={styles.alertFlag}>⚠ Flagged: matches fake-alert pattern</div>
             <p className={styles.alertCaption}>
-              This is from <strong>Week 4</strong> of the STACK curriculum, one of 39 lessons
+              This is from <strong>Week 4</strong> of the STACK curriculum, one of 26 lessons
               built on real Nigerian fraud patterns.
             </p>
           </div>
@@ -242,11 +262,11 @@ export default function StackNextGenLanding() {
       {/* Stats */}
       <div className={styles.stats}>
         <div className={styles.statItem}>
-          <span className={styles.statNum}>7</span>
+          <span className={styles.statNum}>6</span>
           <span className={styles.statLabel}>Modules</span>
         </div>
         <div className={styles.statItem}>
-          <span className={styles.statNum}>39</span>
+          <span className={styles.statNum}>20</span>
           <span className={styles.statLabel}>Lessons</span>
         </div>
         <div className={styles.statItem}>
@@ -255,7 +275,7 @@ export default function StackNextGenLanding() {
         </div>
         <div className={styles.statItem}>
           <span className={styles.statNum}>0</span>
-          <span className={styles.statLabel}>Laptops needed</span>
+          <span className={styles.statLabel}>Tech Skill Required</span>
         </div>
       </div>
 
@@ -277,12 +297,12 @@ export default function StackNextGenLanding() {
               STACK NextGen is Nigeria&apos;s first realworld-style learning programme built
               around security, data privacy, cloud and AI literacy, designed for young Nigerians weather in
               secondary schools, universities or out of school, and built entirely on Nigerian scenarios: NIN, BVN
-              slips leaked on WhatsApp Status, fake JAMB links, fake bank alerts at the market,
+              slips leaked on WhatsApp Status, fake links, fake bank alerts at the market,
               and deepfakes of public figures.
             </p>
             <p>
-              Every lesson runs on printed worksheets, short videos, and role-play — no laptop,
-              no fast internet, and no prior tech knowledge required. Just one hour a week.
+              Every lesson runs on printed worksheets, short videos, and role-play,,
+              no fast internet, and no prior tech knowledge required. Just two hours a week.
             </p>
           </div>
 
@@ -290,7 +310,7 @@ export default function StackNextGenLanding() {
             <div className={styles.pillarRow}>
               <span className={styles.pillarTag}>Secure</span>
               <div>
-                <h3>Cybersecurity</h3>
+                <h3>Security Literacy</h3>
                 <p>Spot fraud patterns before they cost you money or your identity.</p>
               </div>
             </div>
@@ -298,7 +318,7 @@ export default function StackNextGenLanding() {
               <span className={styles.pillarTag}>Trusted</span>
               <div>
                 <h3>Data privacy</h3>
-                <p>Know your rights under the NDPA 2023, and how to act when they&apos;re broken.</p>
+                <p>Know your data rights, and how to act when they&apos;re broken.</p>
               </div>
             </div>
             <div className={styles.pillarRow}>
@@ -311,8 +331,8 @@ export default function StackNextGenLanding() {
             <div className={styles.pillarRow}>
               <span className={styles.pillarTag}>Built</span>
               <div>
-                <h3>For Nigeria</h3>
-                <p>Designed by a Nigerian youth team, for Nigerian classrooms — not adapted from abroad.</p>
+                <h3>Cloud</h3>
+                <p>Cloud fundamentals and players in Nigeria ( Case study driven ).</p>
               </div>
             </div>
           </div>
@@ -345,7 +365,7 @@ export default function StackNextGenLanding() {
       <section id="benefits" className={styles.section} style={{ paddingTop: 0 }}>
         <div className={styles.sectionHead}>
           <h2>What you get</h2>
-          <p>STACK NextGen is built for two people in the room: the student learning (an individua), and the educational institution guiding them.</p>
+          <p>STACK NextGen is built for two people in the room: the student learning (an individual), and the educational institution guiding them.</p>
         </div>
 
         <div className={styles.benefits}>
@@ -391,20 +411,7 @@ export default function StackNextGenLanding() {
             ) : (
               <form onSubmit={handleSubmit}>
                 <div className={styles.roleToggle}>
-                  {/* <button
-                    type="button"
-                    className={`${styles.roleBtn} ${role === "learner" ? styles.roleBtnActive : ""}`}
-                    onClick={() => changeRole("learner")}
-                  >
-                    I&apos;m a learner
-                  </button> */}
-                  {/* <button
-                    type="button"
-                    className={`${styles.roleBtn} ${role === "teacher" ? styles.roleBtnActive : ""}`}
-                    onClick={() => changeRole("teacher")}
-                  >
-                    I&apos;m a teacher
-                  </button> */}
+                  
                 </div>
 
                 <div className={styles.formGrid}>
@@ -412,6 +419,7 @@ export default function StackNextGenLanding() {
                     <label htmlFor="fullName">Full name</label>
                     <input
                       id="fullName"
+                      autoComplete="name"
                       required
                       value={form.fullName}
                       onChange={(e) => updateField("fullName", e.target.value)}
@@ -423,6 +431,7 @@ export default function StackNextGenLanding() {
                     <input
                       id="phone"
                       type="tel"
+                      autoComplete="tel"
                       required
                       value={form.phone}
                       onChange={(e) => updateField("phone", e.target.value)}
@@ -435,6 +444,7 @@ export default function StackNextGenLanding() {
                     <input
                       id="email"
                       type="email"
+                      autoComplete="email"
                       required
                       value={form.email}
                       onChange={(e) => updateField("email", e.target.value)}
@@ -442,44 +452,9 @@ export default function StackNextGenLanding() {
                     />
                   </div>
 
-                  {/* <div className={`${styles.formField} ${styles.full}`}>
-                    <label htmlFor="school">School name</label>
-                    <input
-                      id="school"
-                      required
-                      value={form.school}
-                      onChange={(e) => updateField("school", e.target.value)}
-                      placeholder="e.g. Command Secondary School"
-                    />
-                  </div> */}
 
-                  {/* State field disabled. To re-enable, uncomment and add `state` to the client-side required check.
-                  <div className={styles.formField}>
-                    <label htmlFor="state">State</label>
-                    <select
-                      id="state"
-                      required
-                      value={form.state}
-                      onChange={(e) => updateField("state", e.target.value)}
-                    >
-                      <option value="">Select state</option>
-                      <option>Lagos</option>
-                      <option>Ogun</option>
-                      <option>Oyo</option>
-                      <option>Rivers</option>
-                      <option>Kano</option>
-                      <option>FCT</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                  */}
-
-                  {role === "learner" ? (
-                    <div className={`${styles.formField} ${styles.full}`}>
-                      
-                      
-                    </div>
-                  ) : (
+                  {/* CHANGED: was an empty "learner" div that left a blank gap in the grid. */}
+                  {/* {role === "teacher" && (
                     <div className={`${styles.formField} ${styles.full}`}>
                       <label htmlFor="subjectRole">Subject / role at school</label>
                       <input
@@ -490,6 +465,43 @@ export default function StackNextGenLanding() {
                         placeholder="e.g. Computer Studies teacher, Guidance Counsellor"
                       />
                     </div>
+                  )} */}
+                </div>
+
+                {/* ADDED: consent. The API route rejects signups without it. */}
+                <div className={styles.consentBlock}>
+                  <label className={styles.consentRow}>
+                    <input
+                      type="checkbox"
+                      required
+                      checked={privacyConsent}
+                      onChange={(e) => setPrivacyConsent(e.target.checked)}
+                    />
+                    <span>
+                      I agree that Bpurple Technology may collect and use the
+                      information in this form to manage my STACK-NextGen
+                      registration and to contact me about the programme, as
+                      explained in the{" "}
+                      <a href={PRIVACY_NOTICE_URL} target="_blank" rel="noopener noreferrer">
+                        Privacy Notice
+                      </a>
+                    
+                    </span>
+                  </label>
+
+                  {role === "learner" && (
+                    <label className={styles.consentRow}>
+                      <input
+                        type="checkbox"
+                        required
+                        checked={guardianConsent}
+                        onChange={(e) => setGuardianConsent(e.target.checked)}
+                      />
+                      <span>
+                        I am 18 or older, or my parent or guardian knows about
+                        and agrees to this registration.
+                      </span>
+                    </label>
                   )}
                 </div>
 
@@ -499,7 +511,11 @@ export default function StackNextGenLanding() {
                   </p>
                 )}
 
-                <button type="submit" className={styles.submitBtn} disabled={isSubmitting}>
+                <button
+                  type="submit"
+                  className={styles.submitBtn}
+                  disabled={isSubmitting || !consentComplete}
+                >
                   {isSubmitting
                     ? "Submitting..."
                     : role === "learner"
@@ -514,3 +530,5 @@ export default function StackNextGenLanding() {
     </div>
   );
 }
+
+
