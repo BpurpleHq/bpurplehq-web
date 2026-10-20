@@ -6,8 +6,7 @@ type SignupPayload = {
   fullName: string;
   email: string;
   phone: string;
-  privacyConsent?: boolean;
-  guardianConsent?: boolean | null; // learners only
+  consentComplete?: boolean;
   noticeVersion?: string; // which Privacy Notice version the person saw
 };
 
@@ -41,21 +40,13 @@ export async function POST(req: Request) {
       );
     }
 
-    if (body.role !== "learner" && body.role !== "teacher") {
-      return NextResponse.json({ error: "Invalid role." }, { status: 400 });
-    }
+   
 
     // Consent is enforced here, not just in the browser, because client-side
     // checks can be bypassed. Nothing is saved without a clear "yes".
-    if (body.privacyConsent !== true) {
+    if (body.consentComplete !== true) {
       return NextResponse.json(
         { error: "Privacy consent is required to register." },
-        { status: 400 }
-      );
-    }
-    if (body.role === "learner" && body.guardianConsent !== true) {
-      return NextResponse.json(
-        { error: "Age or guardian confirmation is required for learners." },
         { status: 400 }
       );
     }
@@ -99,7 +90,7 @@ export async function POST(req: Request) {
       // body.role === "learner" ? clean(body.classLevel, 60) : "",
       // // body.role === "teacher" ? clean(body.subjectRole) : "",
       // "YES",
-      body.role === "learner" ? "YES" : "N/A",
+      // body.role === "learner" ? "YES" : "N/A",
       now,
       clean(body.noticeVersion, 40) || "unknown",
     ];

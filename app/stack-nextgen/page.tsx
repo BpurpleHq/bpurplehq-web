@@ -276,7 +276,7 @@ export default function StackNextGenLanding() {
       phone: form.phone.trim(),
 
       // The API route rejects any signup without these.
-      privacyConsent,
+      consentComplete,
       noticeVersion: PRIVACY_NOTICE_VERSION,
     };
 
@@ -682,7 +682,7 @@ export default function StackNextGenLanding() {
                 {/* Consent. The API route rejects signups without it. */}
                 <div className={styles.consentBlock}>
                   <label className={styles.consentRow}>
-                    <input type="checkbox" required checked={privacyConsent} onChange={(e) => setPrivacyConsent(e.target.checked)} />
+                    <input type="checkbox" required checked={consentComplete} onChange={(e) => setPrivacyConsent(e.target.checked)} />
                     <span>
                       I have read and agree to the processing of my personal information in line with Bpurple privacy policy, as explained in the{" "}
                       <a href={PRIVACY_NOTICE_URL} target="_blank" rel="noopener noreferrer">
